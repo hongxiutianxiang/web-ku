@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>11-9滚动照片</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		div{
+			width: 600px;
+			height: 480px;
+			border: 1px solid black;
+			margin:50px auto;
+			overflow: hidden;
+		}
+		ul{
+			width: 2160px;
+			height: 480px;
+			list-style: none;
+			animation: sport 10s linear infinite;
+		}
+		li{
+			width: 270px;
+			height: 480px;
+			background: blue;
+			float: left;
+			
+		}
+		@keyframes sport{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left: -1620px;
+			}
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+		ul li:hover{
+			opacity: 1;
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><img src="../素材/libai.jpg"></li>
+			<li><img src="../素材/wangzhaojun.jpg"></li>
+			<li><img src="../素材/luna.jpg"></li>
+			<li><img src="../素材/hanxin.jpg"></li>
+			<li><img src="../素材/ake.jpg"></li>
+			<li><img src="../素材/zhenji.jpg"></li>
+			<li><img src="../素材/libai.jpg"></li>
+			<li><img src="../素材/wangzhaojun.jpg"></li>
+		</ul>
+	</div>
+</body>
+</html>

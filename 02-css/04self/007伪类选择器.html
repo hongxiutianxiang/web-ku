@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007伪类选择器</title>
+	<style>
+		a:link{
+			color:red;
+		}
+		a:visited{
+			color:green;
+		}
+		a:hover{
+			color:orange;
+		}
+		a:active{
+			color:yellow;
+		}
+		a:after{
+			content:"过去";
+		}
+		p:before{
+			content:"我的天呐";
+		}
+		[type="text"]:focus{
+			color: red;
+		}
+		[type="checkbox"]:checked{
+			height:50px;width: 50px;
+		}
+	</style>
+</head>
+<body>
+	<a href="#">跳转</a>
+	<p>哎呀呀</p>
+	<input type="text">
+	<input type="checkbox">
+</body>
+</html>

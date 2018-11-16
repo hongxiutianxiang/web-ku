@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-6布局qq邮箱</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		header{
+			width: 1600px;
+			height: 60px;
+			background: rgb(239 244 250);
+			overflow: hidden;
+		}
+		li{
+			list-style: none;
+			display: inline-block;
+			float: right;
+		}
+		.logo{
+			float: left;
+			margin-left: 40px;
+			margin-top: 11px;
+		}
+		.infm{
+			margin-top: 22px;
+			margin-right: 40px;
+			font-size: 12px;
+		}
+		.body-left{
+			margin-top: 80px;
+			margin-left: 210px;
+			float: left;
+
+		}
+		.body-right{
+			width: 338px;
+			height: 390px;
+			border:1px solid gray;
+			margin-top: 80px;
+			margin-right: 330px;
+			float: right;
+			border-radius: 7px;
+			
+		}
+		.kuai{
+			height: 52px;
+			background: rgb(239 244 250);
+			text-align: center;
+		}
+		.body-right a{
+			
+			line-height: 52px;
+			
+		}
+		.zhi{
+			width: 283px;
+			height: 39px;
+			border: 1px solid gray;
+			margin-left: 27px;
+			border-radius: 3px;
+		}
+		[type="text"]{
+			margin-top: 39px;
+			margin-bottom: 10px;
+		}
+		p{
+			margin-left: 27px;
+			margin-top: 25px;
+		}
+		.denglu{
+			width: 283px;
+			height: 39px;
+			background: #5a98de;
+			margin-left: 27px;
+			border-radius: 3px;
+			margin-top: 20px;
+			font-size: 18px;
+			color: #ffffff;
+		}
+		.yijian{
+			margin-top: 50px;
+			margin-right: 20px;
+			}
+		footer{
+			margin-top: 700px; 
+			margin-right: 370px;
+		}
+		.guan li{
+			list-style: none;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="logo">
+			<img src="../../练习素材/qq-logo.png" alt="">
+		</div>
+		<div class="infm">
+			<ul>
+				<li><a href="#">企业邮箱</a>&nbsp;|&nbsp;</li>
+				<li><a href="#">手机版</a>&nbsp;|&nbsp;</li>
+				<li><a href="#">English</a>&nbsp;|&nbsp;</li>
+				<li><a href="#">基本版</a>&nbsp;|&nbsp;</li|>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="body-left">
+			<img src="../../练习素材/qq-emil2.png" alt="">
+		</div>
+		<div class="body-right">
+			<div class="kuai">
+				<a href="#">快速登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#">账号密码登陆</a>
+			</div>
+			<input class="zhi" type="text" placeholder="支持QQ号/邮箱/手机号登陆">
+			<input class="zhi" type="password" placeholder="QQ密码">
+			<label for="a">
+				<p><input type="checkbox" id="a">下次自动登陆</p>	
+			</label>
+			<input class="denglu" type="button" value="登&nbsp;&nbsp;录">
+			<ul class="yijian">
+				<li><a href="#">意见反馈</a></li>
+				<li><a href="#">注册新账号</a>&nbsp;|&nbsp;</li>
+				<li><a href="#">忘了密码？</a>&nbsp;|&nbsp;</li>
+			</ul>
+		</div>
+	</section>
+	<footer>
+		<ul class="guan">
+			<li><span>©1998 - 2018 Tencent Inc. All Rights Reserved.</span></li>
+			<li><a href="#">帮助中心&nbsp;|&nbsp;</a></li>
+			<li><a href="#">联系我们&nbsp;|&nbsp;</a></li>
+			<li><a href="#">客服中心&nbsp;|&nbsp;</a></li>
+			<li><a href="#">隐私政策&nbsp;|&nbsp;</a></li>
+			<li><a href="#">服务条款&nbsp;|&nbsp;</a></li>
+			<li><a href="#">关于腾讯&nbsp;|&nbsp;</a></li>
+		</ul>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.father{
+			width: 300px;
+			height: 500px;
+			border: 3px solid pink;
+			border-radius: 5px;
+			margin:50px auto;
+			position: relative;
+		}
+		.son1{
+			width:150px;
+			height:50px;
+			background: yellow;
+			border-radius: 5px;
+			line-height: 50px;
+			text-align: center;
+		}
+		.son2{
+			width: 150px;
+			height: 50px;
+			background: skyblue;
+			border-radius: 5px;
+			line-height: 50px;
+			text-align: center;
+		}
+		.son{
+			float: left;
+		}
+		
+		.erji{
+			width: 100px;
+			height: 50px;
+			border: 1px solid pink;
+			margin-left: 25px;
+			line-height: 50px;
+		}
+		.erji1-1{
+			margin-top: 56px;
+		}
+		/*div.erji.erji2{
+			transform: translate(150px,-260px);
+		}*/
+		.erji{
+			transform: rotateY(90deg);	
+		}
+		.son1:hover~.erji1-1{
+			transform: rotateY(0deg);
+		}
+		.erji1-1{
+			transition: transform 1s;
+		}
+		.son1:hover~.erji1-2{
+			transform: rotateY(0deg);
+		}
+		.erji1-2{
+			transition: transform 1s linear 0.5s;
+		}
+		.son1:hover~.erji1-3{
+			transform: rotateY(0deg);
+		}
+		.erji1-3{
+			transition: transform 1s linear 1s;
+		}
+		.son1:hover~.erji1-4{
+			transform: rotateY(0deg);
+		}
+		.erji1-4{
+			transition: transform 1s linear 1.5s;
+		}
+		.son1:hover~.erji1-5{
+			transform: rotateY(0deg);
+		}
+		.erji1-5{
+			transition: transform 1s linear 2s;
+		}
+
+
+		.son2:hover~.erji2-1{
+			transform: rotateY(0deg);
+		}
+		.erji2-1{
+			transition: transform 1s linear 0s;
+			position: absolute;
+			right: 25px;
+			top: 56px;
+		}
+		.son2:hover~.erji2-2{
+			transform: rotateY(0deg);
+		}
+		.erji2-2{
+			transition: transform 1s linear 0.5s;
+			position: absolute;
+			right: 25px;
+			top: 107px;
+		}
+		.son2:hover~.erji2-3{
+			transform: rotateY(0deg);
+		}
+		.erji2-3{
+			transition: transform 1s linear 1s;
+			position: absolute;
+			right: 25px;
+			top: 158px;
+		}
+		.son2:hover~.erji2-4{
+			transform: rotateY(0deg);
+		}
+		.erji2-4{
+			transition: transform 1s linear 1.5s;
+			position: absolute;
+			right: 25px;
+			top: 209px;
+		}
+		.son2:hover~.erji2-5{
+			transform: rotateY(0deg);
+		}
+		.erji2-5{
+			transition: transform 1s linear 2s;
+			position: absolute;
+			right: 25px;
+			top: 260px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">一级菜单栏</div>
+		<div class="son son2">一级菜单栏2</div>
+		
+		<div class="erji erji1 erji1-1">二级菜单栏1</div>
+		<div class="erji erji1 erji1-2">二级菜单栏2</div>
+		<div class="erji erji1 erji1-3">二级菜单栏3</div>
+		<div class="erji erji1 erji1-4">二级菜单栏4</div>
+		<div class="erji erji1 erji1-5">二级菜单栏5</div>
+			
+		<div class="erji erji2 erji2-1">二级菜单栏6</div>
+		<div class="erji erji2 erji2-2">二级菜单栏7</div>
+		<div class="erji erji2 erji2-3">二级菜单栏8</div>
+		<div class="erji erji2 erji2-4">二级菜单栏9</div>
+		<div class="erji erji2 erji2-5">二级菜单栏10</div>	
+	</div>
+</body>
+</html>

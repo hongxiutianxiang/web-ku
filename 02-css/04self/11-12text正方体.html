@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-12text正方体</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100px;
+			height: 100px;
+			position: relative;
+			margin:100px auto;
+			transform: rotateX(0deg);
+			transform-style: preserve-3d;
+			animation: sport 10s;
+		}
+		@keyframes sport{
+			from{
+				transform: rotateY(0deg);
+			}
+			to{
+				transform: rotateY(360deg);
+			}
+		}
+
+		.father div{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		.a{
+			width: 100px;
+			height: 100px;
+			background: red;
+			transform: translateX(-50PX) rotateY(270deg);
+		}
+		.b{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			transform: translateX(50PX) rotateY(90deg);
+		}
+		.c{
+			width: 100px;
+			height: 100px;
+			background: yellow;
+			transform: translateZ(-50PX) rotateY(180deg);
+		}
+		.d{
+			width: 100px;
+			height: 100px;
+			background: green;
+			transform: translateZ(50PX);
+		}
+		.e{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			transform: translateY(-50PX) rotateX(90deg);
+		}
+		.e{
+			width: 100px;
+			height: 100px;
+			background: purple;
+			transform: translateY(50PX) rotateX(90deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="a">1</div>
+		<div class="b">2</div>
+		<div class="c">3</div>
+		<div class="d">4</div>
+		<div class="e">5</div>
+		<div class="f">6</div>
+	</div>
+</body>
+</html>

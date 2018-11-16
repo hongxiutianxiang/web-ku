@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-16-test-布局</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 400px;
+			height: 505px;
+			border: 1px solid #000;
+		}
+		ul{
+			width: 400px;
+			height: 100px;
+			
+			list-style: none;
+		}
+		ul li:nth-child(1){
+			width: 100px;
+			height: 100px;
+			background: red;
+			float: left;
+		}
+		ul li:nth-child(2){
+			width: 100px;
+			height: 50px;
+			background: gray;
+			float: right;
+		}
+		ul li:nth-child(3){
+			width: 280px;
+			height: 50px;
+			background: purple;
+			float: right;
+		}
+		section{
+			width: 285px;
+			height: 310px;
+			/*border: 1px solid #000;*/
+			margin-top: 10px;
+		}
+		.bodyl{
+			width: 200px;
+			height: 150px;
+			float: left;
+		}
+		.body-top{
+			background: orange;
+		}
+		.body-bottom{
+			background: yellow;
+			margin-top: 10px;
+		}
+		.body-right{
+			width: 70px;
+			height: 310px;
+			background: pink;
+			float: right;
+		}
+		.bu{
+			width: 285px;
+			height: 35px;
+			background: red;
+			float: left;
+			margin-top: 10px;
+		}
+		aside div{
+			width: 100px;
+			height: 355px;
+			background: green;
+			float: right;
+			margin-top: 10px;
+		}
+		footer{
+			width: 400px;
+			height: 30px;
+			background: blue;
+			float: right;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+	<ul class="nav">
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<aside>
+		<div></div>
+	</aside>
+	<section>
+		<div class="body-right"></div>
+		<div class="bodyl body-top"></div>
+		<div class="bodyl body-bottom"></div>
+		<div class="bu"></div>
+	</section>
+	<footer>	
+	</footer>
+	</div>
+</body>
+</html>

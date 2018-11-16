@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-15-test-照片墙</title>
+</head>
+	<style>
+		.father{
+			height: 400px;
+			width: 1300px;
+			background: skyblue;
+		}
+		.father div{
+			width: 200px;
+			height: 300px;
+			border: 1px solid #000;
+			float: left;
+			margin:50px 50px;
+			position: relative;
+			transition: transform 1.5s;
+		}
+		
+		.father:hover div{
+			opacity: 0.5;
+		}
+		.father div:hover{
+			transform: scale(1.5);
+			opacity: 1;
+			z-index: 3;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		.son1{
+			transform: rotateZ(30deg);
+		}
+		.son2{
+			transform: rotateZ(-30deg);
+		}
+		.son3{
+			transform: rotateZ(10deg);
+		}
+		.son4{
+			transform: rotateZ(-20deg);
+		}
+	</style>
+<body>
+	<div class="father">
+		<div class="son1"><a href="./11-8手风琴案例.html"><img src="../../练习素材/a1.jpg" alt=""></a></div>
+		<div class="son2"><img src="../../练习素材/a2.jpg" alt=""></div>
+		<div class="son3"><img src="../../练习素材/a3.jpg" alt=""></div>
+		<div class="son4"><img src="../../练习素材/a4.jpg" alt=""></div>
+	</div>
+</body>
+</html>

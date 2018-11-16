@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>11-7定位流案例</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		header{
+			width:920px;
+			height:38px;
+			background: #808080;
+			position: fixed;
+			top:20px;
+			left: 50%;
+			margin-left:-460px;
+			z-index: 3;
+		}
+		li{
+			list-style: none;
+			display: inline-block;
+			width: 180px;
+			height: 38px;
+			line-height: 38px;
+			text-align: center;
+
+		}
+		li:nth-child(3){
+			background: red;
+		}
+		li a{
+			text-decoration: none;
+		}
+		li a:hover{
+			color: orange;
+		}
+		.mao{
+			position: fixed;
+			top:3px;
+			left:50%;
+			margin-left: -20px;
+		}
+		.body-top{
+			width: 760px;
+			height: 404px;
+			position: absolute;
+			top:77px;
+			left: 50%;
+			margin-left:-383px;	
+		}
+		.jianl{
+			width: 36px;
+			height: 52px;
+			background: gray;
+			position: absolute;
+			top:50%;
+			margin-top: -26px;
+			left: 0px;
+		}
+		.jianr{
+			width: 36px;
+			height: 52px;
+			background: gray;
+			position: absolute;
+			top:50%;
+			margin-top: -26px;
+			right: 0px;
+		}
+		.jiana{
+			line-height: 52px;
+			text-decoration: none;
+			font-size: 30px;
+			margin-left: 5px;
+			color: #fffefb;
+		}
+		.jiana:hover{
+			color: purple;
+		}
+		.yuan{
+			width: 30px;
+			height: 30px;
+			border:1px solid black;
+			background:gray;
+			border-radius:50%; 
+			display: inline-block;
+			position: relative;
+			left: 570px;
+			bottom: 43px;
+			line-height: 30px;
+		}
+		.yuan a{
+			text-decoration: none;
+			margin-left:10px;
+			color: #fffefb;
+		}
+		.jianl:hover,.jianr:hover,.yuan:hover{
+			background:pink;
+		}
+		.yuan a:hover{
+			color:purple;
+		}
+		.body-bottom{
+			position: absolute;
+			left:50%;
+			margin-left:-300px;
+			top:533px;
+		}
+		
+		.aside-left{
+			position: fixed;
+			left: 0px;
+			top: 160px;
+		}
+		.aside-right{
+			position: fixed;
+			right: 0px;
+			top: 160px;
+		}
+		.backtop{
+			width: 80px;
+			height: 80px;
+			background: gray;
+			position: fixed;
+			right:0px;
+			bottom:0px;
+			text-align: center;
+			line-height: 80px;
+		}
+		.backtop a{
+			text-decoration: none; 
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<ul>
+			<li><a href="#">天猫会员</a></li>
+			<li><a href="#">品牌街</a></li>
+			<li><a href="#">电器城</a></li>
+			<li><a href="#">营业厅</a></li>
+			<li><a href="#">魅力惠</a></li>
+		</ul>
+		<div class="mao">
+			<img src="../../练习素材/mao.jpg">
+		</div>
+	</header>
+	<section>
+		<div class="body-top">
+			<img src="../../练习素材/yangmi.png">
+			<div class="jian jianl">
+				<a href="#" class="jiana"><</a>
+			</div>
+			<div class="jain jianr">
+				<a href="#" class="jiana">></a>
+			</div>
+			<div class="yuan"><a href="#">1</a></div>
+			<div class="yuan"><a href="#">2</a></div>
+			<div class="yuan"><a href="#">3</a></div>
+			<div class="yuan"><a href="#">4</a></div>
+			<div class="yuan"><a href="#">5</a></div>
+		</div>
+		<div class="body-bottom">
+			<img src="../../练习素材/juhui.JPG">
+		</div>
+	</section>
+	<aside>
+		<div class="aside-left">
+			<img src="../../练习素材/shuangshiyi.jpg">
+		</div>
+		<div class="aside-right">
+			<img src="../../练习素材/celan.jpg ">
+		</div>
+	</aside>
+	<div class="backtop">
+		<a href="#">回到顶部</a>
+	</div>
+</body>
+</html>

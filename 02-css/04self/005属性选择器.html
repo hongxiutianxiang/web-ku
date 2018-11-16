@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005属性选择器</title>
+	<style>
+		/*
+		[name]{
+			color:red;
+		}
+		
+		[name=kuazhu]{
+			color:red;
+		}
+		
+		[name|=kuazhu]{
+			color:red;
+		}	
+		
+		[name^=kuazhu]{
+			color:red;
+		}
+		
+		[name$=com]{
+			color:red;
+		}
+		
+		[name~=kuazhu]{
+			color:red;
+		}
+		*/
+		[name*=kuazhu]{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li name="li1">li1</li>
+			<li name="kuazhu">li2</li>
+			<li name="kuazhu.com">li3</li>
+			<li name="kuazhu-com">li4</li>
+			<li name="kuazhu com">li5</li>
+		</ul>
+	</div>
+</body>
+</html>

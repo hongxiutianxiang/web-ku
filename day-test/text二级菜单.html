@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>text</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 404px;
+			height: 500px;
+			border: 1px solid #000;
+			position: relative;
+		}
+		.box1{
+			width: 200px;
+			height: 50px;
+			border: 1px solid #000;
+			position: absolute;
+			left: 0px;
+			top: 0px
+		}
+		.box2{
+			width: 200px;
+			height: 50px;
+			border: 1px solid #000;
+			position: absolute;
+			left: 202px;
+			top: 0px
+		}
+		li{
+			width: 100px;
+			height: 50px;
+			border: 1px solid #000;
+			list-style: none;
+			transform: rotateY(90deg);
+		}
+		.box3,.box4{
+			position: absolute;
+			top: 50px;
+		}
+		.box3{
+			left: 50px;
+		}
+		.box4{
+			right: 50px;
+		}
+		.box1:hover~.box3 li{
+			transform: rotateY(0deg);
+		} 
+		.box2:hover~.box4 li{
+			transform: rotateY(0deg);
+		} 
+		li:nth-child(1){
+			transition:transform 1s linear 0s;
+		}
+		li:nth-child(2){
+			transition:transform 1s linear 0.2s;
+		}
+		li:nth-child(3){
+			transition:transform 1s linear 0.4s;
+		}
+		li:nth-child(4){
+			transition:transform 1s linear 0.6s;
+		}
+		li:nth-child(5){
+			transition:transform 1s linear 0.8s;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="box1">一级菜单1</div>
+		<div class="box2">一级菜单2</div>
+		<ul class="box3">
+			<li id="a">1</li>
+			<li id="b">2</li>
+			<li id="c">3</li>
+			<li id="d">4</li>
+			<li id="e">5</li>
+		</ul>
+		<ul class="box4">
+			<li id="f">6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+	</div>
+	
+</body>
+</html>

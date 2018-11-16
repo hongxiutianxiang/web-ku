@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.father{
+			width: 304px;
+			height: 500px;
+			border: 1px solid black;
+			position: relative;
+		}
+		.son1{
+			width:150px;
+			height:50px;
+			border: 1px solid black;
+			line-height: 50px;
+			text-align: center;
+		}
+		.son2{
+			width: 150px;
+			height: 50px;
+			border: 1px solid black;
+			line-height: 50px;
+			text-align: center;
+		}
+		.son3{
+			width: 100px;
+			height: 300px;
+			border: 1px solid black;
+			margin-left: 25px;
+		}
+		.son4{
+			width: 100px;
+			height: 300px;
+			border: 1px solid black;
+			margin-left: 50px;
+		}
+		.son{
+			float:left;
+		}
+		li{
+			list-style: none;
+		}
+		.son3,.son4{
+			transform: rotateY(90deg);
+			transition: transform 2s;
+		}
+		.son1:hover~.son3{
+			transform: rotateY(0deg);
+		}
+		.son2:hover~.son4{
+			transform: rotateY(0deg);
+		}
+		.son3:hover{
+		transform: rotateY(0deg);	
+		}
+		.son4:hover{
+		transform: rotateY(0deg);	
+		}
+		img{
+			width: 100px;
+			height: 300px;
+			transform: rotateY(0deg);
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">
+			一级菜单栏
+		</div>
+		<div class="son son2">
+			一级菜单栏
+		</div>
+		<div class="son son3">
+			<ul>
+				<li>二级菜单栏1<img src="../素材/qin4.jpg"></li>
+				<li>二级菜单栏2</li>
+				<li>二级菜单栏3</li>
+				<li>二级菜单栏4</li>
+				<li>二级菜单栏5</li>
+			</ul>
+		</div>
+		<div class="son son4">
+			<ul>
+				<li>二级菜单栏1</li>
+				<li>二级菜单栏2</li>
+				<li>二级菜单栏3</li>
+				<li>二级菜单栏4</li>
+				<li>二级菜单栏5</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

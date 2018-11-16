@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>11-10正方体</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul{
+			width: 100px;
+			height: 100px;
+			margin:150px auto;
+			list-style: none;
+			position: relative;
+			transform: rotateX(25deg) rotateY(45deg);
+			transform-style: preserve-3d;
+		}
+		li{
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			line-height: 100px;
+			text-align: center;
+		}
+		li:nth-child(1){
+			background: red;
+			transform: translate(-50px,0px) rotateY(270deg);
+		}
+		li:nth-child(2){
+			background: orange;
+			transform: translate(50px,0px) rotateY(90deg);
+		}
+		li:nth-child(3){
+			background: yellow;
+			transform: translateY(-50px) rotateX(90deg);
+		}
+		li:nth-child(4){
+			background: green;
+			transform: translateY(50px) rotateX(270deg);
+		}
+		li:nth-child(5){
+			background: blue;
+			transform: translateZ(-50px) rotateX(180deg);
+		}
+		li:nth-child(6){
+			background: purple;
+			transform: translateZ(50px);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>

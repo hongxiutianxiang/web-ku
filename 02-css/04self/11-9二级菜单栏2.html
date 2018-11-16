@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.father{
+			width: 300px;
+			height: 500px;
+			border: 3px solid pink;
+			border-radius: 5px;
+			margin:50px auto;
+			position: relative;
+		}
+		.son1{
+			width:150px;
+			height:50px;
+			background: yellow;
+			border-radius: 5px;
+			line-height: 50px;
+			text-align: center;
+		}
+		.son2{
+			width: 150px;
+			height: 50px;
+			background: skyblue;
+			border-radius: 5px;
+			line-height: 50px;
+			text-align: center;
+		}
+		.son3{
+			width: 100px;
+			height: 300px;
+			border: 1px solid pink;
+			margin-left: 25px;
+		}
+		.son4{
+			width: 100px;
+			height: 300px;
+			border: 1px solid pink;
+			margin-left: 50px;
+		}
+		.son{
+			float:left;
+		}
+		.son3,.son4{
+			transform: rotateY(90deg);
+			transition: transform 3s;
+		}
+		.son1:hover~.son3{
+			transform: rotateY(0deg);
+		}
+		.son2:hover~.son4{
+			transform: rotateY(0deg);
+		}
+		.son3:hover{
+		transform: rotateY(0deg);	
+		}
+		.son4:hover{
+		transform: rotateY(0deg);	
+		}
+		/*.erji{
+			width: 100px;
+			height: 40px;
+			margin-top: 20px;
+			line-height: 40px;
+		}*/
+		.erji1{
+			width: 100px;
+			height: 40px;
+			background: gray;
+			line-height: 40px;
+			margin-top: 20px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1">
+			一级菜单栏
+		</div>
+		<div class="son son2">
+			一级菜单栏
+		</div>
+		<div class="son son3">
+			
+				<div class="erji erji1 erji1-1">二级菜单栏1</div>
+				<div class="erji erji2 erji1-2">二级菜单栏2</div>
+				<div class="erji erji3 erji1-3">二级菜单栏3</div>
+				<div class="erji erji4 erji1-4">二级菜单栏4</div>
+				<div class="erji erji5 erji1-5">二级菜单栏5</div>
+			
+		</div>
+		<div class="son son4">
+			
+				<div class="erji erji1 erji2-1">二级菜单栏1</div>
+				<div class="erji erji2 erji2-2">二级菜单栏2</div>
+				<div class="erji erji3 erji2-3">二级菜单栏3</div>
+				<div class="erji erji4 erji2-4">二级菜单栏4</div>
+				<div class="erji erji5 erji2-5">二级菜单栏5</div>
+			
+		</div>
+	</div>
+</body>
+</html>

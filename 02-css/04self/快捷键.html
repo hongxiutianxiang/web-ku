@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>快捷键</title>
+</head>
+<body>
+	p#info        	<P id="info"></P>
+	p.info        	<p class="info"></p>
+	a[href"#"]    	<a href="href"#""></a>
+
+	后代 div#wrap>ul>li*3
+					<div id="wrap">
+							<ul>
+								<li></li>
+								<li></li>
+								<li></li>
+							</ul>
+					</div>	
+	兄弟 div.wrap>p*1+span*2			
+					<div class="wrap">
+						<p></p>
+						<span></span>
+						<span></span>
+					</div>
+	换行 p.wrap>span^div.info
+					<p class="wrap"><span></span></p>
+					<div class="info"></div>
+		 ul>li*2^ol>li*2
+					<ul>
+						<li></li>
+						<li></li>
+					</ul>
+					<ol>
+						<li></li>
+						<li></li>
+					</ol>
+	分组 (div.foo>h1>p)+(div.bar>h3>p)
+					<div class="foo">
+						<h1>
+							<p></p>
+						</h1>
+					</div>
+					<div class="bar">
+						<h3>
+							<p></p>
+						</h3>
+					</div>
+	缩写 ul>li.foo$*3
+					<ul>
+						<li class="foo1"></li>
+						<li class="foo2"></li>
+						<li class="foo3"></li>
+					</ul>
+
+</body>
+</html>

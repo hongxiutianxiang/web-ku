@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>11-8手风琴案例</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 840px;
+			height: 500px;
+			border:1px solid black;
+			margin:50px auto;
+			overflow: hidden;
+			list-style: none;
+		}
+		li{
+			/*display: inline-block;*/
+			float: left;
+			width: 140px;
+			height: 500px;
+			transition-property: width;
+			transition-duration: 1s;
+			overflow: hidden;
+		}
+		img{
+			width: 240px;
+			height: 100%;
+			
+		}
+		ul:hover li{
+			width: 120px;
+		}
+		ul li:hover{
+			width: 240px;
+		}
+		
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="../../练习素材/qin1.jpg"></li>
+		<li><img src="../../练习素材/qin4.jpg"></li>
+		<li><img src="../../练习素材/qin3.jpg"></li>
+		<li><img src="../../练习素材/qin5.jpg"></li>
+		<li><img src="../../练习素材/qin2.jpg"></li>
+		<li><img src="../../练习素材/qin6.jpg"></li>
+	</ul>
+</body>
+</html>
