@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012后代选择器</title>
+	<style>
+		div p{
+			color:red;
+			font-size: 40px;
+		}
+		#xcu p{
+			color:blue;
+		}
+		.asd p{
+			color:green;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p>hi</p>
+		<ul>
+			<li>
+				<p>hello</p>	
+			</li>
+		</ul>
+	</div>
+	<ul>
+		<li id="xcu">
+			<p>hi</p>
+		</li>
+
+		<li class="asd">
+			<p>123</p>
+			
+		</li>
+	</ul>
+</body>
+</html>

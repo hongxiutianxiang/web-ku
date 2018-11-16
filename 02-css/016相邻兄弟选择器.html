@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016相邻兄弟选择器</title>
+	<style>
+		.li2+li{
+			color:red;
+		}
+		.p+p{
+			color: blue;
+		}
+		.li7+li+li+li{
+			color:orange;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>li1</li>
+		<li class="li2">li2</li>
+		<li>li3</li>
+		<li>li4</li>
+		<li>li5</li>
+	</ul>
+	<p>p1</p>
+	<p class="p2">p2</p>
+	<span>span</span>
+	<p>p3</p>
+	<p>p4</p>
+	<p>p5</p>
+	<ul>
+		<li>li6</li>
+		<li class="li7">li7</li>
+		<li>li8</li>
+		<li>li9</li>
+		<li>li10</li>
+	</ul>
+</body>
+</html>

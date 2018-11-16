@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>062固定定位注意事项.html</title>
+	<style>
+		body{
+			height: 3000px;
+		}
+		.father{
+			width: 300px;
+			height: 300px;
+			border:1px solid black;
+			position: relative;
+		}
+		.son{
+			width: 50px;
+			height: 100px;
+			background: red;
+			position:fixed;
+			left:0;
+			top:50%;
+			margin-top:-50px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>

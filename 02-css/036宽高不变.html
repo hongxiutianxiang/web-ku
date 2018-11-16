@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>036宽高不变</title>
+	<style>
+		.father{
+			width: 300px;
+			height: 100px;
+			border:1px solid black;
+
+		}
+		.son1,.son2,.son3{
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+
+
+		}
+		.son1{
+			background: red;
+		}
+		.son2{
+			border:10px solid yellow;
+			background: green;
+			box-sizing:border-box;
+		}
+		.son3{
+			background: blue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div><div class="son2"></div><div class="son3"></div>
+	</div>
+</body>
+</html>

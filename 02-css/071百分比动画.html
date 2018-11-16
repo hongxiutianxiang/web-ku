@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>071百分比动画</title>
+	<style>
+		.father{
+			width: 700px;
+			height: 700px;
+			border: 1px solid #000;
+			margin:0px auto;
+			position: relative;
+		}
+		/*.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			animation: sport 8s infinite;
+		}*/
+		.son1{
+			width: 100px;
+			height: 100px;
+			background: red;
+			animation: sport 8s ;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			animation-fill-mode: backwards;
+		}
+		.son2{
+			width: 100px;
+			height: 100px;
+			background: green;
+			animation: sport 7s ;
+			position: absolute;
+			top: 0px;
+			left: 200px;
+			animation-fill-mode: backwards;
+		}
+		@keyframes sport{
+			0%{
+				top: 0px;
+				left: 0px;
+			}
+			25%{
+				top: 0px;
+				left: 600px;
+			}
+			50%{
+				top: 600px;
+				left: 600px;
+			}
+			75%{
+				top: 600px;
+				left: 0px;
+			}
+			100%{
+				top: 0px;
+				left: 0px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+	</div>
+</body>
+</html>

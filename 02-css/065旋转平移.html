@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>065旋转平移</title>
+	<style>
+		.box1{
+			width: 200px;
+			height: 100px;
+			background: red;
+			margin:50px auto;
+			transform: rotate(30deg);
+		}
+		.father{
+			width: 600px;
+			height: 500px;
+			border:1px solid black;
+			margin:0 auto;
+		}
+		.box2{
+			width: 200px;
+			height: 100px;
+			background: red;
+			transform: translate(50px,0px);
+		}
+		.box3{
+			width: 200px;
+			height: 100px;
+			background: blue;
+			transform: rotate(45deg) translate(20px,20px) scale(0.5,1);
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="father">
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</div>
+</body>
+</html>

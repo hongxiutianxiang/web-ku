@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020属性选择器</title>
+	<style>
+		/*[name]{
+			color:red;
+		}
+		[name^=kuazhu]{
+			color:red;
+		}*/
+		[name&=com]{
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<p name="a">p1</p>
+	<p name="a">p2</p>
+	<p name="b">p3</p>
+	<p name="b">p4</p>
+	<p name="c">p5</p>
+	<p name="kuazhu">kuazhu.com</p>
+	<p name="kuazhu-123">kuazhu.com</p>
+	<p name="kuazhu.com">kuazhu.com</p>
+	<p name="kuazhu com">kuazhu.com</p>
+	<p name="kuazhu">kuazhu.com</p>
+	<p name="kuazhu">kuazhu.com</p>
+</body>
+</html>

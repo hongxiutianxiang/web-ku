@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>066旋转基点.html</title>
+	<style>
+		ul{
+			width: 500px;
+			height: 500px;
+			border: 1px solid black;
+			position: relative;
+			left: 50%;
+			margin-left: -250px;
+			margin-top: 100px;
+		}
+		li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			/*background: red;*/
+			position: absolute;
+			top: 50%;
+			margin-top: -100px;
+			left:50%;
+			margin-left: -100px;
+			transform-origin: right bottom;	
+		}
+		li:nth-child(1){
+			background: red;
+			transform: rotate(10deg);
+		}
+		li:nth-child(2){
+			background: orange;
+			transform: rotate(30deg);
+		}
+		li:nth-child(3){
+			background: green;
+			transform: rotate(50deg);
+		}
+		li:nth-child(4){
+			background: blue;
+			transform: rotate(70deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>

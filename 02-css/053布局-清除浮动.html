@@ -1,0 +1,58 @@
+	<meta charset="UTF-8">
+	<title>052布局-浮动元素塌落.html</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box1{
+			background: red;
+			/*height:50px;*/
+			/*margin-bottom:50px;*/
+
+			/*overflow: hidden;*/
+		}
+		.box2{
+			background: green;
+			/*clear:both;*/
+		}
+		.kong{
+			clear:both;
+		}
+		.box1 p{
+			width: 100px;
+			background: blue;
+			float:left;
+		}
+		.box2 p{
+			width: 100px;
+			background: yellow;
+			float:left;
+		}
+		.clearfix:after{
+			content: "";
+			clear:both;
+			display:block;
+			/*height:0px;
+			visibility:hidden;*/
+		}
+		/*.clearfix{
+			*zoom:1;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="box1 clearfix">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<!-- <div class="kong"></div> -->
+	</div>
+	
+	<div class="box2">
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</div>
+</body>
+</html>
