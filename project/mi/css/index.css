@@ -1,15 +1,113 @@
-.content{
-	width: 1226px;
-	margin-left: auto;
-	margin-right: auto;
-	background: gray;
+.top{
+	/*height: 40px;*/
+	background: #333;
 }
 .content .content-nav{
-	width: 390px;
+	float: left;
 	height: 40px;
-	background: pink;
-
+	text-align: center;
 }
 .content-nav-item{
+	display: block;
 	float: left;
+	line-height: 40px;
+}
+.top .sep{
+	color: #42423b;
+	margin: 0 0.5em;
+}
+.user-info-car{
+	float: right;
+	width: 120px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	background: #424242;
+
+}
+.iconfont.icon-car{
+	font-size: 18px;
+	vertical-align: -4px;
+}
+.user-info{
+	float: right;
+	width: 170px;
+	height: 40px;
+	line-height: 40px;
+}
+.user-info .user-info-item{
+	float: right;
+}
+.header .logo{
+	float: left;
+	width: 55px;
+	height: 55px;
+	background: #ff6700;
+	margin-top: 21px;
+
+}
+.header .logo a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-image: url(../image/logo.png);
+	text-indent: -3333px;
+}
+.header .header-nav{
+	float: left;
+	height: 100px;
+	margin-left: 189px;
+}
+.header .header-nav .header-nav-item{
+	float: left;
+	margin-right: 22px;
+}
+.header .header-nav .header-nav-item a{
+	line-height: 100px;
+	font-size: 15px;
+	color: black;
+}
+.header .header-nav .header-nav-item a:hover{
+	color: #ff6700;
+}
+.header .serch{
+	float: right;
+	width: 296px;
+	height: 51px;
+	margin-top: 25px;
+	position: relative;
+}
+.header .serch .serch-boder{
+	float: right;
+	width: 245px;
+	height: 51px;
+	box-sizing: border-box;
+	
+}
+.header .serch .serch-button{
+	float: right;
+	width: 51px;
+	height: 51px;
+	border: 1px solid #eee;	
+	box-sizing: border-box;
+	line-height: 51px;
+	text-align: center;
+	font-size: 18px;
+}
+.header .serch .serch-button:hover{
+	background: #ff6700;
+}
+.header .serch .serch-button:hover .iconfont{
+	color: white;
+}
+.header .serch .serch-keyword{
+	position: absolute;
+	left: 124px;
+	top: 15px;
+}
+.header .serch .serch-keyword a{
+	background: #eee;
+}
+.header .serch .serch-keyword a:hover{
+	background: #ff6700;
 }
