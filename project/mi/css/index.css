@@ -77,8 +77,11 @@
 	margin-top: 25px;
 	position: relative;
 }
+.header .serch:hover .serch-boder,.header .serch:hover .serch-button{
+	border-color:gray;
+}
 .header .serch .serch-boder{
-	float: right;
+	float: left;
 	width: 245px;
 	height: 51px;
 	outline: none;
@@ -88,11 +91,21 @@
 .header .serch .serch-boder:focus~.hot-word{
 	display: block;
 }
+.header .serch .serch-boder:focus~.serch-keyword{
+	display: none;
+}
+.header .serch .serch-boder:focus{
+	border-color: #ff6700;
+}
+.header .serch .serch-boder:focus~.serch-button{
+	border-color: #ff6700;
+}
 .header .serch .serch-button{
-	float: right;
+	float: left;
 	width: 51px;
 	height: 51px;
 	border: 1px solid #eee;	
+	border-left: none;
 	box-sizing: border-box;
 	line-height: 51px;
 	text-align: center;
@@ -130,4 +143,43 @@
 .header .hot-word span{
 	float: right;
 	color: #b0b0b0;
+}
+.home .content{
+	height: 1272px;
+	background: pink;
+}
+.home .home-banner{
+	height: 460px;
+	background: blue;
+}
+.home .home-banner .list{
+	width: 234px;
+	height: 100%;
+	background: #64615b;
+}
+.home .home-banner .carousel{
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+.main .content{
+	height: 2176px;
+	background: yellow;
+}
+.footer .content{
+	height: 277px;
+	background: skyblue;
+}
+.end .content{
+	height: 163px;
+	background: green;
 }
