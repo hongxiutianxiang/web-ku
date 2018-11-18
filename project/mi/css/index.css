@@ -81,8 +81,12 @@
 	float: right;
 	width: 245px;
 	height: 51px;
+	outline: none;
+	border: 1px solid #eee;
 	box-sizing: border-box;
-	
+}
+.header .serch .serch-boder:focus~.hot-word{
+	display: block;
 }
 .header .serch .serch-button{
 	float: right;
@@ -110,4 +114,20 @@
 }
 .header .serch .serch-keyword a:hover{
 	background: #ff6700;
+}
+.header .hot-word{
+	display: none;
+	width: 245px;
+	border: 1px solid #ff6700;
+	box-sizing: border-box;
+	padding: 0 15px;
+}
+.header .hot-word a{
+	height: 29.6px;
+	line-height: 29.6px;
+	color: #424242;
+}
+.header .hot-word span{
+	float: right;
+	color: #b0b0b0;
 }
