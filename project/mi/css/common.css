@@ -30,3 +30,22 @@ a:hover{
 	float: left;
 	margin-left: 14px;
 }
+.top{
+	height: 60px;
+	background: #f5f5f5;
+}
+.top .col1{
+	height: 60px;
+	line-height: 60px;
+	font-size: 20px;
+	color: #464646;
+	
+}
+.top .col2{
+	height: 100%;
+}
+.top .col2 .view-all{
+
+
+
+}
