@@ -87,9 +87,12 @@
 	outline: none;
 	border: 1px solid #eee;
 	box-sizing: border-box;
+
 }
 .header .serch .serch-boder:focus~.hot-word{
+	position: relative;
 	display: block;
+	z-index: 999;
 }
 .header .serch .serch-boder:focus~.serch-keyword{
 	display: none;
@@ -434,8 +437,52 @@
 	transform: translateY(-3px);
 	box-shadow: 10px;
 }
-.main .phone .phone-bd .col2 .product{
-	
+.main .video .video-item{
+	position: relative;
+	float: left;
+	width: 296px;
+	height: 285px;
+	background: #fff;
+	margin-left: 14px;
+	text-align: center;
+}
+.main .video .video-item:nth-child(1){
+	margin-left: 0px;
+}
+.main .video .video-item img{
+	width: 100%;
+	height: 180px;
+
+}
+.main .video .video-item img:hover~.play{
+	background: #ff6700;
+	border-color: #ff6700;
+}
+.main .video .video-item .play{
+	position: absolute;
+	left: 13px;
+	top: 147px;
+	width: 36px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	border: 3px solid #fff;
+	background: transparent;
+	border-radius: 20px;
+}
+.main .video .video-item .first-line{
+	margin-top: 32px;
+	margin-bottom: 14px;
+	font-size: 13px;
+}
+.main .video .video-item .second-line{
+	color: #b0b0c1;
+	font-size: 11px;
+}
+.main .video .play i{
+	color: #fff;
+	font-size: 30px;
+
 }
 
 
