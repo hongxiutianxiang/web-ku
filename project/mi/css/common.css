@@ -30,6 +30,21 @@ a:hover{
 	float: left;
 	margin-left: 14px;
 }
+
+
+
+.ad{
+	height: 120px;
+	margin: 42px 0 20px 0;
+}
+.ad img{
+	height: 120px;
+	width: 100%;
+}
+
+
+
+
 .top{
 	height: 60px;
 	background: #f5f5f5;
@@ -40,12 +55,131 @@ a:hover{
 	font-size: 20px;
 	color: #464646;
 	
+
 }
 .top .col2{
 	height: 100%;
+	position: relative;
 }
 .top .col2 .view-all{
+	height: 60px;
+}
+.top .col2 .view-all .view-all-character:hover{
+	color: #ff6700;
+}
+.top .col2 .view-all-character:hover~.view-all-arrow{
+	background: #ff6700;
+}
+.top .col2 .view-all .view-all-character{
+	position: absolute;
+	top: 25px;
+	right: 29px;
+}
+.top .col2 .view-all .view-all-arrow{
+	position: absolute;
+	top: 26px;
+	right: 0;
+	color: #fff;
+	width: 20px;
+	height: 20px;
+	background: gray;
+	border-radius: 50%;
+	line-height: 20px;
+	text-align: center;
+}
+.top .col2 .tab .tab-item{
+	float: right;
+	font-size: 15px;
+	line-height: 60px;
+	margin-left: 30px;
+}
+.top .col2 .tab .tab-item:hover{
+	color: #ff6700;
+	text-decoration: underline;
+	
+}
 
 
 
+
+
+
+
+.bd .col2{
+	height: 100%;
+}
+.product{
+	position: relative;
+	float: left;
+	width: 234px;
+	margin-left: 14px;
+	text-align: center;
+	transition: all 1s;
+}
+.product:hover{
+	transform: translateY(-3px);
+	box-shadow: 10px;
+}
+.product:first-child{
+	margin-left: 0px;
+}
+.product-m{
+	height: 300px;
+	background: #fff;
+}
+.product-m:nth-child(1),
+.product-m:nth-child(2),
+.product-m:nth-child(3),
+.product-m:nth-child(4){
+	margin-bottom: 14px;
+}
+.product-m:nth-child(5){
+	margin-left: 0px;
+}
+/*.bg{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 234px;
+	background: rgba(0,0,0,0.02);
+	z-index: 3;
+}
+.bg-m{
+	height: 300px;
+}*/
+.product-m img{
+	height: 160px;
+	width: 160px;
+	margin: 30px 0px 20px 0px;
+}
+.product-m .unibody{
+	font-size: 12px;
+	color: #c2c4c4;
+	margin:10px 0px 10px 0px;
+}
+.product-m strong{
+	color: #ff6700;
+	font-size: 14px;
+}
+.product-m del{
+	color: #c2c4c4;
+	font-size: 14px;
+}
+.flag{
+	position: absolute;
+	left: 50%;
+	margin-left: -32px;
+	top: 0px;
+	width: 64px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	text-align: center;
+	color: #fff;
+}
+.flag-new{
+	background: #83c44e;
+}
+.flag-off{
+	background: #e53935;
 }
