@@ -92,6 +92,7 @@
 .header .serch .serch-boder:focus~.hot-word{
 	position: relative;
 	display: block;
+	background: #fff;
 	z-index: 999;
 }
 .header .serch .serch-boder:focus~.serch-keyword{
@@ -494,9 +495,150 @@
 
 .footer .content{
 	height: 277px;
-	background: skyblue;
 }
+.footer .content .service{
+	width: 100%;
+	height: 80px;
+	border-bottom: 2px solid #e0e0e0;
+	padding-top: 27px;
+	box-sizing: border-box;
+}
+.footer .content .service .service-item{
+	float: left;
+	width: 20%;
+	height: 25px;
+	border-right: 1px solid #e0e0e0;
+	box-sizing: border-box;
+	line-height: 25px;
+	text-align: center;
+
+}
+.footer .content .service .service-item:hover a,
+.footer .content .service .service-item:hover i{
+	color: #ff6700;
+}
+.footer .content .service-item a{
+	font-size: 16px;
+	color: #616161;
+}
+.footer .content .service-item i{
+
+	font-size: 24px;
+}
+.footer .content .about .about-item{
+	float: left;
+	width: 160px;
+	height: 112px;
+}
+.footer .content .about-item dt{
+	font-size: 14px;
+	color: #424242;
+	margin: 40px 0 30px 0;
+}
+.footer .content .about-item dd{
+	margin-bottom: 15px;
+}
+.footer .content .about-item dd a:hover{
+	color: #ff6700;
+}
+.footer .content .about .contact{
+	float: right;
+	width: 251px;
+	height: 112px;
+	text-align: center;
+	margin-top: 42px;
+	border-left: 1px solid #e0e0e0;
+}
+
+.footer .content .about .phone-number{
+	font-size: 18px;
+	color: #ff6700;
+	margin-bottom: 11px;
+}
+.footer .content .about .work-time{
+	font-size: 11px;
+	color: #6f6a6a;
+}
+.footer .content .about .message{
+	width: 118px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	color: #ff6700;
+	border: 1px solid #ff6700;
+	margin: 19px auto 0 auto;
+
+}
+.footer .content .about .contact .message:hover{
+	color: #fff;
+	background: #ff6700;
+}
+.footer .content .about .message i{
+	margin-right: 3px;
+}
+
+
+
+
 .end .content{
+	position: relative;
 	height: 163px;
-	background: green;
+	padding-top: 27px;
+	box-sizing: border-box;
+}
+.end .content .logo{
+	float: left;
+	width: 57px;
+	height: 57px;
+	background: #ff6700;
+}
+.end .content .small-word{
+	float: left;
+	width: 720px;
+	height: 72px;
+}
+.end .content .end-tip{
+	float: left;
+	position: relative;
+	margin-left: 10px;
+}
+.end .content .end-tip a:hover{
+	color: #ff6700;
+}
+.end .content .end-tip .separator{
+	position: absolute;
+	right: -5px;
+	top: 8px;
+	width: 1px;
+	height: 9px;
+	background: #b2b0b2;
+}
+.end .content p{
+	float: left;
+	margin-left: 10px;
+	line-height: 12px;
+}
+.end .content p a:hover{
+	color: #ff6700;
+}
+.end .content .links{
+	float: right;
+}
+.end .content .links img{
+	float: right;
+	width: 85px;
+	height: 28px;
+}
+.end .content .fever{
+	position: absolute;
+	left: 50%;
+	bottom: 0px;
+	margin-left: -133.5px;
+	width: 267px;
+	height: 19px;
+
+}
+.end .content .fever img{
+	width: 100%;
+	height: 100%;
 }
