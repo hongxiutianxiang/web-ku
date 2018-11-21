@@ -461,6 +461,9 @@
 	background: #ff6700;
 	border-color: #ff6700;
 }
+.main .video .video-item img:hover~.first-line{
+	color: #ff6700;
+}
 .main .video .video-item .play{
 	position: absolute;
 	left: 13px;
@@ -477,6 +480,10 @@
 	margin-top: 32px;
 	margin-bottom: 14px;
 	font-size: 13px;
+	color: #333;
+}
+.main .video .video-item .first-line:hover{
+	color: #ff6700;
 }
 .main .video .video-item .second-line{
 	color: #b0b0c1;
