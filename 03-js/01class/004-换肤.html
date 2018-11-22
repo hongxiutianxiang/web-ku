@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004-换肤</title>
+	<link id="skin" rel="stylesheet" href="">
+	<style>
+		#skinA,#skinB,#skinC,#skinD,#skinE{
+			display: none;
+		}
+	</style>
+	<script>
+		function change(){
+			document.getElementById('skinA').style.display="inline-block";
+			document.getElementById('skinB').style.display="inline-block";
+			document.getElementById('skinC').style.display="inline-block";
+			document.getElementById('skinD').style.display="inline-block";
+			document.getElementById('skinE').style.display="inline-block";
+		}
+		function changeA(){
+			document.getElementById('skin').href="../04css/skinA.css"
+		}
+		function changeB(){
+			document.getElementById('skin').href="../04css/skinB.css"
+		}
+		function changeC(){
+			document.getElementById('skin').href="../04css/skinC.css"
+		}
+		function changeD(){
+			document.getElementById('skin').href="../04css/skinD.css"
+		}
+		function changeE(){
+			document.getElementById('skin').href="../04css/skinE.css"
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="换肤" id="skin-change" onclick="change()">
+	<input type="button" value="a" id="skinA" onclick="changeA()">
+	<input type="button" value="b" id="skinB" onclick="changeB()">
+	<input type="button" value="c" id="skinC" onclick="changeC()">
+	<input type="button" value="d" id="skinD" onclick="changeD()">
+	<input type="button" value="e" id="skinE" onclick="changeE()">
+</body>
+</html>
