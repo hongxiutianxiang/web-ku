@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-内部样式</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			margin: 100px 100px;
+			background-color: blue; 
+		}
+	</style>
+	<script>
+		function tobig(){
+			document.getElementById('box1').style.width="200px";
+			document.getElementById('box1').style.height="200px";
+			document.grtElementById('box1').style.backgroundColor="red";
+		}
+		// function tosmall(){
+		// 	document.getElementById('box1').style.width="100px";
+		// 	document.getElementById('box1').style.height="100px";
+		// 	document.getElementById('box1').style.backgroundColor="yellow";
+
+		// }
+		function tosmall(){
+			var oDiv = document.getElementById('box1');
+
+			oDiv.style.width="100px";
+			oDiv.style.height="100px";
+			oDiv.backgroundColor="yellow";
+		}
+	</script>
+</head>
+<body>
+	<div id="box1" onmouseover="tobig()" onmouseout="tosmall()"></div>
+</body>
+</html>
