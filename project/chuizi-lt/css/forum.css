@@ -1,0 +1,166 @@
+.header{
+	height: 59px;
+	background: #c93b36;
+}
+.header .content{
+	height: 59px;
+}
+.header .content .logo{
+	float: left;
+	margin-top: 16px;
+	width: 23px;
+	height: 27px;
+}
+.header .content .logo img{
+	width: 100%;
+	height: 100%;
+}
+.header .content .header-nav{
+	float: left;
+	margin-left: 472px;
+}
+.header .content .nav-item{
+	float: left;
+	width: 86px;
+	height: 59px;
+	line-height: 59px;
+	color: #fff;
+}
+.header .content .nav-item:nth-child(5){
+	width: 72px;
+}
+.header .content .nav-item a{
+	font-size: 16px;
+	color: #fff;
+}
+.header .content .load{
+	float: right;
+	height: 59px;
+}
+.header .content .load .load-item{
+	float: right;
+	margin-top: 25px;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+}
+.header .content .load .load-item:first-child{
+	width: 40px;
+}
+.header .content .load .load-item:last-child{
+	width: 65px;
+	border-left: 1px solid #caa2aa;
+	border-right: 1.5px solid #caa2aa;
+	text-align: right;
+}
+.header .content .load-item a{
+	color: #fff;
+}
+.header .content .load-item a:hover{
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+.top{
+	height: 42px;
+	border-bottom: 2px solid #e1e1e1;
+	/*background: yellow;*/
+}
+.top .content{
+	height: 42px;
+	/*background: gray;*/
+}
+.top .content .back-botton{
+	float: left;
+	line-height: 42px;
+}
+.top .content .back-botton a{
+	font-size: 12px;
+	color: ##b7b9c7;
+}
+.top .content .serch{
+	float: right;
+	margin-top: 10px;
+	width: 206px;
+	height: 20px;
+	line-height: 20px;
+	border: 2px solid #e1e1e1;
+	border-radius: 15px;
+}
+.top .content .serch .serch-select{
+	float: left;
+	font-size: 12px;
+	margin-left: 10px;
+	
+}
+.top .content .serch .serch-select a{
+	color: #b7b9c7;
+}
+.top .content .serch .triangle{
+	float: left;
+	width:0px;
+	height:0px;
+	border-top:4px solid #b7b9c7;
+	border-right:4px solid #fff;
+	border-bottom:4px solid #fff;
+	border-left:4px solid #fff;
+	margin: 8px 10px 0px 5px;
+}
+.top .content .serch .serch-word{
+	width: 112px;
+	height: 18px;
+	
+	font-size: 12px;
+	border: none;
+	/*border-bottom: 2px solid #e1e1e1;*/
+	outline: none;
+}
+
+
+
+
+
+
+.home{
+	margin-top: 20px;
+	height: 460px;
+	background: blue;
+}
+.home .content{
+	height: 460px;
+	background: gray;
+}
+
+
+
+
+
+.main{
+	margin-top: 20px;
+	height: 5453px;
+	background: pink;
+}
+.main .content{
+	height: 5453px;
+	background: gray;
+}
+
+
+
+
+
+
+.footer{
+	margin-top: 40px;
+	height: 262px;
+	background: green;
+}
+.footer .content{
+	height: 262px;
+	background: gray;
+}
