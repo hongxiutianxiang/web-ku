@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-显示和隐藏</title>
+</head>
+<body>
+	<input type="button" id="btn">
+	<div id="box1">你好啊</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	var oBox =document.getElementById('box1')
+	
+	function hide(){
+		if(oBox.style.display=="none"){
+			oBox.style.display="block"
+		}else{
+			oBox.style.display="none"
+		}
+	}
+
+	oBtn.onclick = hide;
+</script>
+</html>
