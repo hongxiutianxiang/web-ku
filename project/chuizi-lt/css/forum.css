@@ -152,13 +152,13 @@
 }
 @keyframes sport{
 	0%{
-		z-index: 0;
+		display: none;
 	}
-	90%{
-		z-index: 3;
+	50%{
+		display: inline-block;
 	}
 	100%{
-		z-index: 0;
+		display: none;
 }*/
 .home .content .home-ground .bot{
 	z-index: 4;

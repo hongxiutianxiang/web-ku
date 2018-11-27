@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-选项卡</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		#chose{
+			width: 400px;
+			height: 100px;
+			margin: 20px auto;
+		}
+		#chose li{
+			float: left;
+			width: 100px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+
+		}
+		#content li{
+			width: 200px;
+			height: 350px;
+			line-height: 350px;
+			text-align: center;
+			border: 1px solid #000;
+			margin: 50px auto;
+		}
+		.active{
+			color: orange;
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<ul id="chose">
+		<li class="active">热门</li>
+		<li>家居</li>
+		<li>电脑</li>
+		<li>影音</li>
+	</ul>
+	<ul id="content">
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+</html>

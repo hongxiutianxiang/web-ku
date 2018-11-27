@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11-27显示和隐藏</title>
+	
+</head>
+<body>
+
+	<input type="button" id="btn">
+	<div id="box1">你好啊</div>
+
+</body>
+<script>
+		var oBtn = document.getElementById("btn");
+		var oDiv = document.getElementById("box1");
+		oBtn.onclick = function(){
+			if(oDiv.style.display == "none"){
+				oDiv.style.display = "block";
+			}else{
+				oDiv.style.display = "none";
+			}
+		}
+	</script>
+</html>
