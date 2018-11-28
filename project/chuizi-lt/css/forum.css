@@ -1,3 +1,4 @@
+
 .header{
 	height: 59px;
 	background: #c93b36;
@@ -225,6 +226,7 @@ position: absolute;
 	height: 4px;
 	background: gray;
 	margin:27px 30px 0px 0px;
+	cursor: pointer;
 }
 .main .content .col1 .area{
 	width: 100%;
@@ -388,14 +390,6 @@ position: absolute;
 	border-left:6px solid #b7b9c7;
 	margin: 8px 10px 0px 18px;
 }
-float: left;
-	width:0px;
-	height:0px;
-	border-top:4px solid #b7b9c7;
-	border-right:4px solid #fff;
-	border-bottom:4px solid #fff;
-	border-left:4px solid #fff;
-	margin: 8px 10px 0px 5px;
 
 
 
@@ -453,12 +447,19 @@ float: left;
 	color: gray;
 	margin-left: 30px;
 }
+.main .content .col2 .recommend-content{
+	width: 100%;
+	padding-inline-start:0px;
+}
 .main .content .col2 .recommend-content .recommend-item{
 	float: left;
 	width: 160px;
 	height: 67px;
 	border: 1px solid #000;
 	box-sizing: border-box;
+}
+.main .content .col2 .recommend-content .recommend-item:first-child{
+	margin-left: -95px;
 }
 
 
