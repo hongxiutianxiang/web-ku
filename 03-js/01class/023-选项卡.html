@@ -31,6 +31,7 @@
 			text-align: center;
 			border: 1px solid #000;
 			margin: 50px auto;
+			display: none;
 		}
 		.active{
 			color: orange;
@@ -46,10 +47,28 @@
 		<li>影音</li>
 	</ul>
 	<ul id="content">
-		<li>1</li>
+		<li style="display: block;">1</li>
 		<li>2</li>
 		<li>3</li>
 		<li>4</li>
 	</ul>
 </body>
+<script>
+	var aBtn = document.querySelectorAll("#chose li")
+	var aCon = document.querySelectorAll("#content li")
+	for(var a = 0;a<aBtn.length;a++){
+		aBtn[a].index = a;
+		aBtn[a].onclick=function(){
+
+			for(var b = 0;b<aBtn.length;b++){
+				aBtn[b].className="";
+				aCon[b].style.display="none";
+			}
+
+			// aBtn[this.index].className="active";
+			this.className="active";
+			aCon[this.index].style.display="block";
+		}
+	}
+</script>
 </html>

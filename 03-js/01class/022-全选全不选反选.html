@@ -27,20 +27,14 @@
 	var oContainer = document.getElementById('container');
 	var aCheckBox = oContainer.getElementsByTagName("input");
 	bTn1.onclick=function(){
-		for(var a = 0;a<aCheckBox.length;a++){
-		
-		aCheckBox[a].checked=true;
-
+		for(var a = 0;a<aCheckBox.length;a++){	
+			aCheckBox[a].checked=true;
 		}
-
 	}   
 	bTn2.onclick=function(){
 		for(var a = 0;a<aCheckBox.length;a++){
-		
-		aCheckBox[a].checked=false;
-
+			aCheckBox[a].checked=false;
 		}
-
 	}
 	bTn3.onclick=function(){
 		for(var a = 0;a<aCheckBox.length;a++){
@@ -49,11 +43,7 @@
 		 	}else{
 		 		aCheckBox[a].checked=false;
 		 	}
-		
-
-
 		}
-
 	}      
 </script>
 </html>
