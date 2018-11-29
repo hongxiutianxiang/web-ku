@@ -44,7 +44,6 @@
 			<li>10</li>
 			<li>11</li>
 			<li>12</li>
-
 		</ul>
 		<div id="plan">
 			<h4>1月</h4>
@@ -53,6 +52,18 @@
 	</div>
 </body>
 <script>
-	
+	var oMonth = document.getElementsByTagName("li")
+	var oPlan = document.querySelector("#plan");
+	var aPlan = ["上课","睡觉","打球","玩耍","上课","睡觉","打球","玩耍","上课","睡觉","打球","玩耍"];
+	for(var a = 0;a < 12;a++){
+		oMonth[a].index=a;
+		oMonth[a].onclick = function(){
+			for(var b = 0;b < 12;b++){
+				oMonth[b].className = "";
+			}
+			this.className = "active";
+			oPlan.innerHTML="<h4>"+(this.index+1)+"月</h4><p>"+aPlan[this.index]+"</p>";
+		}
+	}
 </script>
 </html>

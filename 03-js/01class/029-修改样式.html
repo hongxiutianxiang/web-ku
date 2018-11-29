@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>029-修改样式.html</title>
+	<style>
+		#box1,#box2{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">变丑</button>
+	<button id="btn2">变帅</button>
+	<button id="btn3">变傻</button>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	function css(obj,attr,val){
+		obj.style[attr]=val;
+	}
+	var bTn1 = document.getElementById('btn1')
+	var bTn2 = document.getElementById('btn2')
+	var bTn3 = document.getElementById('btn3')
+	var bOx1 = document.getElementById('box1')
+	var bOx2 = document.getElementById('box2')
+	btn1.onclick = function(){
+		// bOx1.style.width="200px"
+		css("box1","width","200px")
+		css("box2","width","200px")
+	}
+	btn2.onclick = function(){
+		// bOx1.style.height="200px"
+		css("height","200px")
+	}
+	btn3.onclick = function(){
+		// bOx1.style.background="red"
+		css("background","red")
+	}
+</script>
+</html>
