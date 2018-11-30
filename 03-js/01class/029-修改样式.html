@@ -12,8 +12,8 @@
 	</style>
 </head>
 <body>
-	<button id="btn1">变丑</button>
-	<button id="btn2">变帅</button>
+	<button id="btn1">变胖</button>
+	<button id="btn2">变丑</button>
 	<button id="btn3">变傻</button>
 	<div id="box1"></div>
 	<div id="box2"></div>
@@ -29,16 +29,18 @@
 	var bOx2 = document.getElementById('box2')
 	btn1.onclick = function(){
 		// bOx1.style.width="200px"
-		css("box1","width","200px")
-		css("box2","width","200px")
+		css(bOx1,"width","200px")
+		css(bOx2,"width","200px")
 	}
 	btn2.onclick = function(){
 		// bOx1.style.height="200px"
-		css("height","200px")
+		css(bOx1,"height","200px")
+		css(bOx2,"height","200px")
 	}
 	btn3.onclick = function(){
 		// bOx1.style.background="red"
-		css("background","red")
+		css(bOx1,"background","red")
+		css(bOx2,"background","red")
 	}
 </script>
 </html>
