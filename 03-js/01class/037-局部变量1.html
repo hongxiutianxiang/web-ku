@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>037-局部变量1</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function fu1(){
+		var a = 1;
+		console.log(1,a);
+		function fu2(){
+			console.log(2,a)
+		}
+		fu2();
+	}
+	fu1();
+	console.log(3,a)
+</script>
+</html>

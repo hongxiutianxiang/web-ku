@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>036-全局变量2</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = 2;
+	function fu1(){
+		console.log(1,a)
+		var a = 3;
+		function fu2(){
+			
+			console.log(2,a)
+		}
+		fu2();
+	}
+	fu1();
+	console.log(3,a)
+</script>
+</html>
