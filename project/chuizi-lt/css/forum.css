@@ -353,6 +353,10 @@ position: absolute;
 	margin-top: 10px;
 	margin-left: 65px;
 }
+.main .content .col1 .comment-item .iconfont{
+	margin-right: 5px;
+	vertical-align: -1px;
+}
 
 
 
@@ -396,7 +400,6 @@ position: absolute;
 	border-bottom-right-radius: 7px;
 }
 .main .content .col1 .page-chose .triangle-right{
-	
 	width:0px;
 	height:0px;
 	border-top:6px solid #f5f5f5;
@@ -689,10 +692,96 @@ position: absolute;
 
 .footer{
 	margin-top: 40px;
-	height: 262px;
-	background: green;
+	/*height: 262px;*/
+	background: #fafafa;
 }
 .footer .content{
 	height: 262px;
-	background: gray;
+	/*background: pink;*/
+}
+.footer .content .about{
+	height: 150px;
+	padding-top: 25px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #cbc5c5;
+}
+.footer .content .about .about-item{
+	float: left;
+	height: 12px;
+	line-height: 12px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-top: 24px;
+	border-right: 1px solid #c4b9b9;
+}
+.footer .content .about .about-item:nth-child(1),
+.footer .content .about .about-item:nth-child(12){
+	padding-left: 0px;
+}
+.footer .content .about .about-item:nth-child(11),
+.footer .content .about .about-item:nth-child(21){
+	border-right:none;
+}
+.footer .content .about .about-item a{
+	font-size: 12px;
+	color: gray;
+	vertical-align: 2px;
+}
+.footer .content .about .about-item a:hover{
+	color: red;
+}
+.footer .content .over{
+	height: 112px;
+	padding-top: 37px;
+	box-sizing: border-box;
+}
+.footer .content .over ul{
+
+}
+.footer .content .over p{
+	float: left;
+	font-size: 12px;
+	color: gray;
+}
+.footer .content .over-item{
+	float: right;
+	height: 12px;
+	line-height: 12px;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-right: 1px solid #c4b9b9;
+}
+.footer .content .over-item:first-child{
+	border-right:none;
+}
+.footer .content .over-item:nth-child(2){
+	font-weight: bold;
+}
+.footer .content .over-item a{
+	font-size: 12px;
+	color: gray;
+	vertical-align: 2px;
+}
+.back-top{
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	width: 43px;
+	height: 43px;
+	border: 1.2px solid #cbc5c5;
+	border-radius: 10px;
+	background: #fff;
+	opacity: 0.6;
+}
+.back-top .triangle{
+	position: absolute;
+	top: 4px;
+	right: 5px;
+	width:0px;
+	height:0px;
+	border-top:6px solid #fff;
+	border-right:6px solid #fff;
+	border-bottom:6px solid #b7b9c7;
+	border-left:6px solid #fff;
+	margin: 8px 10px 0px 18px;
 }

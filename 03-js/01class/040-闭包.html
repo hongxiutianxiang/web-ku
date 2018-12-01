@@ -8,6 +8,16 @@
 	
 </body>
 <script>
-	
+	function fn1 (){
+		var a =1;
+		function fn2(){
+			console.log(a);
+		}
+		function fn3(){
+			fn2();
+		}
+		fn3();
+	}
+	fn1();
 </script>
 </html>

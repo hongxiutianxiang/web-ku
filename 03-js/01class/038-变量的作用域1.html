@@ -8,6 +8,15 @@
 	
 </body>
 <script>
-	
+	var a  = 1;
+	function fn1(){
+		console.log(a);
+	}
+
+	function fn2(){
+		var a = 2;
+		fn1();
+	}
+	fn2();
 </script>
 </html>
