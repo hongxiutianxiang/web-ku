@@ -2,25 +2,19 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>047-去重</title>
+	<title>050-去重改进</title>
 </head>
 <body>
 	
 </body>
+
 <script>
 	var arr1 = [8,5,4,3,6,2,4,8,1]
 	function uniqueArray(arr){
 		var result = [];
 		for(var i = 0;i<arr1.length;i++){
-			var isDup = false;
-			for(var j = 0;j<result.length;j++){
-				if(arr[i] == result[j]){
-					isDup = true;
-					break;
-				} 
-			}
-			if(!isDup){
-				result.push(arr1[i]);
+			if(result.indexOf(arr1[i]) == -1){
+				result.push(arr1[i])
 			}
 		}
 		return result;
