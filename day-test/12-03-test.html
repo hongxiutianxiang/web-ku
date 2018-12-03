@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-03-test</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a = 1;
+	function test1(){
+		console.log(a)//Undefined
+		var a = 2;
+		function test2(){
+			console.log(a);//2
+		}
+		test2();
+	}
+	test1();
+</script>
+</html>
