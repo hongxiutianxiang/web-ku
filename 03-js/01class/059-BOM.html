@@ -14,10 +14,24 @@
 	console.log(b);
 
 	var c = window.screenY;
-	console.log(a);
+	console.log(c);
 	var d = window.screenX;
-	console.log(b);
+	console.log(d);
 
 	
+	var iTop = 0;
+
+	/*
+	if(window.screenTop){
+		iTop = window.screenTop;
+	}else{
+		iTop = window.screenY;
+	}
+	
+	window.screenTop ? iTop = window.screenTop : iTop = window.screenY;
+	*/
+	iTop = window.screenTop || window.screenY;
+
+	console.log(iTop);
 </script>
 </html>
