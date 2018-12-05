@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>068-js运行机制3</title>
+</head>
+<body>
+	
+</body>
+<script>
+	/*
+	 for (var i = 0; i < 3; i++) {
+       
+      }
+         setTimeout(function () {
+              console.log(i);
+          }, 1000);
+                    setTimeout(function () {
+              console.log(i);
+          }, 1000);
+                           setTimeout(function () {
+              console.log(i);
+          }, 1000);
+     */
+     for (var i = 0; i < 3; i++) {
+       	setTimeout(function () {
+              console.log(i);
+          }, 1000);
+      }
+</script>
+</html>
