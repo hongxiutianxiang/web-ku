@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>071-数码时钟</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			margin: 100px auto;
+			text-align: center;
+			font-size: 80px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+	</div>
+</body>
+<script>
+	var oTime = document.getElementById('box');
+	function actiTime(){
+		var now = new Date();
+		var iHour = now.getHours(),iMinute = now.getMinutes(),iSecond = now.getSeconds();
+		function toDouble(num){
+			return	num < 10 ? '0'+num : ''+num;
+		}
+		var time = toDouble(iHour) + ":" + toDouble(iMinute) + ":" + toDouble(iSecond);
+		oTime.innerHTML = time;
+	}
+	setInterval(actiTime,500)
+	actiTime();
+</script>
+</html>

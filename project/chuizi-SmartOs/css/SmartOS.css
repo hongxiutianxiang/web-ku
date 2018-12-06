@@ -10,12 +10,15 @@ a{
 
 
 
-
+.top1{
+	border-bottom: 1px solid black;
+	background: #2e3461;
+}
 .top1 .content{
 	position: relative;
 	height: 100px;
 	line-height: 100px;
-	background: yellow;
+	/*background: yellow;*/
 }
 .top1 .content .top-img{
 	float: left;
@@ -88,10 +91,14 @@ a{
 .top1 .top1-shop a:nth-child(2):hover~.shop-list{
 	opacity: 1;
 }
+.top2{
+	border-bottom: 1px solid black;
+	background: #3c4372;
+}
 .top2 .content{
 	height: 40px;
 	line-height: 40px;
-	background: pink;
+	/*background: pink;*/
 }
 .top2 .content .nav{
 	float: left;
@@ -137,11 +144,15 @@ a{
 }
 
 
+.top3{
+	border-bottom: 1px solid black;
+	background: #3c4372;
+}
 .top3 .content{
 	position: relative;
 	height: 40px;
 	line-height: 40px;
-	background: blue;
+	/*background: blue;*/
 }
 .top3 .content .nav{
 	float: left;
@@ -177,10 +188,10 @@ a{
 }
 .top3 .content .dot .dot-item{
 	float: left;
-	width: 10px;
+	width: 5px;
 	height: 15px;
 	margin-left: 12px;
-	background: green;
+	/*background: #green;*/
 }
 .top3 .content .dot .dot-item .dot-item-shape{
 	width: 2px;
@@ -205,10 +216,10 @@ a{
 	left: 0px;
 	display: none;
 	font-size: 13px;
-	color: #fff;
+	color:#bcbcbc;
 	height: 30px;
 	line-height: 30px;
-	background: gray;
+	background: #fff;
 	border-radius: 5px;
 	padding: 0 15px;
 }
@@ -244,8 +255,19 @@ a{
 
 
 .main{
+	width: 100%;
 	height: 3000px;
 	background: pink;
+}
+.main .sm-a-con{
+	position: relative;
+	width: 100%
+	height: 660px;
+	overflow: hidden;
+}
+.main .sm-a-con .sm-a{
+	position: absolute;
+	margin-left: ;
 }
 
 
