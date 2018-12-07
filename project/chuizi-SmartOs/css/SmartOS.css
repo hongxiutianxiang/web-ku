@@ -1,9 +1,20 @@
 a{
 	text-decoration: none;
+	font-size: 12px;
 }
 .content{
 	width: 1220px;
 	margin: 0 auto;
+}
+.clearfix:after{
+	content:"";
+	clear:both;
+	display: block;
+	height: 0px;
+	visibility: hidden;
+}
+.clearfix{
+	*zoom:1;
 }
 
 
@@ -254,24 +265,37 @@ a{
 
 
 
-.main{
+.main .picture{
 	width: 100%;
 	height: 3000px;
 	background: pink;
 }
-.main .sm-a-con{
-	position: relative;
-	width: 100%
+.main .picture .sm-a-con{
+	width: 100%;
 	height: 660px;
 	overflow: hidden;
+	/*background-image: url('images/sm-a.png');*/
 }
-.main .sm-a-con .sm-a{
-	position: absolute;
-	margin-left: ;
+.main .picture .sm-a-con .sm-a{
+
+	
 }
 
 
 
+
+
+
+
+
+.main .article{
+	height: 2000px;
+	background: skyblue;
+}
+.main .article .content{
+	height: 100%;
+	background: gray;
+}
 
 
 
@@ -286,10 +310,12 @@ a{
 .end .foot-list{
 	height: 120px;
 	border-bottom: 1px solid #e6e6e6;
-	padding: 60px 0px;
+	padding: 55px 0px 45px;
 }
 .end .foot-list .left-list{
+	float: left;
 	height: 110px;
+	width: 900px;
 }
 .end .foot-list .left-list dl{
 	float: left;
@@ -297,6 +323,7 @@ a{
 	box-sizing: border-box;
 }
 .end .foot-list .left-list dl dt{
+	font-size: 12px;
 	font-weight: 700;
 	color: #646464;
 }
@@ -314,6 +341,7 @@ a{
 }
 
 .end .foot-list .right-list{
+	float: right;
 	text-align: right;
 }
 .end .foot-list .right-list .num{
@@ -322,14 +350,17 @@ a{
 	font-weight: 1000;
 }
 .end .foot-list .right-list .time{
+	font-size: 13px;
 	color: #999;
 	margin-top: 13px;
 }
 .end .foot-list .right-list .txt{
+	font-size: 13px;
 	color: #999;
 	margin-top: 2px;
 }
 .end .foot-list .right-list .help{
+	font-size: 13px;
 	float: right;
 	width: 130px;
 	height: 30px;
@@ -339,6 +370,7 @@ a{
 	color: #5079d9;
 	background: #f5f5f5;
 	border-radius: 5px;
+	font-size: 13px;
 	font-weight: 700;
 	margin-top: 15px;
 	box-sizing: border-box;
@@ -355,6 +387,7 @@ a{
 }
 .end .foot-nav .left-nav .nav-link li{
 	float: left;
+	font-size: 12px;
 	margin-left: 8px;
 }
 .end .foot-nav .left-nav .nav-link li .link{
