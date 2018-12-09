@@ -22,7 +22,7 @@ a{
 
 
 .top1{
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #2f3351;
 	background: #212750;
 }
 .top1 .content{
@@ -103,7 +103,7 @@ a{
 	opacity: 1;
 }
 .top2{
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #2f3351;
 	background: #212750;
 }
 .top2 .content{
@@ -161,7 +161,7 @@ a{
 
 
 .top3{
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #2f3351;
 	background: #212750;
 }
 .top3 .content{
@@ -274,14 +274,8 @@ a{
 	width: 100%;
 	background: pink;
 }
-/*.main .picture .sm-con{
+.main .picture .picture-item{
 	width: 100%;
-	height: 660px;
-	overflow: hidden;
-}*/
-.main .picture .sm-a{
-	width: 100%;
-	
 }
 
 
@@ -598,4 +592,29 @@ a{
 .end .foot-nav .right-nav img{
 	float: right;
 	cursor: pointer;
+}
+
+
+.back-top{
+	position: fixed;
+	right: 30px;
+	bottom: 30px;
+	width: 43px;
+	height: 43px;
+	border: 1.2px solid #cbc5c5;
+	border-radius: 10px;
+	background: #fff;
+	opacity: 0.6;
+}
+.back-top .triangle{
+	position: absolute;
+	top: 4px;
+	right: 5px;
+	width:0px;
+	height:0px;
+	border-top:6px solid #fff;
+	border-right:6px solid #fff;
+	border-bottom:6px solid #b7b9c7;
+	border-left:6px solid #fff;
+	margin: 8px 10px 0px 18px;
 }
