@@ -34,16 +34,15 @@
 <script>
 	var oBtn = document.getElementById('btn');
 	var oBox = document.getElementById('box');
+	var timer = 0;
 	oBtn.onclick = function(){
 		timer = setInterval(function(){
-			if(oBox.offsetLeft == 500 + 'px'){
+			if(oBox.offsetLeft == 500){
 				clearInterval(timer);
 			}else{
 				oBox.style.left = oBox.offsetLeft + 10 +'px';
 			}
-			
 		},30)
-		
 	}
 </script>
 </html>
