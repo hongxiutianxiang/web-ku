@@ -40,11 +40,12 @@
 		clearInterval(timer);//防止多次点击
 		timer = setInterval(function(){
 			if(oBox.offsetLeft > 500){
-				iSpeed = -10;
+				iSpeed = -11;//速度11不能正好到500；
 			}else{
-				iSpeed= 10;
+				iSpeed= 11;
 			}
-			if(oBox.offsetLeft == 500){
+			if( Math.abs(500 - oBox.offsetLeft) < Math.abs(iSpeed)){  //绝对值让在500的两边都可以实现
+				oBox.style.left = '500px';
 				clearInterval(timer);
 			}else{
 				oBox.style.left = oBox.offsetLeft + iSpeed +'px';

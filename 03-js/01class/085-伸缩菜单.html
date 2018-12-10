@@ -3,8 +3,73 @@
 <head>
 	<meta charset="UTF-8">
 	<title>085-伸缩菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#menu{
+			width: 400px;
+			height: 400px;
+			background: skyblue;
+			position: absolute;
+			top: 0;
+			left: -400px;
+		}
+		.son{
+			width: 100px;
+			height: 400px;
+			background: pink;
+			position: absolute;
+			top: 0;
+			right: -100px;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="menu">
+		<div class="son"></div>
+	</div>
 </body>
+<script>
+	var oMenu = document.getElementById('menu');
+	// var oBox = document.getquerySelector('son'); //有错
+	var timer = 0;
+
+	oMenu.onmouseover = function(){
+		clearInterval(timer);//防止多次点击
+		var iSpeed = 0;
+		timer = setInterval(function(){
+			if(oMenu.offsetLeft >0){
+				iSpeed = -11;
+			}else{
+				iSpeed= 11;
+			}
+			if( Math.abs(0 - oMenu.offsetLeft) < Math.abs(iSpeed)){
+				oMenu.style.left = '0px';
+				clearInterval(timer);
+			}else{
+				oMenu.style.left = oMenu.offsetLeft + iSpeed +'px';
+			}
+		},30)
+	}
+	oMenu.onmouseout = function(){
+		clearInterval(timer);//防止多次点击
+		var iSpeed = 0;
+		timer = setInterval(function(){
+			if(oMenu.offsetLeft >-400){
+				iSpeed = -11;
+			}else{
+				iSpeed= 11;
+			}
+			if( Math.abs(-400 - oMenu.offsetLeft) < Math.abs(iSpeed)){
+				oMenu.style.left = '-400px';
+				clearInterval(timer);
+			}else{
+				oMenu.style.left = oMenu.offsetLeft + iSpeed +'px';
+			}
+		},30)
+	}
+
+</script>
 </html>
