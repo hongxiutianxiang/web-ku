@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>092-减速动画</title>
+<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 0px;
+			width: 50px;
+			height: 50px;
+			background: blue;
+		}
+		#line{
+			position:absolute;
+			top: 50px;
+			left: 500px;
+			width: 1px;
+			height: 400px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">bom</button>
+	<div id="box"></div>
+	<div id="line"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer = 0;
+	var iSpeed = 0;
+	oBtn.onclick = function(){
+		clearInterval(timer);//防止多次点击
+		timer = setInterval(function(){
+			iSpeed = (500 - oBox.offsetLeft)/10;
+			iSpeed = Math.ceil(iSpeed);
+			// if(oBox.offsetLeft > 500){
+			// 	iSpeed = -10;
+			// }else{
+			// 	iSpeed= 10;
+			// }
+			if(oBox.offsetLeft == 500){
+				clearInterval(timer);
+			}else{
+				oBox.style.left = oBox.offsetLeft + iSpeed +'px';
+			}
+		},30)
+	}
+</script>
+</html>

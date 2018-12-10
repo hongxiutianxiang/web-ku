@@ -34,12 +34,12 @@
 			var current = parseFloat(getComputedStyle(obj,false)[attr]);//获值转数值
 			if(attr == 'opacity'){
 				current = Math.round(current *100);
-			}
-			if(current >100){
+			};
+			if(current >target){
 				iSpeed = -10;
 			}else{
 				iSpeed= 10;
-			}
+			};
 			if( Math.abs(target - current) < Math.abs(iSpeed)){
 				if(attr == 'opacity'){
 					obj.style.opacity = target/100;
@@ -62,11 +62,20 @@
 	oBox1.onmouseover = function(){
 		animate(oBox1,'width',300);
 	}
+	oBox1.onmouseout = function(){
+		animate(oBox1,'width',100);
+	}
 	oBox2.onmouseover = function(){
 		animate(oBox2,'height',300);
 	}
+	oBox2.onmouseout = function(){
+		animate(oBox2,'height',100);
+	}
 	oBox3.onmouseover = function(){
 		animate(oBox3,'opacity',100);
+	}
+	oBox3.onmouseout = function(){
+		animate(oBox3,'opacity',50);
 	}
 </script>
 </html>

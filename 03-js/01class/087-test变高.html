@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>087-test变高</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBox2 = document.getElementById('box2');
+
+	oBox2.onmouseover = function(){
+		clearInterval(oBox2.timer);//防止多次点击
+		var iSpeed = 0;
+		oBox2.timer = setInterval(function(){
+			if(oBox2.offsetHeight >300){
+				iSpeed = -11;
+			}else{
+				iSpeed= 11;
+			}
+			if( Math.abs(300 - oBox2.offsetHeight) < Math.abs(iSpeed)){
+				oBox2.style.height = '300px';
+				clearInterval(oBox2.timer);
+			}else{
+				oBox2.style.height = oBox2.offsetHeight + iSpeed +'px';
+			}
+		},30)
+	}
+</script>
+</html>

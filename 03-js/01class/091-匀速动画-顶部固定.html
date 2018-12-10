@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>091-顶部固定</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.top{
+			width: 100%;
+			height: 50px;
+			background: pink;
+		}
+		#nav{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 0px;
+			background: skyblue;
+		}
+		.main{
+			width: 100%;
+			height: 3000px;
+			background: gray;
+		}
+	</style>
+</head>
+<body>
+	<div class="top"></div>
+	<div id="nav"></div>
+	<div class="main"></div>
+</body>
+<script src="../05js/util.js"></script>
+<script>
+	var oNav = document.getElementById('nav');//没写完
+
+	window.onscroll = function(){
+		if(getScrollTop() >= 50){
+			oNav.style.height = 50 + 'px';
+		}else{
+			oNav.style.height = 0;
+		}
+
+	}
+	// animate(oNav,'height',50)
+</script>
+</html>

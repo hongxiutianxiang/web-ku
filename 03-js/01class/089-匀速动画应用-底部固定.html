@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>089-底部固定</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+		#box{
+			position: absolute;
+			right: 0;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="../05js/util.js"></script>
+<script>
+	var oBox = document.getElementById('box');
+	//oBox.style.top = (window.innerHeight - oBox.offsetHeight) + getScrollTop() + 'px';
+	window.onscroll = function(){
+		var i = (window.innerHeight - oBox.offsetHeight) + getScrollTop();
+		animate(oBox,'top',i)
+	}
+</script>
+</html>
