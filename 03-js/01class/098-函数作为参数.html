@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>098-函数作为参数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function show(ab){
+		ab();
+	}
+	show(function(){
+		alert('cc')
+	});
+
+
+	function sum(x,y,fn){
+		var result = x*10 + y*10 ;
+		fn(result);
+	}
+	sum(2,3,function(result){
+		alert(result);
+	})
+</script>
+</html>

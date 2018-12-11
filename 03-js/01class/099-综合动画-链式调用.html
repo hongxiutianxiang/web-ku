@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>097-综合动画-封装</title>
+	<title>099-综合动画-链式调用</title>
 <style>
 		*{
 			margin: 0;
@@ -30,7 +30,7 @@
 	var iSpeed = 0;
 
 //减速动画的基础上改造
-	function animate(obj,attr,target,isLinear){
+	function animate(obj,attr,target,isLinear,fnEnd){
 		if (isLinear == undefined) {
 			isLinear = true;
 		}
@@ -65,6 +65,10 @@
 			}
 			if(isStopCurrent){ 
 				clearInterval(obj.timer);
+				// if (typeof fnEnd == 'function') {
+				// 	fnEnd();
+				// };
+				typeof fnEnd == 'function' && fnEnd();
 			}else{
 				if(attr == 'opacity'){
 					obj.style.opacity = (current + iSpeed)/100 ;
@@ -77,7 +81,18 @@
 
 
 	oBox1.onmouseover = function(){
-		animate(oBox1,'width',1000,true)
+		animate(oBox1,'width',500,true,function(){
+			animate(oBox1,'height',500,true,function(){
+				animate(oBox1,'opacity',100)
+			})
+		})
+	}
+	oBox1.onmouseout = function(){
+		animate(oBox1,'opacity',50,true,function(){
+			animate(oBox1,'height',50,true,function(){
+				animate(oBox1,'width',50)
+			})
+		})
 	}
 
 	oBox2.onmouseover = function(){
