@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>12-11-动画练习</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			position: absolute;
+			left: 300px;
+			width: 100px;
+			height: 100px;
+			background: red;
+			
+		}
+		#box1{
+			top: 40px;
+		}
+		#box2{
+			top: 150px;
+		}
+		#box3{
+			top: 260px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">start</button>
+	<div id="box1" class="box"></div>
+	<div id="box2" class="box"></div>
+	<div id="box3" class="box"></div>
+	<div class="line"></div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	var iSpeed = 0;
+	var timer = 0;
+
+	oBtn.onclick = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			if(oBox1.offsetWidth > 1000){
+				iSpeed = -11;
+			}else{
+				iSpeed = 11;
+			}
+			if(Math.abs(1000 - oBox1.offsetWidth) < Math.abs(iSpeed)){
+				oBox1.style.width = 1000 + 'px';
+				clearInterval(timer);
+			}else{
+				oBox1.style.width = oBox1.offsetWidth + iSpeed + 'px';
+			}
+		},30)
+	}
+	/*
+	oBtn.onclick = function(){
+		clearInterval(timer);
+		var timer = setInterval(function(){
+			if(oBox2.offsetHeight > 500){
+				iSpeed = -11;
+			}else{
+				iSpeed = 11;
+			}
+			if(Math.abs(500 - oBox2.offsetHeight) < Math.abs(iSpeed)){
+				oBox2.style.height = 500 + 'px';
+				clearInterval(timer);
+			}else{
+				oBox2.style.height = oBox2.offsetHeight + iSpeed + 'px';
+			}
+		},30)
+	}
+	*/
+</script>
+</html>

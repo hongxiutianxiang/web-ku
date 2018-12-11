@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>102-事件-事件处理程序</title>
+</head>
+<body>
+	<button id="btn">过来</button>
+	<button id="btn1">边儿去</button>	
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBtn1 = document.getElementById('btn1');
+	function sayhi(){
+		alert('hi');
+	}
+	function sayhello(){
+		alert('hello');
+	}
+	function sayhehe(){
+		alert('hehe')
+	}
+	oBtn.addEventListener('click',sayhi,false)//不用加on
+	oBtn.addEventListener('click',sayhello,false)
+	oBtn.addEventListener('click',sayhehe,false)
+
+	oBtn1.onclick = function(){
+		oBtn.removeEventListener('click',sayhi,false);
+	} 
+	oBtn1.onclick = function(){
+		oBtn.removeEventListener('click',sayhello,false);
+	}
+	oBtn1.onclick = function(){
+		oBtn.removeEventListener('click',sayhehe,false);
+	}
+	
+	
+
+
+</script>
+</html>
