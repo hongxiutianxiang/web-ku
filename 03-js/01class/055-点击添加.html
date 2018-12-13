@@ -3,19 +3,26 @@
 <head>
 	<meta charset="UTF-8">
 	<title>055-点击添加</title>
+	<style>
+		li{
+			list-style: none;
+		}
+	</style>
 </head>
 <body>
-	<input type="texe" id="texe">
+	<input type="text" id="text" value="你好">
 	<input type="button" value="添加" id="btn">
 	<ul id="ul1"></ul>
-
 </body>
 <script>
 	var oBtn = document.getElementById('btn');
 	var oUl = document.getElementById('ul1');
 	var oText = document.getElementById('text');
 	oBtn.onclick = function(){
-		 
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oText.value;
+		oUl.insertBefore(oLi,oUl.firstChild);
+		oText.value = '';
 	}
 </script>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>107-事件-拖拽</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			height: 50px;
+			height: 50px;
+			width: 50px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oDistanceX = 0,oDistanceY = 0;
+	oBox.onmousedown = function(ev){
+
+		oDistanceX = ev.clientX - oBox.offsetLeft;
+		oDistanceY = ev.clientY - oBox.offsetTop;
+		document.onmousemove = function(ev){
+
+			var l = ev.clientX - oDistanceX;
+			var t = ev.clientY - oDistanceY;
+
+			if(l<0){
+				l = 0;
+			}else if(l>window.innerWidth-oBox.offsetWidth){
+				l = window.innerWidth-oBox.offsetWidth;
+			};
+			if(t<0){
+				t = 0;
+			}else if(t>window.innerHeight-oBox.offsetHeight){
+				t = window.innerHeight-oBox.offsetHeight;
+			}
+
+
+
+			oBox.style.left = l + 'px';
+			oBox.style.top = t + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmousemove = null;
+		}
+	} 
+</script>
+</html>

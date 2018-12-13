@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>111-事件-拖拽-滚动条</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			position: relative;
+			width: 500px;
+			height: 30px;
+			background: gray;
+			margin: 100px auto;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			height: 30px;
+			width: 30px;
+			background: blue;
+		}
+		#box2{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="box"></div>
+	</div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oBox2 = document.getElementById('box2');
+	var oFather = document.getElementById('father');
+	var oDistanceX = 0,oDistanceY = 0;
+	oBox.onmousedown = function(ev){
+
+		oDistanceX = ev.clientX - oBox.offsetLeft;
+		oDistanceY = ev.clientY - oBox.offsetTop;
+		document.onmousemove = function(ev){
+
+			var l = ev.clientX - oDistanceX;
+			var t = ev.clientY - oDistanceY;
+
+			if(l<0){
+				l = 0;
+			}else if(l>oFather.offsetWidth-oBox.offsetWidth){
+				l = oFather.offsetWidth-oBox.offsetWidth;
+			};
+			if(t<0){
+				t = 0;
+			}else if(t>oFather.offsetHeight-oBox.offsetHeight){
+				t = oFather.offsetHeight-oBox.offsetHeight;
+			}
+			oBox.style.left = l + 'px';
+			oBox.style.top = t + 'px';
+
+			var scale = l/oFather.offsetWidth;
+			oBox2.style.width = 100 + 500*scale + 'px';
+			oBox2.style.height = 100 + 500*scale + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmousemove = null;
+		}
+	} 
+</script>
+</html>

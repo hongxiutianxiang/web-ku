@@ -15,11 +15,12 @@
 	var oText = document.getElementById('text');
 	var oUl1 = document.getElementById('ul1');
 	var oBtn = document.getElementById('btn');
-	var val = oText.value;
+	
 	oBtn.onclick = function(){
 		var val = '';
 		var aLi = document.createElement('li');
-		aLi.innerHTML = val;
+		aLi.innerHTML = oText.value;
+		oText.value = '';
 		var oA = document.createElement('a');
 		oA.href = 'javascript:;';
 		oA.innerHTML = '删除';
