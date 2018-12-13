@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>100-综合动画-多值动画</title>
-<style>
-		*{
-			margin: 0;
-			padding: 0;
-		}
-		div{
-			width: 50px;
-			height: 50px;
-			background: blue;
-			margin-top: 10px;
-			opacity: 0.3;
-		}
-	</style>
-</head>
-<body>
-	<div id="box1">变宽</div>
-	
-</body>
-<script>
-	var oBox1 = document.getElementById('box1');
-	var timer = 0;
-	var iSpeed = 0;
-
-//减速动画的基础上改造
-	function animate(obj,options,isLinear,fnEnd){
+function animate(obj,options,isLinear,fnEnd){
 		if (isLinear == undefined) {
 			isLinear = true;
 		}
@@ -85,23 +56,3 @@
 			}
 		},30)
 	}
-
-
-	oBox1.onmouseover = function(){
-		animate(oBox1,{width:500,height:500,opacity:100},true)
-	}
-	oBox1.onmouseout = function(){
-		animate(oBox1,{width:100,height:100,opacity:50},true)
-	}
-
-	
-
-
-
-
-
-
-
-
-</script>
-</html>

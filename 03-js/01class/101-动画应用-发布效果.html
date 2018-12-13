@@ -10,19 +10,35 @@
 		}
 		li{
 			list-style: none;
+			height: 0px;
+			opacity: 0;
+			line-height: 30px;
+			border-bottom: 1px dotted black;
 		}
 	</style>
 </head>
 <body>
-	<input type="text" id="text" value="你好">
+	<input type="text" id="text" value="">
 	<button id="btn">发布</button>
 	<ul id="ul1">
-		<li>123</li>
+		
 	</ul>
 </body>
+<script src="../05js/util2.js"></script>
 <script>
 	var oText = document.getElementById('text');
-	var oBtn = document.getElementById('btn')
-	
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oText.value;
+		oText.value = '';
+		oUl.insertBefore(oLi,oUl.firstChild);
+
+		animate(oLi,{height:40},true,function(){
+			animate(oLi,{opacity:100})
+		})
+	}
 </script>
 </html>

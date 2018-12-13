@@ -3,8 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<title>105-事件-随着鼠标移动多个物体</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+		#box1{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 30px;
+			height: 30px;
+			background: blue;
+		}
+	</style>
 </head>
 <body>
-	
+	<div id="box1"></div>
 </body>
+<script src="../05js/util.js"></script>
+<script>
+	var oBox1 = document.getElementById('box1');
+	document.onmousemove = function(ev){
+		oBox1.style.left = ev.clientX + getScrollLeft() + 'px';
+		oBox1.style.top = ev.clientY + getScrollTop() +'px';
+	}
+</script>
 </html>
