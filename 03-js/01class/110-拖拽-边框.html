@@ -13,22 +13,33 @@
 			top: 50px;
 			left: 50px;
 			height: 50px;
+			width: 50px;
+			background: pink;
+		}
+		#border{
+			position: absolute;
+			top: 50px;
+			left: 50px;
 			height: 50px;
 			width: 50px;
-			background: blue;
+			
+			border: 1px solid #653;
+			box-sizing: border-box;
 		}
 	</style>
 </head>
 <body>
 	<div id="box"></div>
+	<div id="border"></div>
 </body>
 <script>
 	var oBox = document.getElementById('box');
+	var oBorder = document.getElementById('border');
 	var oDistanceX = 0,oDistanceY = 0;
 	oBox.onmousedown = function(ev){
 
-		oDistanceX = ev.clientX - oBox.offsetLeft;
-		oDistanceY = ev.clientY - oBox.offsetTop;
+		oDistanceX = ev.clientX - oBorder.offsetLeft;
+		oDistanceY = ev.clientY - oBorder.offsetTop;
 		document.onmousemove = function(ev){
 
 			var l = ev.clientX - oDistanceX;
@@ -36,8 +47,8 @@
 
 
 
-			oBox.style.left = l + 'px';
-			oBox.style.top = t + 'px';
+			oBorder.style.left = l + 'px';
+			oBorder.style.top = t + 'px';
 		}
 		document.onmouseup = function(){
 			document.onmousemove = null;

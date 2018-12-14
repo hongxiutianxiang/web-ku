@@ -8,12 +8,22 @@
 			margin: 0;
 			padding: 0;
 		}
-		#father{
+		
+		#container{
 			position: relative;
+			width: 330px;
+			height: 500px;
+			background: pink;
+			margin: 50px auto;
+			overflow: hidden;
+		}
+		#father{
+			position: absolute;
+			top: 0;
+			right: 0;
 			width: 30px;
 			height: 500px;
 			background: gray;
-			margin: 100px auto;
 		}
 		#box{
 			position: absolute;
@@ -24,49 +34,66 @@
 			background: blue;
 		}
 		#box2{
-			width: 100px;
-			height: 100px;
-			background: red;
+			position: absolute;
+			width: 300px;
+			
+			
+			line-height: 20px;
 		}
 	</style>
 </head>
 <body>
-	<div id="father">
-		<div id="box"></div>
-	</div>
-	<div id="box2"></div>
+	<div id="container">
+		<div id="father">
+			<div id="box"></div>
+		</div>
+		<div id="box2">
+			央视网消息：为隆重庆祝改革开放40周年，全方位展示改革开放波澜壮阔的伟大历程，由中央宣传部、中央改革办、中央党史和文献研究院、国家发展改革委、国家广播电视总局、新华社、中央广播电视总台、中央军委政治工作部联合拍摄的8集大型政论专题片《必由之路》，12月11日起在中央电视台综合频道20点档播出。
+
+该片以改革开放是坚持和发展中国特色社会主义的必由之路为主题，全景式回顾改革开放40年历程，以风云激荡的感人故事，铺陈出一部国家民族砥砺奋进的壮丽史诗，深刻揭示中国特色社会主义是建立在我们党长期奋斗基础上，是由我们党带领人民历经千辛万苦、付出各种代价、接力探索取得的，响亮回答改革开放是决定当代中国命运的关键一招，也是决定实现“两个一百年”奋斗目标、实现中华民族伟大复兴的关键一招。
+
+全片共分八集，分别为《历史之约》《关键抉择》《伟大跨越》《力量之源》《立国之本》《兴国之魂》《大国之盾》《共同命运》。
+
+这部政论专题片的播出，必将进一步增强人们在习近平新时代中国特色社会主义思想指引下将改革开放进行到底的信心决心。
+
+12月13日播出第三集《伟大跨越》。改革开放40年，中华民族迎来了从站起来、富起来到强起来的伟大飞跃。面对世界百年不遇的大变局，中国共产党深刻作答时代之问。全面深化改革的历史画卷，在经济、政治、文化、社会、生态文明等各个领域一幕幕渐次开启。以人民为中心，贯彻新发展理念，凝聚起为实现中华民族伟大复兴的中国梦不懈奋斗的磅礴伟力，办成了许多过去想办而没有办成的大事。理论创新与实践创新相互激荡，马克思主义中国化迎来新的伟大飞跃。党的十八大以来，在习近平新时代中国特色社会主义思想指引下，现代化建设取得了历史性成就，党和国家事业发生了历史性变革，实现了伟大跨越！
+		</div>
+	</div>	
 </body>
 <script>
 	var oBox = document.getElementById('box');
 	var oBox2 = document.getElementById('box2');
 	var oFather = document.getElementById('father');
+	var oContainer = document.getElementById('container')
 	var oDistanceX = 0,oDistanceY = 0;
 	oBox.onmousedown = function(ev){
-
+		var t = 0;
 		oDistanceX = ev.clientX - oBox.offsetLeft;
 		oDistanceY = ev.clientY - oBox.offsetTop;
 		document.onmousemove = function(ev){
-
-			var l = ev.clientX - oDistanceX;
-			var t = ev.clientY - oDistanceY;
-
-			if(l<0){
-				l = 0;
-			}else if(l>oFather.offsetWidth-oBox.offsetWidth){
-				l = oFather.offsetWidth-oBox.offsetWidth;
-			};
+			t = ev.clientY - oDistanceY;
+			handle();
+		}
+		oContainer.onmousewheel = function(ev){
+			
+			if(ev.wheelDelta>0){
+				t -= 10;
+			}else{
+				t += 10;
+			}
+			handle();
+		}
+		function handle(){
 			if(t<0){
 				t = 0;
 			}else if(t>oFather.offsetHeight-oBox.offsetHeight){
 				t = oFather.offsetHeight-oBox.offsetHeight;
 			}
-			oBox.style.left = l + 'px';
 			oBox.style.top = t + 'px';
-
-			var scale = l/oFather.offsetWidth;
-			oBox2.style.width = 100 + 500*scale + 'px';
-			oBox2.style.height = 100 + 500*scale + 'px';
+			var scale = t/(oFather.offsetHeight - oBox.offsetHeight);
+			oBox2.style.top = -(oBox2.offsetHeight-oContainer.offsetHeight)*scale + 'px';
 		}
+
 		document.onmouseup = function(){
 			document.onmousemove = null;
 			document.onmousemove = null;

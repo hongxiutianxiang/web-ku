@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>116-键盘事件</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			position: absolute;
+			width: 100px;
+			height: 100px;
+			background: #678;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	document.onkeydown = function(ev){
+		console.log(ev.keyCode)
+		if(ev.keyCode == 39){
+			oBox1.style.left = oBox1.offsetLeft + 1 + 'px';
+		}
+	}
+</script>
+</html>
