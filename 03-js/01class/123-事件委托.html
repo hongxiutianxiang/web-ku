@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>123-事件委托</title>
+</head>
+<body>
+	<ul id="list">
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+		<li><a href="#" class="del">删除</a></li>
+	</ul>
+</body>
+<script>
+	var oList = document.getElementById('list');
+
+	oList.addEventListener =('click',function(ev){
+		console.log(ev.target)
+		if(ev.target.className == 'del'){
+			oList.removeChild()
+		}
+	},false) 
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>124-事件对象属性</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			width: 150px;
+			height: 150px;
+			background: #987;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+
+	function handle(ev){
+		if(ev.type=='mousedown'){
+			oBox1.style.background='red';
+		}else if(ev.type=='mouseover'){
+			oBox1.style.background="blue";
+		}else if(ev.type=='mouseup'){
+			oBox1.style.background="orange";
+		}else if(ev.type=='mouseout'){
+			oBox1.style.background="#987";
+		}
+	}
+	oBox1.addEventListener('mousedown',handle,false);
+	oBox1.addEventListener('mouseover',handle,false);
+	oBox1.addEventListener('mouseup',handle,false);
+	oBox1.addEventListener('mouseout',handle,false);
+</script>
+</html>

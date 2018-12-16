@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>120-表单事件</title>
+</head>
+<body>
+	<div id="container">
+		<form action="https//www.kuazhu.com" id="form">
+			<input type="text" id="tex">
+			<input type="submit" id="sub">
+			<input type="reset" id="res">
+
+		</form>
+	</div>
+</body>
+<script>
+	var oForm = document.getElementById('form')
+	var oText = document.getElementById('tex');
+	var oSubmit = document.getElementById('sub');
+	var oRes = document.getElementById('res');
+
+	oText.onfocus = function(){
+		oText.value = nihao
+	}
+</script>
+</html>
