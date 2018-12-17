@@ -9,13 +9,32 @@
 			padding: 0;
 		}
 		#menu{
+			position: absolute;
 			width: 100px;
 			height: 180px;
 			background: #666;
+			display: none;
 		}
 	</style>
 </head>
 <body>
 	<div id="menu"></div>
 </body>
+<script>
+	var oMenu = document.getElementById('menu');
+	document.oncontextmenu = function(ev){
+		
+		oMenu.style.display = 'block';
+		oMenu.style.left = ev.clientX + 'px';
+		oMenu.style.top = ev.clientY + 'px';
+		//return false; 法一
+		ev.preventDefault(); //法二  阻止默认行为
+	}
+	oMenu.onclick = function(ev){
+		ev.stopPropagation();  //阻止冒泡
+	}
+	document.onclick = function(){
+		oMenu.style.display = 'none';
+	}
+</script>
 </html>
