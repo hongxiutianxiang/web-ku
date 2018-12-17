@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>128-利用对象去除重复值</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [2,5,8,6,5,4,2];
+	function nodouble(arr){
+		var result = [];
+		var obj = {};
+		for(var i = 0;i<arr.length;i++){
+			obj[arr[i]] = '';
+		}
+		for(var attr in obj){
+			result.push(attr);
+		}
+
+		return result;
+	}
+	console.log(nodouble(arr));
+</script>
+</html>

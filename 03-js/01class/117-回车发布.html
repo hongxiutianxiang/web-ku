@@ -15,9 +15,18 @@
 	var oText = document.getElementById('text');
 	var oBtn = document.getElementById('btn');
 	var oList = document.getElementById('list');
-
+	
 	oBtn.onclick = function(){
-		var oLi = document.creat
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oText.value;
+		oList.appendChild(oLi)
+	}
+	
+	document.onkeydown = function(ev){
+		console.log(ev.keyCode);
+		if(ev.keyCode == 13 && ev.ctrlKey){  //ctrl + 回车 发布
+			oBtn.onclick();
+		}
 	}
 </script>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>129-JSON和js对象</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var JSON1 = '{"name":"jack","age":"20"}';
+
+	var obj = {name:'Alen',age:18}
+
+	console.log(JSON1);
+	console.log(obj);
+
+	var jsonTostring = JSON.parse(JSON1); //不能直接用JSON命名
+	var jsToJSON =JSON.stringify(obj); 
+	console.log(JSON1);
+	console.log(obj);
+</script>
+</html>
