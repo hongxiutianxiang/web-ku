@@ -30,6 +30,18 @@
 	<div id="box2"></div>
 </body>
 <script>
+	function checkBump(obj1,obj2){
+		if((obj1.offsetLeft+obj1.offsetWidth)>obj2.offsetLeft
+			&&(obj1.offsetTop+obj1.offsetHeight)>obj2.offsetTop
+			&&(obj2.offsetLeft+obj2.offsetWidth)>obj1.offsetLeft
+			&&(obj2.offsetTop+obj2.offsetHeight)>obj1.offsetTop){
+				return true;
+			}else{
+				return false;
+		}
+	}
+
+
 	var oBox = document.getElementById('box');
 	var oBox2 = document.getElementById('box2');
 	var oDistanceX = 0,oDistanceY = 0;
