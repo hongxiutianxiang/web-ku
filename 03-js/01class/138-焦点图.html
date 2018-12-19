@@ -3,16 +3,62 @@
 <head>
 	<meta charset="UTF-8">
 	<title>138-焦点图</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		img{
+			width: 400px;
+			height: 300px;
+		}
+	</style>
 </head>
 <body>
 	<div id="box1"></div>
 </body>
 <script>
 	function Carousel(option){
-		//罗列属性
-		this.oBox1 = document.getElemetById(option.id);
-		this.oImg = option.img;
+		//1.罗列属性
+		this.oBox1 = document.getElementById(option.id);
+		this.aImg = option.img;
+		//2.初始化DOM节点
+		this.init();
+			
+
+	}
+	Carousel.prototype.init = function(){
+	//处理外层父容器
+		this.oBox1.style.position = 'relative';
+	//1.生成图片的容器
+		var oUlImg = document.createElement('ul')
+		//添加图片的容器到外层父容器中
+		this.oBox1.appendChild(oUlImg);
+
+		for(var i = 0;i<this.aImg.length;i++){
+			//生成li标签
+			var oLi = document.createElement('li');
+			oUlImg.appendChild(oLi);
+			oLi.style.position = 'absolute';
+			oLi.style.top = 0;
+			oLi.style.left = 0;
+			if(i == 0){
+				oLi.style.zIndex = 50;
+				oLi.style.opacity = 1;
+			}else{
+				oLi.style.zIndex = 0;
+				oLi.style.opacity = 0.5;
+			}
+			//生成img标签
+			var oImg = document.createElement('img');
+			oImg.src = this.aImg[i];
+			oLi.appendChild(oImg);
+		}
+	//2.生成左右箭头
+
 		
+
 
 	}
 	new Carousel({

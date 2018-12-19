@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>142-原子筛选-竖线两边任意匹配</title>
+</head>
+<body>
+	<input type="text" id="text">
+	<input type="button" id="btn" value="发布">
+	<ul id="list">
+		
+	</ul>
+</body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	var oList = document.getElementById('list');
+
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		var reg = /仓小姐|包小姐/g;
+		oLi.innerHTML = oText.value;
+		oLi.innerHTML = oText.value.replace(reg,'*');
+		oList.appendChild(oLi);
+
+	}
+</script>
+</html>
