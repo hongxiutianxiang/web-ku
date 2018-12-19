@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>135-构造原型模式</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.showName = function(){
+		console.log('I am' + this.name)
+	}
+	var aPerson = new Person('Tom',18);
+	console.log(aPerson);
+	aPerson.showName();
+</script>
+</html>

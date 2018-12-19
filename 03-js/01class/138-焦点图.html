@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>138-焦点图</title>
+</head>
+<body>
+	<div id="box1"></div>
+</body>
+<script>
+	function Carousel(option){
+		//罗列属性
+		this.oBox1 = document.getElemetById(option.id);
+		this.oImg = option.img;
+		
+
+	}
+	new Carousel({
+		id:'box1',
+		img:['../03src/image/bizhia.jpg',
+				'../03src/image/bizhib.jpg',
+				'../03src/image/bizhic.jpg']
+	});
+</script>
+</html>
