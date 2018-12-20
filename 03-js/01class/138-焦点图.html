@@ -10,8 +10,41 @@
 			list-style: none;
 		}
 		img{
-			width: 400px;
-			height: 300px;
+			width: 100%;
+			height: 100%;
+		}
+		.leftArrow,.rightArrow{
+			position: absolute;
+			top: 50%;
+			width: 30px;
+			height: 60px;
+			line-height: 60px;
+			margin-top: -30px;
+			background-color: rgba(0,0,0,0.5);
+			text-align: center;
+			color: #fff;
+			font-size: 24px;
+			cursor: pointer;
+		}
+		.leftArrow{
+			left: 0;
+		}
+		.rightArrow{
+			right: 0;
+		}
+		.bottomBtn{
+			position: absolute;
+			left: 50%;
+			bottom: 10px;
+		}
+		.bottomBtn li{
+			float: left;
+			width: 10px;
+			height: 10px;
+			background-color: #888;
+			border-radius: 50%;
+			border: 3px solid rgba(0,0,0,0.5);
+			margin-right: 5px;
 		}
 	</style>
 </head>
@@ -23,6 +56,9 @@
 		//1.罗列属性
 		this.oBox1 = document.getElementById(option.id);
 		this.aImg = option.img;
+
+		this.width = option.width;
+		this.height = option.height;
 		//2.初始化DOM节点
 		this.init();
 			
@@ -31,15 +67,25 @@
 	Carousel.prototype.init = function(){
 	//处理外层父容器
 		this.oBox1.style.position = 'relative';
+		this.oBox1.style.width = this.width + 'px';
+		this.oBox1.style.height = this.height + 'px';
 	//1.生成图片的容器
 		var oUlImg = document.createElement('ul')
 		//添加图片的容器到外层父容器中
 		this.oBox1.appendChild(oUlImg);
+	//3.生成底部按钮ul
+		var oUlBtn = document.createElement('ul');
+		this.oBox1.appendChild(oUlBtn);
+		oUlBtn.className ='bottomBtn';
+		oUlBtn.style.zIndex = 99;
+		oUlBtn.style.marginLeft = - oUlBtn.offsetWidth * 0.5 + 'px';
+		console.log(oUlBtn.offsetWidth);
 
 		for(var i = 0;i<this.aImg.length;i++){
-			//生成li标签
+			//生成图片的li标签
 			var oLi = document.createElement('li');
 			oUlImg.appendChild(oLi);
+			//图片的li的样式
 			oLi.style.position = 'absolute';
 			oLi.style.top = 0;
 			oLi.style.left = 0;
@@ -54,10 +100,23 @@
 			var oImg = document.createElement('img');
 			oImg.src = this.aImg[i];
 			oLi.appendChild(oImg);
+			//生成底部指示按钮的li标签
+			var oBtn = document.createElement('li');
+			oUlBtn.appendChild(oBtn);
 		}
 	//2.生成左右箭头
-
-		
+		var oLeftArrow = document.createElement('span');
+		var oRightArrow = document.createElement('span');
+		//添加左右箭头到外层父容器
+		this.oBox1.appendChild(oLeftArrow);
+		this.oBox1.appendChild(oRightArrow);
+		//给左右箭头设置样式 暴露接口
+		oLeftArrow.className = 'leftArrow';
+		oRightArrow.className = 'rightArrow';
+		oLeftArrow.style.zIndex = 99;
+		oRightArrow.style.zIndex = 99;
+		oLeftArrow.innerHTML = '&lt';
+		oRightArrow.innerHTML = '&gt'
 
 
 	}
@@ -65,7 +124,10 @@
 		id:'box1',
 		img:['../03src/image/bizhia.jpg',
 				'../03src/image/bizhib.jpg',
-				'../03src/image/bizhic.jpg']
+				'../03src/image/bizhic.jpg'],
+		width:800,
+		height:500,
+
 	});
 </script>
 </html>
