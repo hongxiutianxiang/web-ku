@@ -5,6 +5,21 @@
 	<title>147-合法年份</title>
 </head>
 <body>
+	<input type="text" id="text">
+	<input type="button" id="btn" value="检查">
 	
 </body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick = function(){
+		//合法年份 公元1000年至公元2999年
+		var reg = /^[1|2]\d{3}$/;
+
+		console.log(reg.test(oText.value));
+
+
+	}
+</script>
 </html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>156-前瞻</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str1 = 'a1b2c3d$4e%5f&6';
+
+	var reg1 = /[a-z](?=[0-9])/g;//正向前瞻
+ 	var reg2 = /[a-z](?![0-9])/g;//负向前瞻
+	console.log(str1);
+	console.log(str1.replace(reg1,'*'));
+	console.log(str1.replace(reg2,'*'));
+</script>
+</html>

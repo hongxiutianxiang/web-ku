@@ -7,4 +7,30 @@
 <body>
 	
 </body>
+<script>
+	var str1 = 'aaa 123 fdg 568 edf 1 dfg 56 f 7896';
+
+	var reg1 = /\d/;
+	var reg2 = /\d/g;
+	var reg3 = /\d{3}/;
+	var reg4 = /\d{3}/g;
+	var reg5 = /\d{2}/g;
+	var reg6 = /\d{2,}/g;
+	var reg7 = /\d{2,3}/g;
+	var reg8 = /\d+/g;//等价{1,}
+	var reg9 = /\d?/g;//等价{0,1}
+	var reg10 = /\d*/g;//等价{0,}
+
+	console.log('原',str1);
+	console.log('1',str1.replace(reg1,'*'));
+	console.log('2',str1.replace(reg2,'*'));
+	console.log('3',str1.replace(reg3,'*'));
+	console.log('4',str1.replace(reg4,'*'));
+	console.log('5',str1.replace(reg5,'*'));
+	console.log('6',str1.replace(reg6,'*'));
+	console.log('7',str1.replace(reg7,'*'));
+	console.log('8',str1.replace(reg8,'*'));
+	console.log('9',str1.replace(reg9,'*'));
+	console.log('10',str1.replace(reg10,'*'));
+</script>
 </html>

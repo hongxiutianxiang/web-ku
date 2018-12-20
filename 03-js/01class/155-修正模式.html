@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>155-修正模式</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str1 = 'ad1Df2GDGd4HFgdH21f5'
+
+	var reg1 = /[a-z]/g;
+	var reg2 = /[a-z]/ig;
+
+	var reg3 = /[a-z]/;
+	var reg4 = /[a-z]/g;
+
+	console.log(str1.replace(reg1,'*'));
+	console.log(str1.replace(reg2,'*'));
+	console.log(str1.replace(reg3,'*'));
+	console.log(str1.replace(reg4,'*'));
+</script>
+</html>

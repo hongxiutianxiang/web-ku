@@ -5,6 +5,34 @@
 	<title>151-边界控制</title>
 </head>
 <body>
+	<input type="text" id="text">
+	<input type="button" id="btn" value="检查">
 	
 </body>
+<script>
+	//限制头和尾
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick = function(){
+		//以字母开头,长度在6~12之间,只能包含字母、数字和下划线	
+		var reg = /^[a-z]\w{5,11}$/;
+
+		if(reg.test(oText.value)){
+			alert('合法')
+		}else{
+			alert('不合法')
+		}
+	}
+
+	//  \b 单词边界
+	var str1 = 'this is a fool';
+	var reg1 = /is/g;
+	var reg2 = /\bis\b/g;
+
+	console.log(str1);
+	console.log(str1.replace(reg1,'*'));
+	console.log(str1.replace(reg2,'*'));
+
+</script>
 </html>

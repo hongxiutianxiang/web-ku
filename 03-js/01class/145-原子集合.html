@@ -8,15 +8,25 @@
 	
 </body>
 <script>
-	var str1 = 'df13e45fgd1sf45sd$%&#'
+	var str1 = 'df13	e45fgd1sf45sd$%	&#'
 
 	var reg1 = /[0-9]/g;
-	var reg2 = /\d/g;
+	var reg2 = /\d/g; //  \d任意数字
 
 	var reg3 = /[^0-9]/g;
 	var reg4 = /\D/g;
 
-	var reg5 = //g;
+	var reg5 = /[0-9a-z]/g;
+	var reg6 = /\w/g; //  \w任意 数字 字母 下划线
+
+	var reg7 = /[^0-9a-z]/g;
+	var reg8 = /[\W]/g;
+
+	var reg9 = /[\t\n\f\r\v]/g;
+	var reg10 = /[\s]/g;
+
+	var reg11 = /[^\t\n\f\r\v]/g;
+	var reg12 = /[\S]/g;
 
 	console.log('1',str1.replace(reg1,'*'));
 	console.log('2',str1.replace(reg2,'*'));
@@ -27,5 +37,8 @@
 	console.log('7',str1.replace(reg7,'*'));
 	console.log('8',str1.replace(reg8,'*'));
 	console.log('9',str1.replace(reg9,'*'));
+	console.log('10',str1.replace(reg10,'*'));
+	console.log('11',str1.replace(reg11,'*'));
+	console.log('12',str1.replace(reg12,'*'));
 </script>
 </html>

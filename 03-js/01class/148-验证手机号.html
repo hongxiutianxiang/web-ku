@@ -5,6 +5,25 @@
 	<title>148-验证手机号</title>
 </head>
 <body>
+	<input type="text" id="text">
+	<input type="button" id="btn" value="检查">
 	
 </body>
+<script>
+	var oText = document.getElementById('text');
+	var oBtn = document.getElementById('btn');
+	
+	oBtn.onclick = function(){
+		
+		var reg = /^1[3|5|7|8]\d{9}$/;
+
+		if(reg.test(oText.value)){
+			alert('合法')
+		}else{
+			alert('不合法')
+		}
+		
+
+	}
+</script>
 </html>
