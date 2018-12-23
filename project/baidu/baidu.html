@@ -435,6 +435,16 @@
             aMsg[1].innerHTML = '请输入中国大陆手机号，其他用户看不见';
             aMsg[1].className = 'tiptext';
         } 
+        oPhone.onkeydown = function(ev){
+            var oEvent = ev || event;
+            console.log(ev.keyCode)
+            if((ev.keyCode<48 || ev.keyCode>57) && ev.keyCode != 37 && ev.keyCode != 39 && ev.keyCode != 8){
+                return false;
+            }
+            else if(oPhone.value.length>10){
+                return false;
+            }
+        }
     } 
     
 

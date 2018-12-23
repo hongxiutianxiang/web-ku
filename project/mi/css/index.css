@@ -16,6 +16,9 @@
 	color: #42423b;
 	margin: 0 0.5em;
 }
+.top .car{
+	position: relative;
+}
 .user-info-car{
 	float: right;
 	width: 120px;
@@ -28,6 +31,15 @@
 .iconfont.icon-car{
 	font-size: 18px;
 	vertical-align: -4px;
+}
+.top .car .empty-car{
+	position: absolute;
+	top: 40px;
+	right: 0;
+	width: 300px;
+	height: 100px;
+	background: red;
+	z-index: 999;
 }
 .user-info{
 	float: right;
