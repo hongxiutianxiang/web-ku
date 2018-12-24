@@ -5,15 +5,39 @@
 	<title>losding图标</title>
 	<style>
 		.loading{
+			position: relative;
+			width: 5px;
+			height: 21px;
+			background-color: #ff6700;
+			margin: 0 auto;
+			animation: loading-sport 0.4s linear 0.2s infinite alternate;
+		}
+		.loading:after,.loading:before{
+			position: absolute;
+			display: block;
+			content: '';
 			width: 5px;
 			height: 20px;
-			background: #ff6700;
+			background-color: #ff6700;
 		}
-		.loading:before,.loading:after{
-			width: 5px;
-			height: 7px;
-			background: #ff6700;
+		.loading:after{
+			left: 15px;
+			transform: scale(1,0.5);
+			animation: loading-sport 0.4s linear 0.1s infinite alternate;
 		}
+		.loading:before{
+			left: -15px;
+			transform: scale(1,0.5);
+			animation: loading-sport 0.4s linear 0.3s infinite alternate;
+		}
+		@keyframes loading-sport{
+			from{
+				transform: scale(1,0.5);
+			}
+			to{
+				transform: scale(1,1);
+			}
+		} 
 	</style>
 </head>
 <body>
