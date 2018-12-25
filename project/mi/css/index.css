@@ -231,6 +231,10 @@
 	position: relative;
 	height: 460px;
 }
+.home .home-banner .list-box{
+	position: relative;
+	height: 100%;
+}
 .home .home-banner .list{
 	position: absolute;
 	left: 0px;
@@ -257,15 +261,40 @@
 	float: right;
 }
 
+.home .home-banner .list-content{
+	position: absolute;
+	top: 0;
+	left: 234px;
+	min-width: 500px;
+	height: 460px;
+	background: #fff;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+	z-index: 2000;
+}
+.home .home-banner .list-content .list-content-item{
+	width: 248px;
+	height: 76px;
+	background: blue;
+	line-height: 76px;
+}
+.home .home-banner .list-content img{
+	width: 50px;
+	height:50px;
+	vertical-align: middle;
+}
+.home .home-banner .list-content span:hover{
+	color: #ff6700;
+}
 
 
+/*
 .home .home-banner .carousel{
 	position: absolute;
 	left: 0px;
 	top: 0px;
 	height: 100%;
 	width: 100%;
-	/*background: blue;*/
+	
 }
 .home .home-banner .carousel .carousel-item{
 	position: absolute;
@@ -315,6 +344,54 @@
 .home .home-banner .carousel-bot li:hover{
 	background: white;
 }
+*/
+.home .home-banner .carousel .leftArrow,.rightArrow{
+	position: absolute;
+	top: 50%;
+	width: 30px;
+	height: 60px;
+	line-height: 60px;
+	margin-top: -30px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	cursor: pointer;
+}
+.home .home-banner .carousel .leftArrow:hover,.rightArrow:hover{
+	background-color: rgba(0,0,0,0.5);
+}
+.home .home-banner .carousel .leftArrow{
+	left: 234px;
+}
+.home .home-banner .carousel .rightArrow{
+	right: 0;
+}
+.home .home-banner .carousel .bottomBtn{
+	position: absolute;
+	left: 90%;
+	bottom: 10px;
+}
+.home .home-banner .carousel .bottomBtn li{
+	float: left;
+	width: 5px;
+	height: 5px;
+	border: 2.5px solid gray;
+	background: #424242;
+	border-radius: 50%;
+	margin-left: 10px;
+}
+.home .home-banner .carousel .bottomBtn li.active{
+	background-color: #888;
+	border: 3px solid rgba(0,0,0);
+}
+
+
+
+
+
+
+
+
 .home .home-hot{
 	height: 170px;
 	margin: 14px 0 25px 0;

@@ -12,6 +12,7 @@
 
 handleCar();
 handleNav();
+handCarousel();
 
 //1.处理购物车
 function handleCar(){
@@ -124,4 +125,17 @@ function handleNav(){
 
 		oContent.innerHTML = html;
 	}
+}
+
+//处理首页轮播图
+function handCarousel(){
+	new Carousel({
+		id:'carousel',
+		img:['image/b1.jpg',
+				'image/b2.jpg',
+				'image/b3.jpg'],
+		width:1226,
+		height:460,
+
+	});
 }
