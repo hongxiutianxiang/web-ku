@@ -13,6 +13,8 @@
 handleCar();
 handleNav();
 handCarousel();
+handListContent();
+handleCountdown();
 
 //1.处理购物车
 function handleCar(){
@@ -138,4 +140,76 @@ function handCarousel(){
 		height:460,
 
 	});
+}
+
+
+//分类面板
+function handListContent(){
+	var aListItem = document.querySelectorAll('.list-box .list .list-item');
+	var oListContent = document.querySelector('.home .home-banner .list-content');
+	var oListBox = document.querySelector('.home-banner .list-box');
+	for(var i = 0;i<aListItem.length;i++){
+		aListItem[i].index = i;
+		aListItem[i].onmouseenter = function(){
+			oListContent.style.display = 'block';
+			for(var j = 0;j<aListItem.length;j++){
+				aListItem[j].className = 'list-item';
+			}
+			this.className = 'list-item active';
+			//加载数据
+			loadDate(this.index);
+		}
+	}
+	oListBox.onmouseleave = function(){
+		oListContent.style.display = 'none';
+		for(var j = 0;j<aListItem.length;j++){
+			aListItem[j].className = 'list-item';
+		}
+	}
+	function loadDate(index){
+		var date = aListItemDate[index];
+		var html = '<ul>';
+		for(var i = 0;i<date.length;i++){
+			html +=	'<li class="list-content-item">';
+			html +=		'<a href="'+date[i].url+'">';
+			html +=			'<img src="'+date[i].img+'" alt="">';
+			html +=			'<span>'+date[i].name+'</span>';
+			html +=		'</a>';
+			html +=	'</li>';
+		}
+
+		html += '</ul>';
+		oListContent.innerHTML = html;
+	}
+
+}
+
+
+//倒计时
+function handleCountdown(){
+	var oTimenum = document.querySelectorAll('.flash-bd .time .time-number');
+	var endDate = new Date('2018-12-27 14:23:56');
+	var timer = 0;
+	function toDouble(num){
+		return num > 9 ? ''+num : '0'+num;
+	}
+	function handleTimer(){
+		var endTime = endDate.getTime();
+		var allMinseconds = endTime - Date.now();
+		if(allMinseconds<0){
+			allMinseconds = 0;
+			clearInterval(timer);
+		}
+		var allSeconds = parseInt(allMinseconds /1000);
+		var iHour = parseInt(allSeconds / 3600);
+		var iMinute = parseInt((allSeconds % 3600) / 60);
+		var iSecond = (allSeconds % 3600) % 60;
+		oTimenum[0].innerHTML = toDouble(iHour);
+		oTimenum[1].innerHTML = toDouble(iMinute);
+		oTimenum[2].innerHTML = toDouble(iSecond);
+	}
+	handleTimer();
+	timer = setInterval(handleTimer,500);
+	
+
 }
