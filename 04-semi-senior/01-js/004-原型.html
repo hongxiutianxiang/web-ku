@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004-原型</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	console.log(person.prototype);
+	console.log(person.prototype.constructor);
+</script>
+</html>

@@ -492,8 +492,11 @@
 .home .home-flash .flash-bd .col1{
 	height: 100%;
 	background: #f1eded;
-	
+}
 
+
+.home .home-flash .flash-bd .col2{
+	overflow: hidden;
 }
 .home .home-flash .flash-bd .time{
 	text-align: center;
@@ -520,7 +523,9 @@
 .home .home-flash .flash-bd .col2{
 	height: 100%;
 }
-
+.home .home-flash .flash-bd .col2 .product-box{
+	transition: all 0.3s;
+}
 .home .home-flash .col2 .flash-product{
 	/*position: relative;
 	float: left;*/

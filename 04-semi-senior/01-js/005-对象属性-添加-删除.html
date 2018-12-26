@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005-对象属性-添加-删除</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.showName = function(){
+		console.log('I am' + this.name)
+	}
+	Person.prototype.showAge = function(){
+		console.log('I am' + this.age + 'years old')
+	}
+
+	Person.prototype.LEGS = 2;
+
+	var P1 = new Person('Tom',18);
+	console.log(P1);
+	P1.name = 'Jack';
+	console.log(P1);
+
+	var P2 = new Person('Roce',20);
+	P2.EYES = 2;
+	console.log(P2);
+
+</script>
+</html>

@@ -15,6 +15,8 @@ handleNav();
 handCarousel();
 handListContent();
 handleCountdown();
+handleFlashProduct();
+handleElecproduct();
 
 //1.处理购物车
 function handleCar(){
@@ -211,5 +213,85 @@ function handleCountdown(){
 	handleTimer();
 	timer = setInterval(handleTimer,500);
 	
+
+}
+
+
+//处理闪购商品
+function handleFlashProduct(){
+	var oProductBox = document.querySelector('.home-flash .col2 .product-box');
+	var aArrow = document.querySelectorAll('.home-flash .top .flash-arrow');
+	aArrow[0].onclick = function(){
+		oProductBox.style.marginLeft = '-992px';
+	}
+	aArrow[1].onclick = function(){
+		oProductBox.style.marginLeft = '0px';
+	}
+}
+
+
+
+//选项卡
+function handleElecproduct(){
+	var aTabItem = document.querySelectorAll('.electric-top .tab .tab-item');
+	var oProductBox =document.querySelector('.electric-bd .col2 .elec-product-box');
+	//初始化加载
+	loadDate(0);
+	for(var i = 0;i<aTabItem.length;i++){
+		aTabItem[i].index = i;
+		aTabItem[i].onmouseenter = function(){
+			for(var j = 0;j<aTabItem.length;j++){
+				aTabItem[j].className = 'tab-item';
+			}
+			this.className = 'tab-item active';
+			//加载数据
+			loadDate(this.index);
+		}
+	}
+	function loadDate(index){
+		var date = aElecItemDate[index];
+		console.log(date);
+		var html = '';
+
+		for(var i = 0;i<date.length-1;i++){
+			html += '<li class="product product-m phone-product">';
+			html += 	 '<a href="'+date[i].url+'">';
+			html += 		'<img src="'+date[i].img+'" alt="">';
+			html += 		'<h3>'+date[i].name+'</h3>';
+			html += 	'</a>';
+			html += 	'<p class="unibody">'+date[i].desc+'</p>';
+			html += 	'<p><strong>'+date[i].price+'</strong> <del>'+date[i].del+'</del></>';
+			if(date[i].flag){
+				html += 	'<div class="flag '+date[i].flag.name+'">'+date[i].flag.content+'</div>';
+			}
+			if(date[i].recomnde){
+				html += '<div class="recomnde">';
+				html += 	'<span class="recomnde-word">'+date[i].recomnde.recomndeWord+'</span>';
+				html += 	'<span class="author">'+date[i].recomnde.author+'</span>';
+				html += '</div>';
+			}
+			html += '</li>';
+		}
+
+		var lastDate = date[date.length-1];
+			html +=	'<li class="product product-m phone-product product-last">';
+			html +=		'<div class="more more-top">';
+			html +=			'<p class="name">'+date[i].top.name+'</p>';
+			html +=			'<p class="price">'+date[i].top.price+'</p>';
+			html +=			'<a href="'+date[i].top.url+'">';
+			html +=			'<img src="'+date[i].top.img+'" alt="">';
+			html +=			'</a>';
+			html +=		'</div>';
+			html +=		'<div class="more more-bottom">';
+			html +=			'<p class="view-more">'+date[i].bottom.txt+'</p>';
+			html +=			'<p class="view-hot">'+date[i].bottom.tag+'</p>';
+			html +=			'<a href="'+date[i].bottom.url+'"><i class="iconfont">&#xe615;</i></a>';
+			html +=		'</div>';
+			html +=	'</li>';
+		oProductBox.innerHTML = html;
+
+
+
+	}
 
 }

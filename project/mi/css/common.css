@@ -131,12 +131,11 @@ a:hover{
 	line-height: 60px;
 	margin-left: 30px;
 }
-.top .col2 .tab .tab-item:hover{
+.top .col2 .tab .tab-item.active{
 	color: #ff6700;
 	text-decoration: underline;
 	
 }
-
 
 
 
