@@ -8,6 +8,65 @@
 	
 </body>
 <script>
-	
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.showName = function(){
+		console.log('I am' + this.name)
+	}
+	Person.prototype.showAge = function(){
+		console.log('I am' + this.age + 'years old')
+	}
+
+	Person.prototype.LEGS = 2;
+
+	var P1 = new Person('Tom',18);
+	var P2 = new Person('Roce',20);
+
+	if(P1.hasOwnProperty('name')){
+		console.log(P1.name)
+	}else{
+		console.log('nothing....')
+	}
+
+	if(P1.hasOwnProperty('LEGS')){
+		console.log(P1.LEGS)
+	}else{
+		console.log('nothing....')
+	}
+
+	if('LEGS' in P1){
+		console.log(P1.LEGS)
+	}else{
+		console.log('nothing....')
+	}
+
+	if('name' in P1){
+		console.log(P1.name)
+	}else{
+		console.log('nothing....')
+	}
+
+
+
+
+	if(hasOwnPrototype(P1,'LEGS')){
+		console.log(P1.LEGS)
+	}else{
+		console.log('nothing....')
+	}
+	if(hasOwnPrototype(P1,'name')){
+		console.log(P1.name)
+	}else{
+		console.log('nothing....')
+	}
+	function hasOwnPrototype(obj,attr){
+		return !obj.hasOwnProperty(attr) && (attr in obj)
+	}
+
+
+
 </script>
 </html>

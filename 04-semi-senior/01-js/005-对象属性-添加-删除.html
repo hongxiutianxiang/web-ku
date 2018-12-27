@@ -29,7 +29,16 @@
 
 	var P2 = new Person('Roce',20);
 	P2.EYES = 2;
+	P2.LEGS = 4;
+	console.log(P2);
+	console.log(P2.LEGS);
+	console.log(P2.name);
+	console.log(delete P2.name);
+	console.log(P2.name);
 	console.log(P2);
 
+	console.log(P1.LEGS);
+	delete Person.prototype.LEGS;
+	console.log(P1.LEGS);
 </script>
 </html>
