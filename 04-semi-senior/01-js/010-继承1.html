@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-继承1</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.showName = function(){
+		console.log('I am ' + this.name)
+	}
+	Person.prototype.showAge = function(){
+		console.log('I am ' + this.age + ' years old')
+	}
+
+	Person.prototype.LEGS = 2;
+
+	var P1 = new Person('Tom',18);
+	console.log(P1);
+	P1.showName();
+	P1.showAge();
+
+
+
+	function Student(name,age,major){
+		this.name = name;
+		this.age = age;
+		this.major = major;
+	}
+
+	Student.prototype.showName = function(){
+		console.log('I am ' + this.name)
+	}
+	Student.prototype.showAge = function(){
+		console.log('I am ' + this.age + ' years old')
+	}
+	Student.prototype.showMajor = function(){
+		console.log('I am from ' + this.major)
+	}
+
+	Student.prototype.LEGS = 2;
+
+	var S1 = new Student('Jack',20,'art');
+	console.log(S1);
+	S1.showName();
+	S1.showAge();
+	S1.showMajor();
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-this指向.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(n1,n2){
+		console.log(this,n1,n2);
+	}
+
+	console.log(Person(1,2));
+	console.log(Person.call('somebody',1,2));
+	console.log(Person.apply('somebody',[1,2]));
+	console.log(Person.bind('somebody',1,2));
+
+	var fn = Person.bind('somebody',1,2);
+	fn(1,2)
+</script>
+</html>
