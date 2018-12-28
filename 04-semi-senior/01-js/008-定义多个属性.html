@@ -7,4 +7,45 @@
 <body>
 	
 </body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.showName = function(){
+		console.log('I am' + this.name)
+	}
+	Person.prototype.showAge = function(){
+		console.log('I am' + this.age + 'years old')
+	}
+
+	Person.prototype.LEGS = 2;
+
+	var P1 = new Person('Tom',18);
+
+	console.log('1',P1);
+
+
+	Object.defineProperties(
+		P1,{
+			EYES:{
+				value:2,
+				enumerable:true,
+				//writable:true,
+				configurable:true,
+				},
+			hands:{
+				value:2,
+				enumerable:true,
+				writable:true,
+				configurable:true,
+				}
+		 	});
+	P1.EYES = 4;
+	for(var attr in P1){
+		console.log(attr,P1[attr]);
+	}
+	console.log('4',delete P1.EYES);
+</script>
 </html>

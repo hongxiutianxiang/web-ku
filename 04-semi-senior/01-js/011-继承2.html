@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>010-继承1</title>
+	<title>011-继承2</title>
 </head>
 <body>
 	
@@ -12,14 +12,20 @@
 		this.name = name;
 		this.age = age;
 	}
-
+/*
 	Person.prototype.showName = function(){
 		console.log('I am ' + this.name)
 	}
+*/	
 	Person.prototype.showAge = function(){
 		console.log('I am ' + this.age + ' years old')
 	}
-
+	Object.defineProperty(Person.prototype,'showName',{
+		value:function(){
+			console.log('I am ' + this.name)
+		},
+		enumerable:true   //继承二的缺点：如果父类的方法不可枚举，子类就继承不到
+	})
 	Person.prototype.LEGS = 2;
 
 	var P1 = new Person('Tom',18);
@@ -37,16 +43,10 @@
 		this.major = major;
 	}
 
-/*
-	Student.prototype.showName = function(){
-		console.log('I am ' + this.name)
+	//Student.prototype = Person.prototype;//方法的继承一
+	for(var attr in Person.prototype){
+		Student.prototype[attr] = Person.prototype[attr]; //方法的继承二
 	}
-	Student.prototype.showAge = function(){
-		console.log('I am ' + this.age + ' years old')
-	}
-	Student.prototype.LEGS = 2;
-*/
-	Student.prototype = Person.prototype;//方法的继承
 
 	Student.prototype.showMajor = function(){
 		console.log('I am from ' + this.major)
@@ -59,13 +59,13 @@
 	S1.showName();
 	S1.showAge();
 	S1.showMajor();
-
-
-//缺点：父类会有子类的方法  如：
+	
 	var P2 = new Person('Leo',20,'cdf')	
 	console.log(P2);
 	P2.showName();
 	P2.showAge();
-	P2.showMajor();
+	P2.showMajor();//报错,正常，父类就是不应该用子类的方法
+	
+	
 </script>
 </html>
