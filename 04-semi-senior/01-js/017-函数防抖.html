@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>017-函数防抖</title>
+	<style>
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	function debounce(fn,delay){
+		var timer = 0;
+		return function(){
+			clearTimeout(timer);
+			timer = setInterval(fn,delay)
+		}
+	}
+
+	window.onscroll = debounce(function(){
+		console.log('aaa')
+	},500)
+</script>
+</html>

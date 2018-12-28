@@ -17,8 +17,10 @@
 		//2.初始化
 		this.init();
 		//3.绑定事件
+		this.bindEvent();
+
 	}
-	Drag.prototype.init =function(){
+	Drag.prototype.init = function(){
 		this.oBox = document.createElement('div');
 		this.oBox.style.position = 'absolute';
 		this.oBox.style.top = 0;
@@ -27,6 +29,12 @@
 		this.oBox.style.height = this.height + 'px';
 		this.oBox.style.background = this.background;
 		document.body.appendChild(this.oBox);
+	}
+	Drag.prototype.bindEvent = function(){
+		this.oBox.onmousedown = function(ev){
+			
+		}
+
 	}
 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016-函数的节流</title>
+	<style>
+		body{
+			width: 300px;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	function throttle(fn,wait){
+
+		var lastTime = Date.now();
+		return function(){
+			var currentTime = Date.now();
+			if(currentTime - lastTime > wait){
+				fn();
+				lastTime = Date.now();
+			}
+		}
+	}
+
+	window.onscroll = throttle(function(){
+		console.log('ccc')
+	},500)
+</script>
+</html>
