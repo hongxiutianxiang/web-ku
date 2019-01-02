@@ -5,6 +5,48 @@
 	<title>020-封闭空间的作用-构建对象</title>
 </head>
 <body>
-	
+	有问题
 </body>
+<script>
+	/*
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+	
+	Person.prototype.showName = function(){
+		console.log('I am ' + this.name)
+	}
+	Person.prototype.showAge = function(){
+		console.log('I am ' + this.age + ' years old')
+	}
+
+	Person.prototype.LEGS = 2;
+	*/
+
+	(function(w){
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+	
+	Person.prototype = {
+		constructor:Person,
+		LEGS:2,
+		showName : function(){
+			console.log('I am ' + this.name);
+		},
+		showAge : function(){
+			console.log('I am ' + this.age + ' years old');
+		}	
+	}
+	w.Person = Person;
+
+	})(window);
+
+
+	var P1 = new Person('Tom',18);
+	showAge();
+	showName();
+</script>
 </html>

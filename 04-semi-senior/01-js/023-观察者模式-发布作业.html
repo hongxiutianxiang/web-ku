@@ -9,7 +9,48 @@
 </body>
 <script>
 	(function(w){
-		
+		function Teacher(name){
+			this.name = name;
+			this.students = [];
+		}
+		Teacher.prototype = {
+			constructor:Teacher,
+			register:function(student){
+				this.students.push(student)
+			},
+			publish:function(task){
+				for(var i = 0;i<this.students.length;i++){
+					this.students[i].listen(task);
+				}
+			}
+		}
+
+		w.Teacher = Teacher;
 	})(window);
+
+	(function(w){
+		function Student(name,teacher){
+			this.name = name;
+			//teacher.students.push(this)
+			teacher.register(this)
+		}
+		Student.prototype = {
+			constructor:Student,
+			listen:function(task){
+				console.log(this.name + ' got task '+ task)
+			}
+			
+		}
+
+		w.Student = Student;
+	})(window);
+
+	var t1 = new Teacher('Tom');
+	console.log(t1);
+	var s1 = new Student('Leo',t1);
+	var s2 = new Student('Peter',t1);
+	console.log(s1);
+
+	t1.publish('coding...');
 </script>
 </html>
