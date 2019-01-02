@@ -28,7 +28,7 @@
 	oBox.onmousedown = function(ev){
 
 		oDistanceX = ev.clientX - oBox.offsetLeft;
-		oDistanceY = ev.clientY - oBox.offsetTop;
+		oDistanceY = ev.clientY - oBox.offsetTop;//记录鼠标在盒子中的位置
 		document.onmousemove = function(ev){
 
 			var l = ev.clientX - oDistanceX;

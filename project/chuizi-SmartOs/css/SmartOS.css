@@ -24,6 +24,7 @@ a{
 .top1{
 	border-bottom: 1px solid #2f3351;
 	background: #212750;
+	overflow: hidden;
 }
 .top1 .content{
 	position: relative;

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>1-2-碰撞检测</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background: blue;
+		}
+		#box2{
+			margin:200px auto;
+			width: 300px;
+			height: 300px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+
+	oBox1.onmousedown = function(ev){
+		var oDistancex = ev.clientX - oBox1.offsetLeft;
+		var oDistancey = ev.clientY - oBox1.offsetTop;
+		oBox1.onmousemove = function(ev){
+			oBox1.style.left = ev.clientX - oDistancex + 'px';
+			oBox1.style.top = ev.clientY - oDistancey + 'px';
+			console.log(ev.clientY - oDistancey)
+			console.log(oBox1.offsetHeight)
+			console.log(oBox2.offsetHeight)
+			if((ev.clientX - oDistancex + oBox1.offsetWidth > oBox2.offsetLeft)&&
+				(ev.clientY - oDistancey + oBox1.offsetHeight > oBox2.offsetTop)){
+				oBox2.style.background = 'red';
+			}else{
+				oBox2.style.background = 'green';
+			}
+			if(ev.clientX - oDistancex >oBox2.offsetLeft+oBox2.offsetWidth){
+				oBox2.style.background = 'green';
+			}
+			if(ev.clientY - oDistancey + oBox1.offsetHeight >oBox2.offsetHeight + oBox2.offsetHeight){
+				oBox2.style.background = 'green';
+			}
+		}
+		oBox1.onmouseup = function(){
+			oBox1.onmousemove = null;
+		}	
+	}
+</script>
+</html>
