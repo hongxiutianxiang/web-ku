@@ -9,9 +9,37 @@
 </body>
 <script>
 	var arr = [2,5,6,8,22,44,66,31,15];
-
+/*
 	arr1 = arr.forEach(function(value,index){
 		console.log(value,index)
-	})
+	});
+
+	var arr2 = arr.map(
+		function(value,index){
+			return value * 10;
+		}
+	);
+	console.log(arr2);
+
+	var arr3 = arr.filter(
+		function(value,index){
+			return value<10;
+		}
+	);
+	console.log(arr3);  
+*/
+	var arr4 = arr.every(
+		function(value,index){
+			return value > 10;
+		}
+	);
+	console.log(arr4);
+
+	var arr5 = arr.some(
+		function(value,index){
+			return value > 10;
+		}
+	);
+	console.log(arr5);
 </script>
 </html>
