@@ -15,8 +15,12 @@
 		var oAjax = new XMLHttpRequest();
 		//2.建立连接
 		oAjax.open('get','http://127.0.0.1:3000/029-nodeTest2.js',true);
-		//3.发送信息
+		//3.发送信息0
 		oAjax.send();
+		//4.监听事件接收数据
+		oAjax.onreadyatatechange = function(){
+			console.log(oAjax.readyState);
+		}
 	}
 	
 </script>
