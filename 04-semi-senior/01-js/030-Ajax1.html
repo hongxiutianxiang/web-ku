@@ -8,7 +8,16 @@
 	<button id="btn">获取数据</button>
 </body>
 <script>
-	var oAjax = new XMLHttpRequest();
-	oAjax.open()
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function(){
+		//1.生成Ajax对象
+		var oAjax = new XMLHttpRequest();
+		//2.建立连接
+		oAjax.open('get','http://127.0.0.1:3000/029-nodeTest2.js',true);
+		//3.发送信息
+		oAjax.send();
+	}
+	
 </script>
 </html>
