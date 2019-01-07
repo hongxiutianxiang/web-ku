@@ -2,20 +2,22 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>030-Ajax1</title>
+	<title>030-Ajax2</title>
 </head>
 <body>
+	<!--发送基本ajax请求-->
 	<button id="btn">获取数据</button>
 </body>
 <script>
 	var oBtn = document.getElementById('btn');
 
 	oBtn.onclick = function(){
+		
 		//1.生成Ajax对象
 		var oAjax = new XMLHttpRequest();
 		//2.建立连接
-		oAjax.open('get','http://127.0.0.1:3000/029-nodeTest2.js',true);
-		//3.发送信息0
+		oAjax.open('get','http://127.0.0.1:3000/029-server2.js',true);
+		//3.发送信息
 		oAjax.send();
 		//4.监听事件接收数据
 		oAjax.onreadyatatechange = function(){
