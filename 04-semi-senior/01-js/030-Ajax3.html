@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>030-Ajax2</title>
+	<title>030-Ajax3</title>
 </head>
 <body>
-	<!--发送基本ajax请求-->
-	<button id="btn">获取数据</button>
+	<!--发送基本ajax请求-post-->
+	<button id="btn">发送post请求</button>
 </body>
 <script>
 	var oBtn = document.getElementById('btn');
@@ -17,14 +17,14 @@
 		var oAjax = new XMLHttpRequest();
 		console.log(oAjax.readyState);//0
 		//2.建立连接
-		oAjax.open('GET','http://127.0.0.1:3000/031-data.json',true);
+		oAjax.open('POST','http://127.0.0.1:3000/031-data.json',true);
 		//3.发送信息
 		console.log(oAjax.readyState);//1
 
 		//可选，设置请求头
 		oAjax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 
-		oAjax.send();
+		oAjax.send('{"name":"Tom","age":20}');
 		//4.监听事件接收数据
 		oAjax.onreadystatechange = function(){
 			console.log(oAjax.readyState);//2 3 4
