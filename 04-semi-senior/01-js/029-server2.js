@@ -6,6 +6,13 @@ var server = http.createServer(function(req, res){
 	if(urlStr == '/favicon.ico'){
 		res.end('favicon.ico');
 	}
+	//参数处理
+	if(urlStr.search(/\?/)!=-1){
+		var parm = url.parse(urlStr,true).query;
+		//根据数据做处理
+		var json = JSON.stringify(parm);
+		res.end(json);
+	}
 	var filePath = './' + urlStr;
 	fs.readFile(filePath,function(err,date){
 		if(!err){
