@@ -75,6 +75,7 @@ body{
     border-top: 1px solid #dcdcdc;
     border-bottom: 1px solid #EEE;
 	box-shadow: 0 1px 2px 1px rgba(0,0,0,.03);
+	display: none;
 }
 .header-hide .content ul{
 	float: left;
@@ -216,15 +217,15 @@ body{
 
 
 
-
+/*
 .home{
 	margin-top: 20px;
 	height: 460px;
-	/*background: blue;*/
+	background: blue;
 }
 .home .content{
 	height: 460px;
-	/*background: gray;*/
+	background: gray;
 }
 .home .content .home-ground{
 	position: relative;
@@ -238,19 +239,7 @@ body{
 	top: 0;
 	border-radius: 7px;
 }
-/*.home .content .home-ground .image1{
-	animation: sport 10s linear infinite 0s;
-}
-@keyframes sport{
-	0%{
-		display: none;
-	}
-	50%{
-		display: inline-block;
-	}
-	100%{
-		display: none;
-}*/
+
 .home .content .home-ground .bot{
 	z-index: 4;
 	width: 9px;
@@ -271,8 +260,40 @@ position: absolute;
 	left: 570px;
 	bottom: 30px;
 }
-
-
+*/
+.home{
+	margin-top: 20px;
+}
+.home .content{
+	position: relative;
+	width: 1120px;
+	height: 460px;
+}
+.home img{
+	width: 100%;
+	height: 100%;
+	border-radius: 7px;
+}
+.bottomBtn{
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+}
+.bottomBtn li{
+	float: left;
+	width: 9px;
+	height: 9px;
+	background-color: #888;
+	border-radius: 50%;
+	border: 1px solid #757575;
+	margin-right: 5px;
+}
+.bottomBtn li.active{
+	width: 10px;
+	height: 10px;
+	background-color: #fff;
+	border: 1px solid #757575;
+}
 
 
 
