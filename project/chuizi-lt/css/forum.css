@@ -197,21 +197,24 @@ body{
 .top .content .serch .serch-select a{
 	color: #b7b9c7;
 }
-.top .content .serch .serch-select .serch-user{
+.top .content .serch .serch-user{
 	position: absolute;
 	top: 25px;
 	left: 0;
 	width: 68px;
 	height: 32px;
-	line-height: 35px;
+	line-height: 32px;
 	background: #ffe;
 	z-index: 1002;
 	box-shadow: 1px 1px 1px gray;
 	display: none;
 }
-.top .content .serch .serch-select .serch-user span{
+.top .content .serch .serch-user span{
 	margin-left: 8px;
 	font-size: 12px;
+}
+.top .content .serch .serch-user span:hover{
+	color: blue;
 }
 .top .content .serch .triangle{
 	float: left;
@@ -770,6 +773,17 @@ position: absolute;
 }
 .main .content .col2 .slect .brand{
 	position: relative;
+	/*width: 278px;
+	height: 38px;
+	color: gray;
+	background: #f0f0f0;
+	line-height: 38px;
+	margin-bottom: 20px;
+	border: 1px solid #b7b9c7;
+	border-radius: 7px;
+	cursor: pointer;*/
+}
+.main .content .col2 .slect .br{
 	width: 278px;
 	height: 38px;
 	color: gray;
@@ -780,8 +794,13 @@ position: absolute;
 	border-radius: 7px;
 	cursor: pointer;
 }
-.main .content .col2 .slect .brand span{
+.main .content .col2 .brand .brand-chose{
+	width: 100%;
+	height: 38px;
+}
+.main .content .col2 .brand .brand-chose span{
 	margin-left: 16px;
+	font-size: 14px;
 }
 .main .content .col2 .slect .triangle{
 	position: absolute;
@@ -789,11 +808,59 @@ position: absolute;
 	right: 12px;
 	width:0px;
 	height:0px;
+	margin: 8px 10px 0px 5px;
+}
+.main .content .col2 .slect .triangle-down{
 	border-top:6px solid #b7b9c7;
 	border-right:6px solid #f0f0f0;
 	border-bottom:6px solid #f0f0f0;
 	border-left:6px solid #f0f0f0;
-	margin: 8px 10px 0px 5px;
+}
+.main .content .col2 .slect .triangle-up{
+	border-top:6px solid #f0f0f0;
+	border-right:6px solid #f0f0f0;
+	border-bottom:6px solid #b7b9c7;
+	border-left:6px solid #f0f0f0;
+	margin: 3px 10px 0px 5px;
+}
+.main .content .col2 .brand .brand-content{
+	display: none;
+}
+.main .content .col2 .brand .brand-item{
+	position: relative;
+	z-index: 999;
+	background: #fff;
+	margin-left: -1px;
+	margin-bottom: 0;
+	border-radius: 0;
+}
+.main .content .col2 .brand .brand-item:nth-child(1){
+	
+	
+}
+.main .content .col2 .brand .brand-item:nth-child(2){
+	border-top: none;
+	border-bottom: none;
+	
+}
+.main .content .col2 .brand .brand-item:nth-child(3){
+	
+}
+.main .content .col2 .brand .brand-item:nth-child(4){
+	border-top: none;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+.main .content .col2  .brand-item img{
+	margin-left: 6px;
+    margin-top: -5px;
+    vertical-align: middle;
+}
+.main .content .col2  .brand-item span{
+	border-left: #E5E5E5 solid 1px;
+    margin-left: 12px;
+    padding-left: 15px;
+    font-size: 14px;
 }
 .main .content .col2 .slect .download{
 	float: right;

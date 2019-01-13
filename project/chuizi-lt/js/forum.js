@@ -3,6 +3,7 @@ handleSerchSelect();
 handCarousel();
 firstPlus();
 secondPlus();
+brandChose();
 
 function handleForumList(){
 	var oPlate = document.getElementById('plate');
@@ -17,45 +18,45 @@ function handleForumList(){
 }
 
 
-
-
-
-
-
 function handleSerchSelect(){
 	var oSelectBtn = document.querySelector('.select-btn');
 	var oSerchUser = document.querySelector('.serch-user');
+	var oSerchSelectCon = document.querySelector('.serch-select a');
 	var hideTimer = 0;
 
 	oSelectBtn.onclick = function(){
 		oSerchUser.style.display = 'block';
 	}
-	oSelectBtn.onmouseenter = function(){
-		if(oSerchUser.style.display == 'block'){
-			clearTimeout(hideTimer);
+	oSelectBtn.onmouseover = function(){
+		clearTimeout(hideTimer);
+		if(oSerchUser.style.display == 'block'){			
 			oSerchUser.style.display = 'block';
 		}
 	}
 	 oSelectBtn.onmouseleave = function(){
 		hideTimer = setTimeout(hide,500);
 	 }
-
+	 oSerchUser.onmouseenter = function(){
+		clearTimeout(hideTimer);
+		oSerchUser.style.display = 'block';
+	}
 	oSerchUser.onmouseleave = function(){
 		hideTimer = setTimeout(hide,500);
 	}
-	
-
+	oSelectBtn.onmouseenter = function(){
+		clearTimeout(hideTimer);		
+		if(oSerchUser.style.display == 'block'){		
+			oSerchUser.style.display = 'block';
+		}
+	}
+	oSerchUser.onclick = function(){
+		oSerchSelectCon.innerHTML = '用户';
+	}
 	
 	function hide(){
 		oSerchUser.style.display = 'none';
 	}
-
 }
-
-
-
-
-
 
 
 function handCarousel(){
@@ -110,6 +111,39 @@ function secondPlus(){
 			oSecondConsult.style.borderBottomLeftRadius = '7px';
 			oSecondConsult.style.borderBottomRightRadius = '7px';
 		}	
+	}
+}
+
+
+function brandChose(){
+	var oBrand = document.querySelector('.brand');
+	var oBrandChoseBtn = document.querySelector('.brand .brand-chose');
+	var oBrandContent = document.querySelector('.brand .brand-content');
+	var oTtiangle = document.querySelector('.col2 .slect .triangle');
+	var oBrandItem = document.querySelectorAll('.col2 .brand .brand-item');
+
+	oBrandChoseBtn.onclick = function(){
+		oBrand.style.borderBottomLeftRadius = '0';
+		oBrand.style.borderBottomRightRadius = '0';
+
+		if(oBrandContent.style.display == 'block'){
+			oBrandContent.style.display = 'none';
+			oTtiangle.className = 'triangle triangle-down';	
+		}else{
+			oBrandContent.style.display = 'block';
+			oTtiangle.className = 'triangle triangle-up';
+		}
+		
+		for(var i = 0;i<oBrandItem.length;i++){
+			// oBrandItem[i].index = i;
+			oBrandItem[i].onmouseover = function(){
+				for(var j = 0;j<oBrandItem.length;j++){
+					oBrandItem[j].style.backgroundColor = '';
+				}
+				this.style.backgroundColor = '#f5f5f5';
+				
+			}
+		}
 	}
 }
 
