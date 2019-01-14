@@ -109,7 +109,7 @@ a{
 	overflow: hidden;
 	width: 100%;
 	position: fixed;
-
+	z-index: 999;
 }
 .top2 .content{
 	height: 40px;
@@ -172,6 +172,7 @@ a{
 	height: 0;
 	overflow: hidden;
 	position: fixed;
+	z-index: 999;
 }
 .top3 .content{
 	position: relative;
@@ -345,6 +346,17 @@ a{
 	left: 16px;
 	width: 282px;
 	height: 568px;
+}
+.main .article .kind-item .video-box{
+	position: absolute;
+	top: 40px;
+	left: 16px;
+	width: 282px;
+	height: 568px;
+}
+.main .article .kind-item .video-box video{
+	width: 100%;
+	height: 100%;
 }
 .main .article .kind-item h4{
 	font-size: 18px;
