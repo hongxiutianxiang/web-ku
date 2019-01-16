@@ -33,7 +33,7 @@ Carousel.prototype.init = function(){
 	this.oUlBtn.className ='bottomBtn';
 	this.oUlBtn.style.zIndex = 99;
 	this.oUlBtn.style.marginLeft = - this.oUlBtn.offsetWidth * 0.5 + 'px';
-	console.log(this.oUlBtn.offsetWidth);//有问题
+	//console.log(this.oUlBtn.offsetWidth);//有问题
 	for(var i = 0;i<this.aImg.length;i++){
 		//生成图片的li标签
 		var oLi = document.createElement('li');
