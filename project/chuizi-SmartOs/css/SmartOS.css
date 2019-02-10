@@ -1,3 +1,4 @@
+
 a{
 	text-decoration: none;
 	font-size: 12px;
@@ -22,9 +23,11 @@ a{
 
 
 .top1{
-	border-bottom: 1px solid #2f3351;
+	/*border-bottom: 1px solid #2f3351;*/
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
 	background: #212750;
-	overflow: hidden;
+	position: relative;
+	z-index: 1000;	
 }
 .top1 .content{
 	position: relative;
@@ -74,8 +77,7 @@ a{
 .top1 .content .top1-shop .car{
 	margin-left: 38px;
 }
-.top1 .content .top1-shop .shop-list{
-	opacity: 0;
+.shop-list{
 	position: absolute;
 	top: 75px;
 	right: 0px;
@@ -84,37 +86,49 @@ a{
 	border-radius: 10px;
 	text-align: center;
 	background: #fff;
-	z-index: 999;
+	z-index: 9999;
+	display: none;
 	transition: all 0.3s linear;
 }
-.top1 .content .top1-shop .shop-list i{
+ .shop-list i{
 	font-size: 70px;
 	margin-top: 80px;
 	color: #aaa; 
 }
-.top1 .content .top1-shop .shop-list h3{
+.shop-list h3{
 	font-weight: bold;
 	margin-top: -30px;
 }
-.top1 .content .top1-shop .shop-list p{
+ .shop-list p{
 	color: #bcbcbc;
 	margin-top: -70px;
 }
-.top1 .top1-shop .car:hover~.shop-list{
-	opacity: 1;
-}
 .top2{
-	border-bottom: 1px solid #2f3351;
+	/*border-bottom: 1px solid #2f3351;*/
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
 	background: #212750;
 	overflow: hidden;
 	width: 100%;
 	position: fixed;
-
+	top: 100px;
+	left: 0;
+	z-index: 999;
 }
 .top2 .content{
+	position: relative;
 	height: 40px;
 	line-height: 40px;
-	/*background: pink;*/
+}
+.top2 .content .smart-logo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 110px;
+	height: 40px;
+	text-align: left;
+	color: rgb(88, 88, 88);
+	display: none;
+	/*background: blue;*/
 }
 .top2 .content .nav{
 	float: left;
@@ -166,12 +180,15 @@ a{
 
 
 .top3{
-	border-bottom: 1px solid #2f3351;
+	/*border-bottom: 1px solid #2f3351;*/
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 	background: #212750;
 	width: 100%;
-	height: 0;
-	overflow: hidden;
+	height: 0px;
 	position: fixed;
+	left: 0px;
+	top:40px;
+	z-index: 998;
 }
 .top3 .content{
 	position: relative;
@@ -186,21 +203,22 @@ a{
 	float: left;
 	
 }
-.top3 .content .nav .nav-item a{
+.top3 .content .nav .nav-item span{
 	display: inline-block;
 	margin-left: 70px;
 	font-size: 13px;
 	color: #bcbcbc;
+	cursor: pointer;
 }
-.top3 .content .nav .nav-item:first-child a{
+.top3 .content .nav .nav-item:first-child span{
 	margin-left: 0px;
 }
-.top3 .content .nav .nav-item:nth-child(2) a{
+.top3 .content .nav .nav-item:nth-child(2) span{
 	margin-left: 80px;
 	font-weight: bold;
 	color: #fff;
 }
-.top3 .content .nav .nav-item:nth-child(4) a{
+.top3 .content .nav .nav-item:nth-child(4) span{
 	margin-left: 100px;
 }
 .top3 .content .dot{
@@ -214,14 +232,18 @@ a{
 .top3 .content .dot .dot-item{
 	float: left;
 	width: 5px;
-	height: 15px;
+	height: 20px;
 	margin-left: 12px;
+	margin-top: -7px;
+	padding-top: 7px;
 	/*background: #green;*/
+	cursor: pointer;
 }
 .top3 .content .dot .dot-item .dot-item-shape{
 	width: 2px;
 	height: 2px;
 	background: #bcbcbc;
+	cursor: pointer;
 }
 .top3 .content .dot .dot-item:nth-child(1):hover~.dot-item-con1{
 	display: block;
@@ -247,6 +269,8 @@ a{
 	background: #fff;
 	border-radius: 5px;
 	padding: 0 15px;
+	z-index: 9999;
+	box-shadow: 0px 2px 3px rgba(150,150,150,0.9);
 }
 .top3 .content .dot.dot2{
 	top: 20px;
@@ -281,7 +305,7 @@ a{
 
 .main .picture{
 	width: 100%;
-	background: pink;
+	/*background: pink;*/
 }
 .main .picture .picture-item{
 	width: 100%;
@@ -345,6 +369,17 @@ a{
 	left: 16px;
 	width: 282px;
 	height: 568px;
+}
+.main .article .kind-item .video-box{
+	position: absolute;
+	top: 40px;
+	left: 16px;
+	width: 282px;
+	height: 568px;
+}
+.main .article .kind-item .video-box video{
+	width: 100%;
+	height: 100%;
 }
 .main .article .kind-item h4{
 	font-size: 18px;

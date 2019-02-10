@@ -208,30 +208,21 @@ function typeChose(){
 	var oBrandItem = document.querySelectorAll('.col2 .brand-type .brand-item');
 	var oFont1 = document.querySelectorAll('.brand .brand-chose span')[1];
 	var oFont0 = document.querySelectorAll('.brand .brand-chose span')[0];
-	var oMask1 = document.querySelectorAll('.brand .brand-chose span')[1];
+	var oMask1 = document.querySelectorAll('.main .content .col2 .mask')[1];
 	var oMask2 = document.querySelectorAll('.main .content .col2 .mask')[2];
 	
-
-
 	oBrandChoseBtn.onclick = function(){
 		oBrand.style.borderBottomLeftRadius = '0';
 		oBrand.style.borderBottomRightRadius = '0';
-
 		function back(){
 			for(var k = 0;k<oBrandContent.length;k++){
 				oBrandContent[k].style.display = 'none';
 			}
-			// oBrandContent[1].style.display = 'none';
 			oTtiangle.className = 'triangle triangle-down';	
 			oBrand.style.borderBottomLeftRadius = '7px';
 			oBrand.style.borderBottomRightRadius = '7px';
-			// oMask1.style.display = 'none';
-			// oMask2.style.display = 'none';
-			oMask1.style.height = 0;
-			oMask2.style.height = 0;
-		}
-
-		
+			
+		}		
 		for(var i = 0;i<oBrandItem.length;i++){
 			oBrandItem[i].index = i;
 			oBrandItem[i].onmouseover = function(){
@@ -243,40 +234,35 @@ function typeChose(){
 			oBrandItem[i].onclick = function(){
 				oFont1.innerHTML = this.innerHTML;				
 				back();
+				oMask1.style.height = 0;
+				oMask2.style.height = 0;
 			}
-
-
 			if(oBrandContent[1].style.display == 'block'){
 				back();
 			}else if(oFont0.innerHTML == '手机品牌： 小米'){
 				oBrandContent[1].style.display = 'block';
-				oTtiangle.className = 'triangle triangle-up';
-			}else{
-				//oMask1.style.cursor = ' not-allowed';
-
+				oTtiangle.className = 'triangle triangle-up';			
 			}
-
 			if(oBrandContent[2].style.display == 'block'){
 				back();
 			}else if(oFont0.innerHTML == '手机品牌： 一加'){
 				oBrandContent[2].style.display = 'block';
-				oTtiangle.className = 'triangle triangle-up';
+				oTtiangle.className = 'triangle triangle-up';			
 			}
-
 			if(oBrandContent[3].style.display == 'block'){
 				back();
 			}else if(oFont0.innerHTML == '手机品牌： Nexus'){
 				oBrandContent[3].style.display = 'block';
 				oTtiangle.className = 'triangle triangle-up';
+				
 			}
-
 			if(oBrandContent[4].style.display == 'block'){
 				back();
 			}else if(oFont0.innerHTML == '手机品牌： 三星'){
 				oBrandContent[4].style.display = 'block';
 				oTtiangle.className = 'triangle triangle-up';
+				
 			}
-			
 		}
 	}
 }
