@@ -25,6 +25,10 @@ a{
 }
 /*共通*/
 
+body{
+	height: 3000px;
+	background: #eee;
+}
 
 .top{
 	width: 100%;
@@ -231,10 +235,21 @@ a{
 
 
 
-
-.home .all-product{
+.home{
 	position: relative;
-	float: left;
+	width: 100%;
+	height: 520px;
+	background: pink;
+}
+.home .container{
+	position: relative;
+	background: yellow;
+	height: 38px;
+}
+.home .all-product{
+	position: absolute;
+	top: 0;
+	left: 0;
 	width: 190px;
 	height: 38px;
 	line-height: 38px;
@@ -276,8 +291,413 @@ a{
 	height: 38px;
 	line-height: 38px;
 	font-weight: bold;
+	margin-left: 190px;
 }
 .home .nav .nav-item{
 	float: left;
 	margin: 0 10px;
+}
+
+.home .poor .poor-img{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 170px;
+	height: 38px;
+}
+.home .poor .poor-img img{
+	width: 100%;
+	height: 100%;
+}
+.home .poor .poor-content{
+	position: absolute;
+	top: 38px;
+	right: 0;
+	width: 170px;
+	height: 482px;
+	/*background: gray;*/
+}
+.home .poor .poor-content .new{
+	width: 170px;
+	height: 155px;
+	/*background: skyblue;*/
+	padding-top: 11px;
+	border-bottom: 1px solid #f2f2f2;
+}
+.home .poor .poor-content .new .hi-logo{
+	width: 52px;
+	height: 52px;
+	margin: 0 59px;
+}
+.home .poor .poor-content .new .hi-logo img{
+	width: 100%;
+	height: 100%;
+}
+.home .poor .poor-content .new .hi{
+	width: 150px;
+	height: 24px;
+	text-align: center;
+	font-size: 13px;
+	margin: 8px 10px 0 10px;
+}
+.home .poor .poor-content .new .super{
+	width: 170px;
+	height: 22px;
+	margin: 6px 0 15px 0;
+}
+.home .poor .poor-content .new .super-button{
+	float: left;
+	width: 68px;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 7px;
+	border: 1px solid #F90;
+	color: #ffa114;
+	font-size: 13px;
+	text-align: center;
+}
+.home .poor .poor-content .new .enter{
+	width: 170px;
+	height: 18px;
+}
+.home .poor .poor-content .new .enter-button{
+	float: left;
+	width: 70px;
+	height: 18px;
+	margin: 0 7px 0 8px;
+	/*background: blue;*/
+}
+.home .poor .poor-content .roll{
+	width: 150px;
+	height: 145px;
+	margin: 11px 10px;
+	overflow: hidden;
+	/*background: yellow;*/
+}
+.home .poor .poor-content .roll .roll-item{
+	width: 150px;
+	height: 48px;
+}
+.home .poor .poor-content .roll .roll-item span:first-child{
+	color: #F90;
+}
+.home .poor .poor-content .life{
+	position: relative;
+	width: 170px;
+	height: 145px;
+	/*background: green;*/
+	border-top: 1px solid #f2f2f2
+}
+.home .poor .poor-content .life .line{
+	position: absolute;
+	top: 72px;
+	left: 0;
+	width: 170px;
+	height: 1px;
+	background: #f2f2f2;
+}
+.home .poor .poor-content .life-item{
+	float: left;
+	width: 56px;
+	height: 72px;
+	text-align: center;
+	border-right: 1px solid #f2f2f2;
+}
+.home .poor .poor-content .life-item:nth-child(3),
+.home .poor .poor-content .life-item:nth-child(6){
+	border-right: none;
+}
+.home .roll-ad{
+	position: absolute;
+	top: 390px;
+	left: 198px;
+	width: 816px;
+	height: 122px;
+	background: skyblue;
+}
+
+
+.main .part-one{
+	position: relative;
+	width: 1190px;
+	height: 373px;
+}
+.main .part-one .background{
+	width: 100%;
+	height: 100%;
+}
+.main .part-one .part-one-item-img{
+	position: absolute;
+	top: 160px;
+	width: 120px;
+	height: 120px;
+}
+.main .part-one .part-one-1{
+	left: 55px;
+}
+.main .part-one .part-one-2{
+	left: 295px;
+}
+.main .part-one .part-one-3{
+	left: 535px;
+}
+.main .part-one .part-one-4{
+	left: 775px;
+}
+.main .part-one .part-one-5{
+	left: 1015px;
+}
+.main .part-one .text{
+	position: absolute;
+	bottom: 23px;
+	width: 210px;
+	height: 56px;
+	text-align: center;
+}
+.main .part-one .text1{
+	left: 10px;
+}
+.main .part-one .text-top{
+	width: 210px;
+	height: 28px;
+	line-height: 28px;
+	font-size: 20px;
+	color: #fff;
+}
+.main .part-one .text-bottom{
+	width: 210px;
+	height: 22px;
+	line-height: 22px;
+	margin-top: 6px;
+	color: #F90;
+}
+.main .part-one .text2{
+	left: 250px;
+}
+.main .part-one .text3{
+	left: 490px;
+}
+.main .part-one .text4{
+	left: 732px;
+}
+.main .part-one .text5{
+	left: 971px;
+}
+
+
+.main .part-two{
+	width: 100%;
+	height: 307px;
+	margin-top: 20px;
+	background: pink;
+}
+.main .part-two .title{
+	width: 100%;
+	height: 46px;
+	border-bottom: 1px solid #e7e7e7;
+}
+.main .part-two .title img{
+	float: left;
+	width: 83px;
+	height: 20px;
+	margin: 14px 0 0 20px;
+}
+.main .part-two .title .next{
+	float: left;
+	height: 16px;
+	margin: 15px 0 0 20px;
+	font-size: 13px;
+}
+.main .part-two .title .time{
+	float: left;
+	height: 20px;
+	line-height: 20px;
+	margin: 14px 0 0 8px;
+}
+.main .part-two .title .time .time-number{
+	width: 20px;
+	height: 20px;
+	background: #333;
+	border-radius: 3px;
+	color: #fff;
+}
+.main .part-two .title .list{
+	float: left;
+	width: 579px;
+	height: 36px;
+	margin-left: 62px;
+}
+.main .part-two .title .list .list-item{
+	float: left;
+	width: 133px;
+	height: 24px;
+	line-height: 24px;
+	text-align: center;
+	margin: 12px 60px 0 0;
+}
+.now{
+	background-image: url(../images/title-beijing.png);
+}
+.main .title .more{
+	position: relative;
+	float: right;
+	color: #999;
+	margin: 13px 10px 0 0;
+	padding-right: 18px;
+}
+.main .title .more-arrow{
+	position: absolute;
+	right: 0;
+	top: 4px;
+	width: 15px;
+	height: 15px;
+	background: url(../images/all-logo.png) -561px -36px;
+}
+.main .part-two .list-content{
+	float: left;
+	width: 1000px;
+	height: 260px;
+	background: skyblue;
+}
+.main .part-two .list-content .content-item{
+	float: left;
+	width: 199px;
+	height: 240px;
+	border-right: 1px solid #e7e7e7;
+	margin-top: 10px;
+}
+.main .part-two .list-content .content-item img{
+	width: 159px;
+	height: 159px;
+	margin: 10px 20px;
+}
+.main .part-two .list-content .content-item .describe{
+	width: 156px;
+	height: 16px;
+	margin-left: 20px;
+	line-height: 16px;
+	overflow: hidden;
+	color: #333;
+}
+.main .part-two .list-content .content-item .describe:hover{
+	color: #F60;
+}
+.main .part-two .list-content .content-item .price-box{
+	height: 21px;
+	margin: 6px 0 0 20px;
+}
+.main .part-two .list-content .content-item .price-box .price{
+	line-height: 21px;
+	color: #F60;
+	font-size: 16px;
+	font-weight: bold;
+}
+.main .part-two .list-content .content-item .text{
+	margin-left: 20px;
+	color: #999;
+}
+.main .part-two .list-box .part-two-content6{
+	float: left;
+	width: 170px;
+	height: 240px;
+	margin: 10px;
+}
+.main .part-three{
+	height: 427px;
+	margin-top: 20px;
+	background: pink;
+}
+.main .part-three .content-area{
+	position: relative;
+	float: left;
+	width: 390px;
+	height: 427px;
+	background: #fff;
+	border-radius: 4px;
+}
+.main .part-three .content-area .title{
+	width: 100%;
+	height: 45px;
+	background: #f7faf9;
+}
+.main .part-three .content-area .title .little{
+	float: left;
+	width: 5px;
+	height: 20px;
+	margin-top: 12px;
+	background: #69a88f;
+}
+.main .part-three .content-area .title .text{
+	float: left;
+	font-weight: bold;
+	font-size: 18px;
+	line-height: 44px;
+	margin-left: 15px;
+	color: #69a88f;
+}
+.main .part-three .content-area .content-one-item{
+	float: left;
+	width: 350px;
+	height: 362px;
+	margin: 15px 20px;
+	/*background: pink;*/
+}
+.main .part-three .content-area .content-one-item .top-img{
+	width: 350px;
+	height: 150px;
+	border-radius: 2px;
+}
+.main .part-three .content-area .content-one-item .describe{
+	width: 350px;
+	height: 21px;
+	line-height: 21px;
+	overflow: hidden;
+	font-size: 18px;
+	text-align: center;
+	margin-top: 14px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.main .part-three .content-area .content-one-item .text{
+	height: 40px;
+	font-size: 14px;
+	line-height: 20px;
+	margin: 8px 0 11px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #999;
+}
+.main .part-three .content-area .content-one-item .bottom-img{
+	float: left;
+	width: 100px;
+	height: 100px;
+	margin-left: 16px;
+}
+.main .part-three .content-area .content-one-item .bottom-img img{
+	width: 100%;
+	height: 100%;
+}
+.main .part-three .content-area .content-one-item .page-box{
+	position: absolute;
+	bottom: 7px;
+	left: 0;
+	width: 390px;
+	height: 6px;
+	text-align: center;
+}
+.main .part-three .content-area .content-one-item .page{
+	margin-left: 160px;
+	width: 66px;
+	height: 6px;
+}
+.main .part-three .content-area .content-one-item .page-item{
+	float: left;
+	width: 12px;
+	height: 6px;
+	border-radius: 6px;
+	background: #d8d8d8;
+	margin-left: 10px;
+}
+.main .part-three .content-area .content-one-item .page-item:first-child{
+	background: #69a88f;
 }
