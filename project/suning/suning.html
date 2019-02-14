@@ -3,7 +3,10 @@
 <head>
 	<meta charset="UTF-8">
 	<title>suning</title>
+	<link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="resource/suning-icon/iconfont.css">
+	<link rel="stylesheet" href="resource/suning-icon补/iconfont.css">
 	<link rel="stylesheet" href="css/suning-index.css">
 </head>
 <body>
@@ -11,7 +14,11 @@
 		<div class="container">
 			<ul class="list-one">
 				<li class="list-one-item">
-					<a href="#"">网站导航</a>
+					<a href="#"">
+						网站导航
+						<i class="iconfont arrow">&#xe6f7;</i>
+					</a>
+					<i></i>
 					<div class="page-nav-wrap">
 						<ul>
 							<li class="spcial page-nav-item">
@@ -108,7 +115,10 @@
 					</div>
 				</li>
 				<li class="list-one-item">
-					<a href="#"">商家入驻</a>
+					<a href="#"">
+						商家入驻
+						<i class="iconfont arrow">&#xe6f7;</i>
+					</a>
 					<div class="merchant-wrap">
 						<ul>
 							<li class="spcial page-nav-item">
@@ -131,19 +141,64 @@
 						</ul>
 					</div>	
 				</li>
-				<li class="list-one-item"><a href="#"">客户服务</a></li>
-				<li class="list-one-item"><a href="#"">北京</a></li>
+				<li class="list-one-item">
+					<a href="#"">
+						客户服务
+						<i class="iconfont arrow">&#xe6f7;</i>
+					</a>
+					<div class="client-wrap merchant-wrap">
+						<ul>
+							<li class="spcial page-nav-item">
+								<ul class="merchant-item-one">
+									<li><a href="#">商家入驻</a></li>
+									<li><a href="#">苏宁卡</a></li>
+									<li><a href="#">易回收</a></li>
+									<li><a href="#">领券中心</a></li>
+									<li><a href="#">苏宁Outlets</a></li>
+									<li><a href="#">导购指南</a></li>
+								</ul>
+								<ul class="merchant-item-two">
+									<li><a href="#">入驻商家</a></li>
+									<li><a href="#">苏宁卡</a></li>
+									<li><a href="#">易回收</a></li>
+									<li><a href="#">领券中心</a></li>
+									<li><a href="#">导购指南</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li class="list-one-item">
+					<a href="#"">
+						<i class="iconfont location">&#xe665;</i>
+						北京
+					</a>
+					<i class="trangle"></i>
+				</li>
 			</ul>
 			<ul class="list-two">
 				<li class="list-two-item"><a href="#">请登录</a></li>
 				<li class="list-two-item"><a href="#">注册有礼</a></li>
-				<li class="list-two-item"><a href="#">我的订单</a></li>
-				<li class="list-two-item"><a href="#">我的易购</a></li>
+				<li class="list-two-item">
+					<a href="#">我的订单<i class="iconfont arrow">&#xe6f7;</i></a>
+				</li>
+				<li class="list-two-item">
+					<a href="#">我的易购<i class="iconfont arrow">&#xe6f7;</i></a>
+				</li>
 				<li class="list-two-item"><a href="#">苏宁会员</a></li>
-				<li class="list-two-item"><a href="#">购物车</a></li>
+				<li class="list-two-item">
+
+					<a href="#">
+						<i class="iconfont icon-cart">&#xe614;</i>
+						购物车
+					</a>
+					<i class="iconfont arrow">&#xe6f7;</i>
+				</li>
 				<li class="list-two-item"><a href="#">易付宝</a></li>
 				<li class="list-two-item"><a href="#">企业采购</a></li>
-				<li class="list-two-item"><a href="#">手机苏宁</a></li>
+				<li class="list-two-item">
+					<a href="#">手机苏宁<i class="iconfont arrow">&#xe6f7;</i></a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -151,13 +206,19 @@
 	<header class="header clearfix">
 		<div class="container">
 			<div class="suningyigou">
-				<img src="images/suningyigou.png" alt="">
+				<img class="yigou" src="images/suningyigou.png" alt="">
+				<img class="gif" src="images/gif.gif" alt="">
 			</div>
 		</div>
 		<div class="serch-wrap">
-			<div class="text">
-				<div class="remain"><a href="#">欢乐出行平安喜乐 爆款好货直降2000</a></div>
-				<input type="text">
+			<div class="text">	
+				<div class="input-box">
+					<i class="iconfont">&#xe616;</i>
+					<input type="text">
+					<div class="remain">
+						<a href="#">欢乐出行平安喜乐 爆款好货直降2000</a>
+					</div>
+				</div>				
 			</div>
 			<div class="serch-button">
 				<span>搜索</span>
@@ -183,7 +244,9 @@
 					<a>正在热搜中</a>
 					<div class="close">×</div>
 				</div>
-				<div class="picture"></div>
+				<div class="picture">
+					<img src="images/serch.png" alt="">
+				</div>
 				<ul class="serch-hot-content">
 					<li class="hot-content-item"><a href="href"#"">iphone</a></li>
 					<li class="hot-content-item serch-active"><a href="href"#"" class="serch-active">热水器</a></li>
@@ -216,7 +279,8 @@
 	<div class="home clearfix">
 		<div class="container">
 			<div class="all-product">
-				<span>全部商品分类</span>
+				<i class="iconfont">&#xe7f2;</i>
+				<span class="word">全部商品分类</span>
 				<div class="product-box">
 					<ul>
 						<li class="product-item">
@@ -497,7 +561,10 @@
 				<ul>
 					<li class="nav-item">限时抢购</li>
 					<li class="nav-item">红孩子</li>
-					<li class="nav-item">苏宁超市</li>
+					<li class="nav-item">
+						苏宁超市
+						<i class="hot"></i>
+					</li>
 					<li class="nav-item">电器城</li>
 					<li class="nav-item">生活家电</li>
 					<li class="nav-item">时尚服饰</li>
@@ -522,17 +589,13 @@
 							<div class="super-button">
 								<span>新人有礼</span>
 							</div>
-							<div class="super-button">
+							<div class="super-button super-button-right">
 								
 							</div>
 						</div>
 						<div class="enter">
-							<div class="enter-button">
-								
-							</div>
-							<div class="enter-button">
-								
-							</div>
+							<div class="enter-button enter-button-left"></div>
+							<div class="enter-button enter-button-right"></div>
 						</div>
 					</div>
 					<div class="roll">
@@ -567,27 +630,27 @@
 						<div class="line"></div>
 						<ul>
 							<li class="life-item">
-								<i></i>
+								<p class="iconfont">&#xe605;</p>
 								<a>话费</a>
 							</li>
 							<li class="life-item">
-								<i></i>
+								<p class="iconfont">&#xe608;</p>
 								<a>水电煤</a>
 							</li>
 							<li class="life-item">
-								<i></i>
+								<p class="iconfont">&#xe621;</p>
 								<a>苏宁卡</a>
 							</li>
 							<li class="life-item">
-								<i></i>
+								<p class="iconfont">&#xe61e;</p>
 								<a>理财</a>
 							</li>
 							<li class="life-item">
-								<i></i>
+								<p class="iconfont">&#xe653;</p>
 								<a>分期</a>
 							</li>
 							<li class="life-item">
-								<i></i>
+								<p class="iconfont">&#xe652;</p>
 								<a>苏宁公益</a>
 						</li>
 						</ul>
@@ -595,11 +658,10 @@
 				</div>
 			</div>
 
+			<div id="carousel" class="carousel"></div>	
 			<div class="roll-ad"></div>
 		</div>
-
-		
-		<div class="carousel"></div>
+	
 	</div>
 
 	<div class="main">
@@ -1314,15 +1376,200 @@
 	<footer class="foot">
 		<div class="foot-top">
 			<div class="container">
-			
+				<div class="service">
+					<ul>
+						<li class="service-item">
+							<img src="images/foot-top.jpg" alt="">
+							<p><strong>正品保障</strong></p>
+							<p><a href="#">正品保障、提供发票</a></p>
+						</li>
+						<li class="service-item">
+							<img src="images/foot-top.jpg" alt="">
+							<p><strong>正品保障</strong></p>
+							<p><a href="#">正品保障、提供发票</a></p>
+						</li>
+						<li class="service-item">
+							<img src="images/foot-top.jpg" alt="">
+							<p><strong>正品保障</strong></p>
+							<p><a href="#">正品保障、提供发票</a></p>
+						</li>
+						<li class="service-item">
+							<img src="images/foot-top.jpg" alt="">
+							<p><strong>正品保障</strong></p>
+							<p><a href="#">正品保障、提供发票</a></p>
+						</li>
+						<li class="service-item">
+							<img src="images/foot-top.jpg" alt="">
+							<p><strong>正品保障</strong></p>
+							<p><a href="#">正品保障、提供发票</a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="help">
+					<dl>
+						<dt>购物指南</dt>
+						<dd><a href="#">导购演示</a></dd>
+						<dd><a href="#">免费注册</a></dd>
+						<dd><a href="#">会员等级</a></dd>
+						<dd><a href="#">常见问题</a></dd>
+						<dd><a href="#">品牌大全</a></dd>
+						
+					</dl>
+					<dl>
+						<dt>购物指南</dt>
+						<dd><a href="#">导购演示</a></dd>
+						<dd><a href="#">免费注册</a></dd>
+						<dd><a href="#">会员等级</a></dd>
+						<dd><a href="#">常见问题</a></dd>
+						<dd><a href="#">品牌大全</a></dd>
+						
+					</dl>
+					<dl>
+						<dt>购物指南</dt>
+						<dd><a href="#">导购演示</a></dd>
+						<dd><a href="#">免费注册</a></dd>
+						<dd><a href="#">会员等级</a></dd>
+						<dd><a href="#">常见问题</a></dd>
+						<dd><a href="#">品牌大全</a></dd>
+						
+					</dl>
+					<dl>
+						<dt>购物指南</dt>
+						<dd><a href="#">导购演示</a></dd>
+						<dd><a href="#">免费注册</a></dd>
+						<dd><a href="#">会员等级</a></dd>
+						<dd><a href="#">常见问题</a></dd>
+						<dd><a href="#">品牌大全</a></dd>
+						
+					</dl>
+					<dl>
+						<dt>购物指南</dt>
+						<dd><a href="#">导购演示</a></dd>
+						<dd><a href="#">免费注册</a></dd>
+						<dd><a href="#">会员等级</a></dd>
+						<dd><a href="#">常见问题</a></dd>
+						<dd><a href="#">品牌大全</a></dd>
+						
+					</dl>
+				</div>
+				<div class="near">
+					<p>身边苏宁</p>
+					<a href="#">全国300多个城市，上万个门店和服务终端期待您的光临，为您提供最贴心的服务！</a>
+				</div>
 			</div>
 		</div>
 		<div class="foot-bottom">
 			<div class="container">
-			
+				<p class="first-line">
+					<a href="#">苏宁物联</a>
+					<span>|</span>
+					<a href="#">苏宁金融</a>
+					<span>|</span>
+					<a href="#">苏宁支付</a>
+					<span>|</span>
+					<a href="#">PP视频</a>
+					<span>|</span>
+					<a href="#">红孩子</a>
+					<span>|</span>
+					<a href="#">苏宁物流</a>
+					<span>|</span>
+					<a href="#">手机苏宁</a>
+					<span>|</span>
+					<a href="#">零售云</a>
+					<span>|</span>
+					<a href="#">苏宁云</a>
+					<span>|</span>
+					<a href="#">知识产权举报</a>
+					<span>|</span>
+					<a href="#">投资者关系</a>
+				</p>
+				<p class="first-line second-line">
+					<a href="#">联系我们</a>
+					<span>|</span>
+					<a href="#">诚聘英才</a>
+					<span>|</span>
+					<a href="#">供应商入驻</a>
+					<span>|</span>
+					<a href="#">广告平台</a>
+					<span>|</span>
+					<a href="#">苏宁联盟</a>
+					<span>|</span>
+					<a href="#">苏宁招标</a>
+					<span>|</span>
+					<a href="#">友情链接</a>
+					<span>|</span>
+					<a href="#">隐私声明</a>
+					<span>|</span>
+					<a href="#">用户体验提升计划</a>
+					<span>|</span>
+					<a href="#">股东会员认证</a>
+				</p>
+				<p class="third-line">
+					Copyright© 2002-2019，苏宁易购集团股份有限公司版权所有
+					<span>|</span>
+					<i class="iconfont">&#xe620;</i>
+					苏公网安备 32010202010078号
+					<span>|</span> 
+					苏ICP备10207551号-4
+				</p>
+				<p class="fouth-line third-line">
+					合字B2-20180025
+					<span>|</span> 
+					合字A1.B1.B2-20180017
+					<span>|</span> 
+					出版物经营许可证新出发苏批字第A-243号
+					<span>|</span> 
+					互联网药品信息服务资格证书（苏）-非经营性-2016-0005
+				</p>
+				<p class="fifth-line third-line">
+					经营证照
+					<span>|</span> 
+					医疗器械网络交易服务第三方平台备案凭证-（苏）网械平台备字（2018）第00052号
+					<span>|</span> 
+					网络文化经营许可证：苏网文〔2018〕10580-203号
+				</p>
+				<p class="six-line third-line">
+					本网站直接或间接向消费者推销商品或者服务的商业宣传均属于“广告”（包装及参数、售后保障等商品信息除外）
+				</p>
+				<div class="img-box">
+					<img src="images/foot-last.png" alt="">
+					<img src="images/foot-last.png" alt="">
+					<img src="images/foot-last.png" alt="">
+					<img src="images/foot-last.png" alt="">
+					<img src="images/foot-last.png" alt="">
+				</div>
+			</div>
+		</div>	
+	</footer>
+	<div class="aside">
+		<div class="aside-top">
+			<div class="blank"></div>
+			<div class="cart-container">
+				<div class="cart-box">
+					<p class="iconfont">&#xe614;</p>
+					<p class="text">购物车</p>
+					<p class="number">0</p>
+				</div>
+				<div class="message">
+					<i class="iconfont">&#xe957;</i>
+				</div>
+			</div>
+			<div class="aside-middle">
+				<p class="iconfont">&#xe6b0;</p>
+				<p class="iconfont">&#xe631;</p>
+				<p class="iconfont">&#xe654;</p>
+			</div>
+			<div class="aside-bottom">
+				<p class="iconfont erji">&#xe711;</p>
+				<p class="iconfont fankui">&#xe674;</p>
+				<p class="iconfont erweima">&#xe626;</p>
+				<a href="#" class="iconfont backtop">&#xe96c;</a>
 			</div>
 		</div>
-		
-	</footer>
+
+	</div>
 </body>
+<script src="js/util2.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/suning-index.js"></script>
 </html>
