@@ -332,6 +332,7 @@ body{
 	width: 190px;
 	height: 482px;
 	background: #252221;
+	z-index: 1002;
 }
 .home .all-product .product-box .product-item{
 	width: 175px;
@@ -341,7 +342,7 @@ body{
 	position: relative;
 	float: left;
 	line-height: 20px;
-	padding: 0 6px 0 7px;
+	padding: 0 8px 0 8px;
 	margin-top: 6px;
 }
 .home .all-product .product-box .product-item .product-item-content a{
@@ -377,6 +378,81 @@ body{
 	height: 17px;
 	background: url(../images/all-logo.png) -345px -213px;
 }
+
+.home .hide-content{
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 190px;
+	width: 999px;
+	min-height: 480px;
+	background: #fff;
+	z-index: 1000;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+}
+.home .hide-content .kind-box{
+	float: left;
+	width: 686px;
+	height: 24px;
+	margin: 10px 0 0 0;
+	overflow: hidden;
+	/*background: pink;*/
+}
+.home .hide-content .kind-box .kind-item{
+	float: left;
+	height: 24px;
+	margin-left: 25px;
+	padding: 0 10px;
+	line-height: 24px;
+	text-align: center;
+	background: #F90;
+}
+.home .hide-content .kind-box .kind-item a{
+	color: #fff;
+}
+.home .hide-content .list-box{
+	float: left;
+	width: 780px;
+	height: 437px;
+	margin: 10px 0 0 1px;
+	padding-left: 20px;
+	overflow: hidden;
+
+}
+.home .hide-content .list-box .list-item{
+	float: left;
+	width: 750px;
+	overflow: hidden;
+}
+.home .hide-content .list-box .list-item .list-item-title{
+	float: left;
+	width: 84px;
+	height: 20px;
+	line-height: 20px;
+	font-size: 13px;
+	font-weight: 700;
+	padding-left: 10px;
+	padding-top: 8px;
+}
+.home .hide-content .list-box .list-item .list-item-content{
+	float: left;
+	width: 650px;
+	/*line-height: 20px;*/
+	overflow: hidden;
+	border-bottom: 1px solid #eee;
+	margin-top: 8px;
+	padding-bottom: 5px;
+}
+.home .hide-content .list-box .list-item .list-item-content:last-child{
+	border-bottom: none;
+}
+.home .hide-content .list-box .list-item .list-item-content a{
+	display: inline-block;
+	margin-right: 15px;
+	line-height: 20px;
+}
+
 .home .poor .poor-img{
 	position: absolute;
 	top: 0;
@@ -511,7 +587,6 @@ body{
 }
 #carousel{
 	position: absolute;
-
 	top: 38px;
 	left: 190px;
 }

@@ -3,7 +3,7 @@
 handleNav();
 handleSerch();
 handCarousel();
-
+handleCate();
 
 
 
@@ -67,4 +67,67 @@ function handCarousel(){
 		height:482,
 		playDuration:4000,
 	});
+}
+
+function handleCate(){
+	var oCateItem = document.querySelectorAll('.all-product .product-box .product-item');
+	var oHideContent = document.querySelector('.home .hide-content');
+	var oProductBox = document.querySelector('.home .product-box');
+	var oHideBox = document.querySelector('.home .product-box .hide-box');
+
+	for(var i = 0;i<oCateItem.length;i++){
+		oCateItem[i].index = i;
+		oCateItem[i].onmouseenter = function(){
+			oHideContent.style.display = 'block';
+			//加载数据
+			loadData(this.index);
+		}
+	}
+
+	oProductBox.onmouseleave = function(){
+			oHideContent.style.display = 'none';
+		}
+	function loadData(index){
+		var data = aCateItemDate[index];
+		var html = '<div>';
+		for(var i = 0;i<data.length;i++){
+			html +=		'<div class="kind-box clearfix">'
+			html +=		'	<ul>'
+			html +=		'		<li class="kind-item"><a href="'+data[i].url+'">'+data[i].kindItem1+'</a></li>'
+			html +=		'		<li class="kind-item"><a href="'+data[i].url+'">'+data[i].kindItem2+'</a></li>'
+			html +=		'		<li class="kind-item"><a href="'+data[i].url+'">'+data[i].kindItem3+'</a></li>'
+			html +=		'		<li class="kind-item"><a href="'+data[i].url+'">'+data[i].kindItem4+'</a></li>'
+			html +=		'		<li class="kind-item"><a href="'+data[i].url+'">'+data[i].kindItem5+'</a></li>'
+			html +=		'		<li class="kind-item"><a href="'+data[i].url+'">'+data[i].kindItem6+'</a></li>'
+			html +=		'		<li class="kind-item"><a href="'+data[i].url+'">'+data[i].kindItem7+'</a></li>'		
+			html +=		'	</ul>'
+			html +=		'</div>'
+			html +=		'<div class="list-box">'
+			html +=		'	<ul>'
+			html +=		'		<li class="list-item">'
+			html +=		'			<div class="list-item-title">时尚女包</div>'
+			html +=		'			<div class="list-item-content">'
+			html +=		'				<a href="#">【情人节 每500减60】</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent1+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent2+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent3+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent4+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent5+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent6+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent7+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent8+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent9+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent10+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent11+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent12+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent13+'</a>'
+			html +=		'				<a href="#">'+data[i].listItemContent14+'</a>'
+			html +=		'			</div>'
+			html +=		'		</li>'
+			html +=		'</div>'
+		}
+		html += '</div>';
+		oHideBox.innerHTML = html;
+	}
+
 }
