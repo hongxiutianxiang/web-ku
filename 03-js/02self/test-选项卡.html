@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		li{
+			list-style: none;
+		}
+		.tab-list{
+			overflow: hidden;
+		}
+		.list-item{
+			float: left;
+			width: 100px;
+			height: 50px;
+			margin-right: 10px;
+			text-align: center;
+			line-height: 50px;
+			background: gray;
+			
+		}
+		.content-item{
+			margin-top: 20px;
+			margin-left: 110px;
+			width: 200px;
+			height: 300px;
+			background: pink;
+			text-align: center;
+			line-height: 300px;
+			font-size: 30px;
+			display: none;
+		}
+		.content-item:first-child{
+			display: block;
+		}
+		.active{
+			background: skyblue;
+		}
+	</style>
+</head>
+<body>
+	<ul class="tab-list">
+		<li class="list-item active">第一</li>
+		<li class="list-item">第二</li>
+		<li class="list-item">第三</li>
+		<li class="list-item">第四</li>
+	</ul>
+	<ul class="tab-content">
+		<li class="content-item">1</li>
+		<li class="content-item">2</li>
+		<li class="content-item">3</li>
+		<li class="content-item">4</li>
+	</ul>
+</body>
+<script>
+	var aListItem = document.querySelectorAll('.list-item');
+	var aContentItem = document.querySelectorAll('.content-item');
+
+	for(var i = 0;i<aListItem.length;i++){
+		aListItem[i].index = i;
+		aListItem[i].onclick = function(){
+			for(var j = 0;j<aListItem.length;j++){
+				aListItem[j].className = 'list-item';
+				aContentItem[j].style.display = 'none';
+			}
+			this.className = 'list-item active';
+			aContentItem[this.index].style.display = 'block';
+		}
+
+	}
+</script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>月历</title>
+	<style>
+		.month-box{
+			width: 210px;
+			overflow: hidden;
+		}
+		li{
+			float: left;
+			list-style: none;
+			width: 68px;
+			height: 88px;
+			background: skyblue;
+			border: 1px solid #000;
+			line-height: 88px;
+			text-align: center;
+			font-size: 25px;
+		}
+		.active{
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<ul class="month-box">
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+		<li>7</li>
+		<li>8</li>
+		<li>9</li>
+		<li>10</li>
+		<li>11</li>
+		<li>12</li>
+	</ul>
+	<h2>1月</h2>
+	<p>红色</p>
+</body>
+<script>
+	var aMonth = document.getElementsByTagName('li');
+	var oH2 = document.querySelector('h2');
+	var oP = document.querySelector('p');
+	var aColor = ['红色','黄色','白色','绿色','红色','黄色','白色','绿色','红色','黄色','白色','绿色'] ;
+
+	for(var i = 0;i<aMonth.length;i++){
+		aMonth[i].index = i;
+		aMonth[i].onmouseover = function(){
+			for(var j = 0;j<aMonth.length;j++){
+				aMonth[j].className = '';
+			}
+			this.className = 'active';
+			oH2.innerHTML = '<h2>' + (this.index + 1) + '月' +'</h2>'
+			oP.innerHTML = aColor[this.index];
+		}
+	}
+</script>
+</html>
