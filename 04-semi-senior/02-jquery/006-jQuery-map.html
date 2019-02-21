@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-jQuery-map</title>
+</head>
+<body>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	var arr1 = [1,2,3,4,5];
+	var likeArr = {0:'a',1:'b',2:'c',length:3};
+	var aDiv = document.getElementsByTagName('div');
+
+	var a = arr1.map(function(value,index){
+		return value;
+	})
+	console.log(a)
+
+	var b = $.map(arr1,function(value,index){
+		return value;
+	});
+	console.log(b);
+
+
+	// var c = likeArr.map(function(value,index){
+	// 	return value;
+	// })
+	// console.log(c);		//wrong
+	var d = $.map(likeArr,function(value,index){
+		return value;
+	})
+	console.log(d);
+
+	var e = $.map(aDiv,function(value,index){
+		return value;
+	})
+	console.log(e);
+
+</script>
+</html>

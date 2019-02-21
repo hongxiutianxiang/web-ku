@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007-jQuery-extend等其他</title>
+</head>
+<body>
+	
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	var obj1 = {name:'Jack',age:19,sex:'fale'};
+	var obj2 = {name:'Peter'};
+	var str1 = ' a b c '
+
+	var obj3 = $.extend({},obj1,obj2);
+	console.log(obj3);
+	console.log('obj1',obj1);
+
+	var obj4 = $.extend(obj1,obj2);
+	console.log(obj4);
+	console.log('obj1',obj1);
+
+	var str2 = $.trim(str1);
+	console.log(str2);
+
+	console.log($.isWindow(obj1));
+	console.log($.isWindow(window));
+
+</script>
+</html>

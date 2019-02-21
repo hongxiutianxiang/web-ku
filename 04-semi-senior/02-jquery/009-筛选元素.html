@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-筛选元素</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div>3</div>
+	<div>4</div>
+	<div><span>123</span></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	console.log($('div')[1]);//DOM对象
+	console.log($('div[1]'));//wrong
+	console.log($('div').eq(0));
+	console.log($('div:eq(1)'));
+	console.log($('div:empty'));
+	console.log($('div:parent'));
+	console.log($('div:contains(4)'));
+	console.log($('div:has(span)'));
+	console.log($('div').eq(0));
+	console.log($('div').siblings());
+</script>
+</html>
