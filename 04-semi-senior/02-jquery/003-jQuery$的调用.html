@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-jQuery$的调用</title>
+	<style>
+		div{
+			width: 80px;
+			height: 50px;
+			background: blue;
+			border: 1px solid #000;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button class=".btn">start</button>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').click(function(){
+			$('div').css({
+				background:'red',
+				height:'80px',
+			})
+		})
+	})
+
+	console.log($('btn'));
+	console.log('<h1>123</h1>')
+</script>
+</html>
