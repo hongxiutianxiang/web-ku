@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-操作代码-文本-值</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<input type="text">
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').eq(0).html('<h2>你好</h2>');
+		
+		$('div').eq(1).text('<h2>你好</h2>');
+		$('input').val('aaa');
+	})
+</script>
+</html>

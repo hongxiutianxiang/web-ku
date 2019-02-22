@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-操作class</title>
+	<style>
+		.box1{
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+		}
+		.box2{
+			background: pink;
+		}
+		.box3{
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">bingo</button>
+	
+	<div class="box1"></div>
+	<div class="box1 box2"></div>
+	<div class="box1 box2 box3"></div>
+	
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		//$('div').addClass('box1 box2 box3');
+		//$('div').removeClass('box1 box2 box3');
+		var oBtn = document.getElementById('btn');
+		oBtn.onclick = function(){
+			$('div').eq(0).toggleClass('box3');
+		}
+	})
+</script>
+</html>

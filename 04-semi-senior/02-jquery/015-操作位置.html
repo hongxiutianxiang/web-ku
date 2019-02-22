@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-操作位置</title>
+	<style>
+		.father{
+			width: 300px;
+			height: 300px;
+			background: pink;
+			margin:0 auto;
+			overflow: auto;
+			position: relative;
+		}
+		.son1{
+			position: absolute;
+			top: 50px;
+			left: 50px;
+			width: 100px;
+			height: 100px;
+			background: red;
+			z-index: 99;
+		}
+		.son2{
+			width: 1000px;
+			height: 1000px;
+			background: skyblue;	
+		}
+	</style>
+</head>
+<body>
+	<button>bingo</button>
+	<div class="father">
+		<div class="son1"></div>
+		<div class="son2"></div>
+	</div>
+</body>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+	$(function(){
+		$('.son1').offset({top:50,left:50});
+		console.log($('.son1').position());
+
+		var oBtn = document.querySelector('button');
+		oBtn.onclick = function(){
+			console.log($('.son1').scrollTop);
+		}
+		
+	})
+</script>
+</html>

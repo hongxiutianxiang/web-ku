@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-操作属性</title>
+</head>
+<body>
+	<input type="text" name="1" value="aa">
+	<input type="text" name="2">
+	<input type="checkbox" checked='checked'>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		// console.log($('input').attr('value'));
+		// console.log($('input').attr('name'));
+		// console.log($('input').attr('checked'));
+		// console.log($('input').prop('checked'));
+
+		//$('input').attr('value','qq ww');
+		$('input').prop('value','qq ww');
+	})
+
+</script>
+</html>
