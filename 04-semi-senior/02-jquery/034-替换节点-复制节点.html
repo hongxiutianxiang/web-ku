@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>034-替换节点-复制节点</title>
+</head>
+<body>
+	<button>替换a</button>
+	<button>替换b</button>
+	<button>复制a</button>
+	<button>复制b</button>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('click',function(){
+			console.log('div');
+		})
+
+		$('button').eq(0).on('click',function(){
+			var $h = $('<h1>hhh</h1>')
+			$('div').replaceWith($h);
+		});
+		$('button').eq(1).on('click',function(){
+			var $h = $('<h1>hhh</h1>')
+			$h.replaceAll($('div'));
+		});
+
+		$('button').eq(2).on('click',function(){
+			var $a = $('div').clone();
+			$('body').append($a);
+		})
+		$('button').eq(3).on('click',function(){
+			var $a = $('div').clone(true);
+			$('body').append($a);
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>031-延迟动画-动画的速度</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>start</button>
+	<button>stop</button>
+	<button>run</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').eq(0).on('click',function(){
+			$('div').delay(2000).animate({width:'+=100'},1000,function(){}).delay(2000)
+			$('div').animate({height:'+=100'},1000,function(){})
+			$('div').animate({opacity:0.5},1000,function(){})
+		});
+	});
+	$(function(){
+		$('button').eq(2).on('click',function(){
+			$('div').eq(0).animate({width:'+=1000'},1000,'linear',function(){})
+			$('div').eq(1).animate({width:'+=1000'},1000,function(){})
+		});
+
+		$('button').eq(1).on('click',function(){
+			$('div').stop(false,true);
+		});
+	})
+</script>
+</html>

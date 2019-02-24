@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028-动画的基本使用</title>
+	<style>
+		div{
+			width: 200px;
+			height: 200px;
+			background: red;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<button>start</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			$('div').animate(
+				{width:'+=20',height:'-=20'},1000,function(){
+				alert('over')
+			})
+		});
+	})
+</script>
+</html>

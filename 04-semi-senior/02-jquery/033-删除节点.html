@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>033-删除节点</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>a</button>
+	<button>b</button>
+	<button>c</button>
+	<div>
+		<p>hello</p>
+
+	</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').on('click',function(){
+			console.log('div');
+		});
+
+		$('button').eq(0).on('click',function(){
+			var $a = $('div').remove();
+			$('body').append($a)
+		});
+		$('button').eq(1).on('click',function(){
+			var $p = $('<p></p>')
+			$('div').empty();
+			$('div').append($p)
+		});
+		$('button').eq(2).on('click',function(){
+			var $a = $('div').detach();
+			$('body').append($a)
+		})
+	})
+</script>
+</html>
