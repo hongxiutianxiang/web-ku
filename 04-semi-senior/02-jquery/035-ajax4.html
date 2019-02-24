@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>035-ajax4</title>
+</head>
+<body>
+	<button>获取</button>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			$.ajax({
+			url:'035-data.json',
+			type:'post',
+			data:{name:'Jack',age:30},
+			dataType:'json',
+			success:function(back,status,jqXHR){
+				console.log(back,status,jqXHR)
+			},
+			error:function(jqXHR,status){
+				console.log(jqXHR,status)
+			},
+			complete:function(jqXHR,status){
+				console.log(jqXHR,status)
+			}
+		});
+		})
+		
+	})
+</script>
+</html>
