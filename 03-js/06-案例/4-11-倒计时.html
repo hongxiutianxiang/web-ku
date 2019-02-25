@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>4-11-倒计时</title>
+	<style>
+		#Countdown{
+			width: 600px;
+			height: 200px;
+			margin: 150px auto;
+			background: #000;
+			color: #fff;
+			font-size: 25px;
+			line-height: 200px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="Countdown"></div>
+</body>
+<script>
+	var oCountdown = document.getElementById('Countdown');
+	var endTime = new Date('2019-2-25 11:45:00');
+	var timer = 0;
+
+	function toDouble(num){
+		return num<10 ? num = '0'+num : num = ''+num;  
+	}
+
+	function handleTime(){
+		var allMinSeconds = endTime.getTime() - Date.now();
+
+		if(allMinSeconds<=0){
+			allMinSeconds = 0;
+			clearInterval(timer);
+		}
+
+		var allSeconds = allMinSeconds/1000;
+		var iHours = parseInt(allSeconds/3600);
+		var iMinutes = parseInt((allSeconds % 3600)/60);
+		var iSeconds = parseInt((allSeconds % 3600) % 60); 
+		oCountdown.innerHTML = '距离活动结束还有' + toDouble(iHours) + '小时' + toDouble(iMinutes) + '分钟' + toDouble(iSeconds) + '秒';
+	}
+	handleTime();
+	timer = setInterval(handleTime,500)
+
+</script>
+</html>
