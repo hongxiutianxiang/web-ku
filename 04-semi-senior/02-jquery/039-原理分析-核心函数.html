@@ -5,11 +5,41 @@
 	<title>039-原理分析-核心函数</title>
 </head>
 <body>
-	
+	<div id="box">1</div>
+	<div>2</div>
 </body>
-<script src="jquery-1.12.4.js"></script>
-<script src="kquery-1.00.0.js"></script>
+<!-- <script src="jquery-1.12.4.js"></script> -->
+<script src="kquery-1.0.0.js"></script>
 <script>
-	
+	//1.布尔值false
+	// console.log('1::',$(false));
+	// console.log('2::',$(''));
+	// console.log('3::',$(0));
+	// console.log('4::',$(undefined));
+	// console.log('5::',$(null));
+	// console.log('6::',$(NaN));
+	//2.函数
+	// console.log('2::',$(function(){
+	// 	console.log('123')
+	// }));
+	//3.字符串
+	// 3.1 html代码
+	// console.log('3.1::',$('<h1>标题</h1>'));
+	//3.2 选择器
+	// console.log('3.2::',$('div'));
+	//4. 数组
+	// 4.1 真数组
+	var arr = [1,5,5,6,8,7];
+	console.log('4.1::',$(arr));
+	// 4.2 假数组
+	var arrLike = {0:'a',1:'b',length:2};
+	console.log('4.2::',$(arrLike));
+	//5. 对象
+	//5.1 普通对象
+	var obj = {name:'Tom',age:30}
+	console.log('5.1::',$(obj))
+	//5.2 DOM对象
+	var oBox = document.getElementById('box');
+	console.log('5.2::',$(oBox))
 </script>
 </html>
