@@ -24,15 +24,25 @@
 </body>
 <script src="js/jquery-1.12.4.js"></script>
 <script>
-	;(function($){
-		$('button').eq(0).on('click',function(){
-			$('div').show();
-		});
-		$('button').eq(1).on('click',function(){
-			$('div').hide();
-		});
+	var slient = {
 
-	})(jQuery);
-	
+		show:function($elem){
+			$elem.show();
+		},
+
+		hide:function($elem){
+			$elem.hide();
+		}
+
+	}
+
+	var $elem = $('#box');
+
+	$('button').eq(0).on('click',function(){
+		slient.show($elem);
+	});
+	$('button').eq(1).on('click',function(){
+		slient.hide($elem);
+	});
 </script>
 </html>
