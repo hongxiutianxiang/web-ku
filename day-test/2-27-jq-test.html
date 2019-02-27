@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>2-27-jq-test</title>
+</head>
+<body>
+	<div class="box">
+		<ul class="list">
+			<li class="item1">li1</li>
+			<li class="item3">li3</li>
+			<li class="item7">li7</li>
+			<li class="item5">li5</li>
+		</ul>
+	</div>
+</body>
+<script src="../04-semi-senior/02-jquery/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var oLi6 = document.createElement('li');
+		oLi6.innerHTML = 'li6';
+		$('.list').append(oLi6);
+
+		var oLi4 = document.createElement('li');
+		oLi4.innerHTML = 'li4';
+		$('.item3').append(oLi4);
+
+		var oLi2 = document.createElement('li');
+		oLi2.innerHTML = 'li2';
+		$('.item1').after(oLi2);
+
+		$('.item7').remove();
+
+		var oLi0 = document.createElement('li');
+		oLi0.innerHTML = 'li0';
+		$('.list').prepend(oLi0);
+
+
+	})
+</script>
+</html>

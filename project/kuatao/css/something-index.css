@@ -26,6 +26,9 @@ a{
 .link:hover{
 	color: #F60;
 }
+.transition{
+	transition: all 0.5s;
+}
 /*共通*/
 
 body{
@@ -47,6 +50,16 @@ body{
 	text-align: center;
 	box-sizing: border-box;
 }
+.top .menu-active{
+	background: #fff;
+}
+.top .menu-active .hide-wrap{
+	display: block;
+}
+.top .menu-active .drapdown-arrow{
+	display: inline-block;
+	transform: rotateZ(180deg);
+}
 .top .list-one .list-one-item .location{
 	font-size: 14px;
 	color: #F90;
@@ -59,10 +72,10 @@ body{
 	border: 4px solid #f5f5f5;
 	border-top-color: #666;
 }
-.top .arrow{
+.top .drapdown-arrow{
 	font-size: 5px;
 }
-.top .list-two .arrow{
+.top .list-two .drapdown-arrow{
 	margin-left: 5px;
 }
 
@@ -86,7 +99,7 @@ body{
 	margin-right: 3px;
 	vertical-align: middle;
 }
-.top .list-one .page-nav-wrap{
+.top .page-nav-wrap{
 	display: none;
 	position: absolute;
 	top: 35px;
@@ -101,7 +114,7 @@ body{
 	padding-bottom: 0;
 	overflow: hidden;
 	padding-right: 0px;
-	z-index: 999;
+	z-index: 1005;
 }
 .top .list-one .page-nav-wrap .page-nav-item{
 	float: left;
@@ -128,12 +141,12 @@ body{
 .top .list-one .page-nav-wrap .page-nav-item .spcial-item-two li{
 	line-height: 30px;
 }
-.top .list-one .merchant-wrap{
+.top .merchant-wrap{
 	display: none;
 	position: absolute;
 	top: 35px;
 	left: -1px;
-	width: 140px;
+	width: 135px;
 	height: 140px;
 	background: #fff;
 	padding: 10px 28px 0 0px;
@@ -149,8 +162,8 @@ body{
 .top .list-one .merchant-wrap .merchant-item-two li{
 	line-height: 20px;	
 }
-.top .list-one .client-wrap{
-	left: -90px;
+.top .client-wrap{
+	left: -82px;
 }
 
 
