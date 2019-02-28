@@ -27,16 +27,38 @@
 	var slient = {
 
 		show:function($elem){
+			$elem.trigger('showing');
 			$elem.show();
+			$elem.trigger('shown');
 		},
 
 		hide:function($elem){
+			$elem.trigger('hiding');
 			$elem.hide();
+			$elem.trigger('hiden');
 		}
 
 	}
 
 	var $elem = $('#box');
+
+	// $elem.on('ab',function(){
+	// 	console.log('ab...')
+	// });
+	// $elem.on('abc',function(){
+	// 	console.log('abc...')
+	// });
+	$elem.on('showing shown hiding hiden',function(ev){
+		if(ev.type == 'showing'){
+			console.log('showing...')
+		}else if(ev.type == 'shown'){
+			console.log('shown...')
+		}else if(ev.type == 'hiding'){
+			console.log('hiding...')
+		}else if(ev.type == 'hiden'){
+			console.log('hiden...')
+		}
+	});
 
 	$('button').eq(0).on('click',function(){
 		slient.show($elem);
