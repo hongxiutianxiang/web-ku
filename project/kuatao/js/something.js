@@ -6,14 +6,7 @@
 // 	})
 // })(jQuery);
 ;(function($){
-	$('.drapdown-button')
-	.hover(function(){
-		var $this = $(this);
-		var activeClass = $this.data('active') + '-active';
-		$this.addClass(activeClass);
-	},function(){
-		var $this = $(this);
-		var activeClass = $this.data('active') + '-active';
-		$this.removeClass(activeClass);
-	})
+	$('.drapdown-button').dropdown({jser:true,mode:'slideDownUp'});
+	// $('.drapdown-button').on('dropdown-show dropdown-shown dropdown-hide dropdown-hidden'),
+	// 	console.log("::::",ev.type)
 })(jQuery);

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-1封装插件</title>
+	<style>
+		div{
+			width: 50px;
+			height: 50px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>00</button>
+	<div></div>
+	<div></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	;(function($){
+		$.fn.make = function(a,b){
+			if(!b){
+				console.log(this.css(a))
+			}else{
+				this.css(a,b)
+			}
+		}
+	})(jQuery);
+</script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+
+			$('div').make('width','100px')
+		})
+	})
+
+</script>
+</html>

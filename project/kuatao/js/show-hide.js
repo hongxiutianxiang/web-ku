@@ -183,14 +183,14 @@
 
 	var DEFAULTS = {
 		jser:true,
-		mode:'fade'
+		mode:'slideDownUp'
 	}
 	//注册插件
 	$.fn.extend({
 		showHide:function(options){
 			// console.log(this)
 			//1.隐式迭代
-			this.each(function(){
+			return this.each(function(){
 				//console.log(this)  DOM对象
 				var $elem = $(this);
 
