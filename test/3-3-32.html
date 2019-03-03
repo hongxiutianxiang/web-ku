@@ -13,6 +13,7 @@
 </head>
 <body>
 	<div>123</div>
+	<div>123</div>
 </body>
 <script src="jquery-1.12.4.js"></script>
 <script>
@@ -29,9 +30,10 @@
 	
 </script>
 <script>
-	(function($){
-		$('div').on('click',function(){
-			setColor();
+	$(function(){
+	$('div').on('click',function(){
+		console.log(this)
+		$('div').setColor();
 			console.log('000')
 		})
 	})

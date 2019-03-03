@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-3-12</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var name = 'Tom';
+	var object = {
+		name:'Leo',
+		getName:function(){
+			return function(){
+				return this.name;
+			}
+		}
+	}
+	var temp = object.getName();
+	console.log(temp());
+
+</script>
+</html>
