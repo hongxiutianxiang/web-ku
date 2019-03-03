@@ -186,34 +186,28 @@ body{
 	width: 540px;
 	height: 63px;
 	margin: 30px 0px;	
+	background: skyblue;
 }
-.header .serch-wrap .text .remain{
+.header .serch-wrap .remain{
 	position: absolute;
+
 	top: 8px;
 	left: 35px;
 }
-.header .serch-wrap .text .input-box{
+.header .serch-wrap .input-box{
 	position: relative;
 	float: left;
+	padding-left: 20px;
 	outline: none;
 	border: 2px solid #FA0;
 	width: 420px;
 	height: 40px;
 	box-sizing: border-box;
 }
-.header .serch-wrap .text .input-box .iconfont{
+.header .serch-wrap .input-box .iconfont{
 	position: absolute;
 	top: 10px;
 	left: 10px;
-}
-.header .serch-wrap .text .input-box input{
-	position: absolute;
-	top: 0;
-	left: 32px;
-	width: 388px;
-	height: 35px;
-	border: none;
-	outline: none;
 }
 .header .serch-wrap .serch-button{
 	float: left;
@@ -225,6 +219,7 @@ body{
 	color: #fff;
 	background: #FA0;
 	box-sizing: border-box;
+	outline: none;
 }
 .header .serch-wrap .serch-chose-item{
 	float: left;
