@@ -20,4 +20,15 @@
 			console.log(data)
 		})
 	})
+
+	var $search = $('.header .serch-wrap');
+	$search.search();
+
+
+	//焦点区域轮播图
+	var $focusCarousel = $('.carousel-wrap ');
+	$focusCarousel.carousel({});
+
+
+
 })(jQuery);
