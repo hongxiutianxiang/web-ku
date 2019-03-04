@@ -6,9 +6,18 @@
 // 	})
 // })(jQuery);
 ;(function($){
-	$('.drapdown-button').dropdown({jser:true,mode:'slideDownUp'});
-	$('.drapdown-button').on('dropdown-show dropdown-shown dropdown-hide dropdown-hidden',
-		function(ev){
-		 	console.log("::::",ev.type);
+	var $menuDropdown = $('.drapdown-button');
+	$menuDropdown.dropdown({
+			jser:true,
+			mode:'slideDownUp',
+			delay:100,
+		});
+	$menuDropdown.on('dropdown-show',function(ev){
+		var $elem = $(this);
+		var loadUrl = $elem.data('load');
+		if(!loadUrl) return; 
+		$.getJSON(loadUrl,function(data){
+			console.log(data)
 		})
+	})
 })(jQuery);

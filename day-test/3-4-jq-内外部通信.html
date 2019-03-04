@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-4</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<button>000</button>
+	<div></div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+	;(function($){
+		
+		var $elem = $('div');
+
+		$('button').on('click',function(){
+			$elem.data('status','none');
+			$elem.css({height:0});
+			$elem.data('status','shown');
+		})
+
+		$elem.data('status','none').trigger('none');
+		$elem.data('status','shown').trigger('shown');
+
+		$.elem.on('none','shown',function(){
+			if(ev.type == 'none'){
+				console.log('none...')
+			}else if(ev.type == 'shown'){
+				console.log('shown...')
+			}
+		})
+
+		// function none(){
+		// 	console.log('none')
+		// }
+		// function shown(){
+		// 	console.log('shown')
+		// }
+
+		
+
+		
+	})(jQuery);
+
+	
+</script>
+</html>

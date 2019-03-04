@@ -165,6 +165,16 @@ body{
 .top .client-wrap{
 	left: -82px;
 }
+.dropdown-loading{
+	width: 50px;
+	height: 50px;
+	background-image: url(../images/ad.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+
+
 
 
 .header{
