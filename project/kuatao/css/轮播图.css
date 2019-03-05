@@ -4,7 +4,7 @@
 	height: 482px;
 	margin-top: 50px;
 	margin-left: 50px;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 .carousel-wrap .carousel-item{
 	position: absolute;
@@ -56,6 +56,7 @@
 }
 .carousel-wrap.fade .carousel-item{
 	display: none;
+	position: absolute;
 }
 .carousel-wrap.slide .carousel-item{
 	left:100%;

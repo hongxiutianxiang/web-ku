@@ -25,9 +25,9 @@ Set.prototype = {
 
 		this.$box2.on('click',function(){
 			console.log('123',this.$box2)
-			this.$box2.css({'left':this.options.left});
-			this.$box2.css({'top':this.options.top});
-			// this._back();
+			// this.$box2.css({'left':this.options.left});
+			// this.$box2.css({'top':this.options.top});
+			this._back();
 		}.bind(this));
 		
 	},
@@ -38,6 +38,9 @@ Set.prototype = {
 		if(firstLeft != 0){
 			this.$box2.css('left',0)
 			this.$box2.css('top',0)
+		}else{
+			this.$box2.css({'left':this.options.left});
+			this.$box2.css({'top':this.options.top});
 		}
 
 	}
