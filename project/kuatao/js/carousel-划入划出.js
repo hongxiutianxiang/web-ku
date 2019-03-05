@@ -41,7 +41,6 @@ Carousel.prototype = {
 			
 			this.tab = this._fade;
 
-			
 		}
 
 		//显示默认的指示按钮
@@ -64,6 +63,7 @@ Carousel.prototype = {
 		this.$btns.on('click',function(){
 			_this.tab(_this.$btns.index($(this)));
 		});
+		
 
 		//自动播放
 		if(this.options.interval){
@@ -91,7 +91,7 @@ Carousel.prototype = {
 		//1把即将显示的放入容器的左边或右边
 		this.$carouselItem.eq(index).css({left:direction * this.itemWidth});
 		//2把当前的移出容器
-		this.$carouselItem.eq(this.now).css('x',-1 * direction * this.itemWidth);
+		this.$carouselItem.eq(this.now).move('x',-1 * direction * this.itemWidth);
 		//3把即将显示的放入容器
 		this.$carouselItem.eq(index).move('x',0)
 

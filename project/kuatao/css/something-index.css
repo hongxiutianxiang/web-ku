@@ -608,15 +608,13 @@ body{
 }
 
 
-
-
-
 .carousel-wrap{
 	position: absolute;
-	top: 40px;
-	left: 200px;
-	background: blue;
-	/*overflow: hidden;*/
+	top: 38px;
+	left: 190px;
+	width: 830px;
+	height: 482px;
+	overflow: hidden;
 }
 .carousel-wrap .carousel-item{
 	position: absolute;
@@ -627,9 +625,8 @@ body{
 }
 .carousel-wrap .btns{
 	position: absolute;
-	left:500px;
-	top: 400px;
-	/*bottom: 0px;*/
+	left:50%;
+	bottom: 20px;
 }
 .carousel-wrap .btn-item{
 	float: left;
