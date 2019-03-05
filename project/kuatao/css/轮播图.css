@@ -34,7 +34,7 @@
 }
 
 .carousel-wrap .control {
-	display: block;
+	display: none;
 	position: absolute;
 	top:50%;
 	width: 30px;

@@ -7,8 +7,10 @@ function Carousel($elem,options){
 	this.options = options;
 	this.now = this.options.activeIndex;
 	this.$carouselItem = this.$elem.find('.carousel-item');
+	this.itemNum = this.$carouselItem.length;
 	this.$btns = this.$elem.find('.btn-item');
 	this.$controlBtns = this.$elem.find('.control');
+	this.timer = 0;
 	//2.初始化
 	this.init();
 }
@@ -29,36 +31,68 @@ Carousel.prototype = {
 			//监听事件
 			this.$elem
 			.hover(function(){//显示隐藏左右按钮
-				// this.$controlBtns.show();
+				this.$controlBtns.show();
 			}.bind(this),function(){
-				// this.$controlBtns.hide();
+				this.$controlBtns.hide();
 			}.bind(this))
 			.on('click','.control-left',function(){
-				this._fade(this.now-1)
+				this._fade(this._getCorrectIndex(this.now-1))
 			}.bind(this))
 			.on('click','.control-right',function(){
-				this._fade(this.now+1)
+				this._fade(this._getCorrectIndex(this.now+1))
 			}.bind(this))
+
+			//监听底部指示按钮
+			var _this = this;
+			this.$btns.on('click',function(){
+				_this._fade(_this.$btns.index($(this)));
+			});
+
+			//自动播放
+			if(this.options.interval){
+				this.autoplay();
+				this.$elem.hover($.proxy(this.pause,this),$.proxy(this.autoplay,this))
+			}
+
+
 		}
 	},
 	_fade:function(index){
 		//index 代表即将显示的
+		if(this.now == index) return;
 		//隐藏当前的
 		this.$carouselItem.eq(this.now).showHide('hide');
 		//显示即将显示的
 		this.$carouselItem.eq(index).showHide('show');
 		//处理底部指示按钮
 		this.$btns.eq(this.now).removeClass('active');
-		this.$btns.eq(index).removeClass('active');
+		this.$btns.eq(index).addClass('active');
 
 		this.now = index;
+	},
+	_getCorrectIndex:function(index){
+		if(index < 0) return this.itemNum - 1;
+		if(index >= this.itemNum) return 0;
+		return index;
+	},
+	autoplay:function(){
+		this.timer = setInterval(function(){
+			this.$controlBtns.eq(1).trigger('click')
+		}.bind(this),this.options.interval)
+	},
+	pause:function(){
+		clearInterval(this.timer);
 	}
+
+
+
 }
 Carousel.DEFAULTS = {
 	jser:true,
 	mode:'fade',
 	slide:false,
 	activeIndex:0,
+	interval:1000,
 }
 
 
@@ -77,7 +111,6 @@ $.fn.extend({
 				carousel[options]();
 			}
 
-			
 		});
 	}
 })
