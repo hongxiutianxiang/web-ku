@@ -20,24 +20,40 @@ Carousel.prototype = {
 		var _this = this;
 
 		if(this.options.slide){//划入划出
-			console.log('slide...')
 			//隐藏所有页面
 			this.$elem.addClass('slide');
 			//显示默认的第一张
 			this.$carouselItem.eq(this.now).css({left:0});
 			this.itemWidth = this.$carouselItem.eq(this.now).width();
+
+			// this.$carouselItem.on('move',function(ev){
+			// 	console.log(_this.$carouselItem.index(this),ev.type)
+			// })
+			this.$carouselItem.on('move',function(ev){
+				var qqindex = _this.$carouselItem.index(this);
+				if(_this.now != qqindex){
+					_this.$elem.trigger('carousel-show',[qqindex,this])
+				}
+			})
+
 			//初始化移动插件
 			this.$carouselItem.move(this.options);
 
 			this.tab = this._slide;
 			
 		}else{//淡入淡出
-			
+			console.log('fade...')
 			//隐藏所有页面
 			this.$elem.addClass('fade');
 			//显示默认的第一张
 			this.$carouselItem.eq(this.now).show();
-			
+
+			// this.$carouselItem.on('showing shown hiding hided',function(ev){
+			// 	console.log(_this.$carouselItem.index(this),ev.type)
+			// })
+			this.$carouselItem.on('showing',function(ev){
+				_this.$elem.trigger('carousel-show',[_this.$carouselItem.index(this),this])
+			})
 			//初始化显示隐藏插件
 			this.$carouselItem.showHide(this.options);
 			
@@ -135,7 +151,7 @@ Carousel.prototype = {
 Carousel.DEFAULTS = {
 	jser:true,
 	mode:'fade',
-	slide:false,
+	slide:true,
 	activeIndex:0,
 	// interval:1000,
 }

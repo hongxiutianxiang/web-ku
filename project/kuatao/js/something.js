@@ -27,6 +27,9 @@
 
 	//焦点区域轮播图
 	var $focusCarousel = $('.carousel-wrap ');
+	$focusCarousel.on('carousel-show',function(ev,index,elem){
+		console.log('carousel-show',index,elem)
+	})
 	$focusCarousel.carousel({});
 
 
