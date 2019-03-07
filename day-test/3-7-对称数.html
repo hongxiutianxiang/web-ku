@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-7-对称数</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// var arr1 = [];
+	// function some(num){
+	// 	for(var i = 1;i <= num;i++){
+	// 		arr1.push(i)
+	// 	}
+	// }
+	// some(10000);
+	// console.log(arr1)
+
+	function some(start,end){
+		for(var i = start;i<end+1;i++){
+			var num = i.toString().split("").reverse().join("");
+			if(num == i ){
+				console.log(i)
+			}
+		}
+		
+	};
+	some(1,10000)
+
+	
+</script>
+</html>

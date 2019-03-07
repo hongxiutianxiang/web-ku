@@ -1,4 +1,3 @@
-
 ;(function($){
 
 function Carousel($elem,options){
@@ -11,7 +10,6 @@ function Carousel($elem,options){
 	this.$btns = this.$elem.find('.btn-item');
 	this.$controlBtns = this.$elem.find('.control');
 	this.timer = 0;
-	//2.初始化
 	this.init();
 }
 Carousel.prototype = {
