@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08-显示和隐藏-左右卷入卷出-淡入淡出的左右卷入卷出-共通</title>
+	<style>
+		button{
+			width: 80px;
+			height: 50px;
+			margin-right: 20px;
+		}
+		.box{
+			width: 300px;
+			height: 300px;
+			padding: 20px;
+			border: 10px solid #ff9;
+			background: pink;
+			margin-top: 20px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div class="box"></div>
+	<div class="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/show-hide.js"></script>
+<script>
+
+var $elem = $('.box');
+//1.初始化
+$elem.showHide();
+
+$elem.on('showing shown hiding hided',function(ev){
+	if(ev.type == 'showing'){
+		console.log('showing...')
+	}else if(ev.type == 'shown'){
+		console.log('shown...')
+	}else if(ev.type == 'hiding'){
+		console.log('hiding...')
+	}else if(ev.type == 'hided'){
+		console.log('hided...')
+	}
+});
+
+$('button').eq(0).on('click',function(){
+	$elem.showHide('show')
+});
+$('button').eq(1).on('click',function(){
+	$elem.showHide('hide')
+});
+
+</script>
+</html>

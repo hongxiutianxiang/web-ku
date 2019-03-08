@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>13-移动插件测试</title>
+	<style>
+		button{
+			width: 80px;
+			height: 50px;
+		}
+		.box{
+			position: absolute;
+			left: 0;
+			top: 120px;
+			width: 100px;
+			height: 100px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<button>复原</button>
+	<button>移动</button>
+	<div class="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script src="js/move.js"></script>
+<script>
+;(function($){
+	
+
+
+	var $elem = $('.box');
+	$elem.move({js:true})
+
+	$elem.on('move moved',function(ev){
+		console.log(ev.type)
+	});
+
+	$('button').eq(0).on('click',function(){
+		// move.to(0,120);
+		//move.x(0)
+		// move.y(100)
+
+		$elem.move('to',0,100)
+	});
+
+	$('button').eq(1).on('click',function(){
+		// move.to(100,200)
+		//move.x(100)
+		// move.y(200)
+		$elem.move('to',100,200)
+	});
+})(jQuery);
+
+
+</script>
+</html>

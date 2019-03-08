@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+</head>
+<body>
+	<canvas></canvas>
+</body>
+<script>
+	var oCanvas = document.querySelector('canvas');
+
+	oCanvas.width = 800;
+	oCanvas.height = 500;
+
+	var ctx = oCanvas.getContext('2d');
+
+	ctx.moveTo(0,0);
+	ctx.lineTo(100,100);
+	ctx.lineTo(150,200);
+	ctx.lineTo(250,100);
+	ctx.strokeStyle = 'red';
+	ctx.lineWidth = 1;
+	ctx.fillStyle = 'pink';
+	ctx.closePath();
+	ctx.stroke();
+	ctx.fill();
+
+
+</script>
+</html>

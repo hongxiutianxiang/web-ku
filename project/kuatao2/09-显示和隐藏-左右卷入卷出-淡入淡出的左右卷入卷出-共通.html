@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08-显示和隐藏-左右卷入卷出-淡入淡出的左右卷入卷出-共通</title>
+	<style>
+		button{
+			width: 80px;
+			height: 50px;
+			margin-right: 20px;
+		}
+		#box{
+			width: 300px;
+			height: 300px;
+			padding: 20px;
+			border: 10px solid #ff9;
+			background: pink;
+			margin-top: 20px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button>显示</button>
+	<button>隐藏</button>
+	<div id="box"></div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+
+function initer($elem,hiddenCb){
+	if($elem.is(':hidden')){
+		$elem.data('status','hidden');
+		typeof hiddenCb == 'function' && hiddenCb();
+	}else{
+		$elem.data('status','shown')
+	}
+}
+function shower($elem,cb){
+	if($elem.data('status') == 'shown') return;
+	if($elem.data('status') == 'showing') return;//防止显示过程点击
+	$elem.data('status','showing').trigger('showing');
+	cb();
+}
+function hider($elem,cb){
+	if($elem.data('status') == 'hidden') return;
+	if($elem.data('status') == 'hiding') return;
+	$elem.data('status','hiding').trigger('hiding');
+	cb()
+}
+
+var slient = {
+	init:initer,
+	show:function($elem){
+		shower($elem,function(){
+			$elem.show();
+			$elem.trigger('shown').data('status','shown');
+		})
+		
+	},
+
+	hide:function($elem){
+		hider($elem,function(){
+			$elem.hide();
+			$elem.trigger('hided').data('status','hidden');
+		})
+
+	}
+}
+
+var jser={
+	fade:{
+		init:function($elem){
+			jser._init($elem)
+		},
+		show:function($elem){
+			jser._show($elem,'fadeIn');
+		},
+		hide:function($elem){
+			jser._hide($elem,'fadeOut');
+		}
+	},
+	slideDownUp:{
+		init:function($elem){
+			jser._init($elem)
+		},
+		show:function($elem){
+			jser._show($elem,'slideDown');
+		},
+		hide:function($elem){
+			jser._hide($elem,'slideUp');
+		}
+	},
+	slideLeftRight:{
+		init:function($elem){
+			jser._customInit($elem,{
+					width:0,
+					paddingLeft:0,
+					paddingRight:0,
+					borderLeftWidth:0,
+					borderRightWidth:0
+				});
+			},
+		show:function($elem){
+			jser._customShow($elem);
+		},
+		hide:function($elem){
+			jser._customHide($elem,{
+				width:0,
+				paddingLeft:0,
+				paddingRight:0,
+				borderLeftWidth:0,
+				borderRightWidth:0
+			});
+		}
+	},
+	FadeSlideLeftRight:{
+		init:function($elem){
+			jser._customInit($elem,{
+					width:0,
+					paddingLeft:0,
+					paddingRight:0,
+					borderLeftWidth:0,
+					borderRightWidth:0,
+					opacity:0,
+				});
+			},
+		show:function($elem){
+			jser._customShow($elem);
+		},
+		hide:function($elem){
+			jser._customHide($elem,{
+				width:0,
+				paddingLeft:0,
+				paddingRight:0,
+				borderLeftWidth:0,
+				borderRightWidth:0,
+				opacity:0,
+			});
+		}
+	},
+}
+
+jser._init = function($elem){
+	$elem.removeClass('transition');
+	initer($elem);
+}
+jser._show = function($elem,mode){
+	shower($elem,function(){
+		$elem.stop();
+		$elem[mode](function(){
+			$elem.trigger('shown').data('status','shown');
+		});
+	});
+}
+jser._hide = function($elem,mode){
+	hider($elem,function(){
+		$elem.stop();
+		$elem[mode](function(){
+			$elem.trigger('hided').data('status','hidden');
+		});
+	})
+}
+jser._customInit = function($elem,options){
+	$elem.removeClass('transition');
+	// initer($elem);
+	//1.保存原始值
+	var styles = {};
+
+	for(var key in options){
+		styles[key] = $elem.css(key)
+	}
+
+	$elem.data('stylesbb',styles);
+	
+	//2.如果是隐藏的话，把水平方向的值改为0
+	initer($elem,function(){
+		$elem.css(options)
+	})
+}
+jser._customShow = function($elem){
+	shower($elem,function(){
+		$elem.show();//display = block
+		$elem.stop()
+		.animate($elem.data('stylesbb'),function(){
+			$elem.trigger('shown').data('status','shown');
+		});
+	});
+}
+jser._customHide = function($elem,options){
+	hider($elem,function(){
+		$elem.stop()
+		.animate(options,function(){
+			$elem.hide();//display = none
+			$elem.trigger('hided').data('status','hidden');
+		})
+	})
+}
+
+
+
+var $elem = $('#box');
+
+$elem.on('showing shown hiding hided',function(ev){
+	if(ev.type == 'showing'){
+		console.log('showing...')
+	}else if(ev.type == 'shown'){
+		console.log('shown...')
+	}else if(ev.type == 'hiding'){
+		console.log('hiding...')
+	}else if(ev.type == 'hided'){
+		console.log('hided...')
+	}
+	
+});
+
+
+// slient.init($elem);
+// $('button').eq(0).on('click',function(){
+// 	slient.show($elem);
+// });
+// $('button').eq(1).on('click',function(){
+// 	slient.hide($elem);
+// });
+
+// jser.fade.init($elem);
+// $('button').eq(0).on('click',function(){
+// 	jser.fade.show($elem);
+// });
+// $('button').eq(1).on('click',function(){
+// 	jser.fade.hide($elem);
+// });
+
+// jser.slideDownUp.init($elem);
+// $('button').eq(0).on('click',function(){
+// 	jser.slideDownUp.show($elem);
+// });
+// $('button').eq(1).on('click',function(){
+// 	jser.slideDownUp.hide($elem);
+// });
+
+//左右卷入卷出
+// jser.slideLeftRight.init($elem);
+// $('button').eq(0).on('click',function(){
+// 	jser.slideLeftRight.show($elem);
+// });
+// $('button').eq(1).on('click',function(){
+// 	jser.slideLeftRight.hide($elem);
+// });
+
+//淡入淡出的卷入卷出
+jser.FadeSlideLeftRight.init($elem);
+$('button').eq(0).on('click',function(){
+	jser.FadeSlideLeftRight.show($elem);
+});
+$('button').eq(1).on('click',function(){
+	jser.FadeSlideLeftRight.hide($elem);
+});
+
+
+
+
+
+</script>
+</html>
