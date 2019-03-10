@@ -16,3 +16,22 @@
   background: pink;
   color: #0000ff;
 }
+.box3 {
+  width: 100px !important;
+  height: 100px !important;
+  margin-top: 10px !important;
+  background: pink !important;
+  color: #0000ff !important;
+}
+.box3 li {
+  background: blue;
+}
+.box3 li a {
+  color: yellow;
+}
+.box3 li:hover {
+  background: skyblue;
+}
+.box4 {
+  width: 100px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3-10-6</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// var n = 100;
+	// function aa(){
+	// 	return n += 1;
+	// }
+	
+	// console.log(aa());
+
+
+	function f1(){
+		var n = 100;
+		nAdd = function(){
+			n += 1;
+		}
+		function f2(){
+			return n;
+		}
+		return f2;
+	}
+	var result = f1();
+	console.log(result());
+	console.log(nAdd());
+	console.log(result());
+
+
+
+</script>
+</html>

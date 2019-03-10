@@ -14,3 +14,22 @@
 .box2{
 	.box1;
 }
+.box3{
+	.box1 !important;
+	li{
+		background: blue;
+		a{
+			color: yellow;
+		}
+		&:hover{
+			background: skyblue;
+		}
+	}
+}
+
+.set(@attr,@val){
+	@{attr}:unit(@val,px)
+}
+.box4{
+	.set(width,100)
+}
