@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.box1 {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  background: pink;
+  color: #0000ff;
+}
+.box2 {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  background: pink;
+  color: #0000ff;
+}
+.box3 {
+  width: 100px !important;
+  height: 100px !important;
+  margin-top: 10px !important;
+  background: pink !important;
+  color: #0000ff !important;
+}
+.box3 li {
+  background: blue;
+}
+.box3 li a {
+  color: yellow;
+}
+.box3 li:hover {
+  background: skyblue;
+}
+.box4 {
+  width: 100px;
+}
+.box5 {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 30px;
+  border-color: transparent transparent #ff0000 transparent;
+}
