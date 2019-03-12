@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>019-圣杯布局</title>
+	<style>
+		body{
+			background: #ccc;
+
+			display: flex;
+
+			flex-direction: column;
+
+		}
+		header{
+			background: pink;
+			height: 5vw;
+		}
+		section{
+			background: #fff;
+			display: flex;
+			flex-direction: row;
+			flex-grow: 1;
+		}
+		nav{
+			background: blue;
+
+		}
+		.main{
+			background: yellow;
+		}
+		.aside{
+			background: red;
+
+		}
+		footer{
+			background: green;
+			height: 5vw;
+		}
+	</style>
+</head>
+<body>
+	<header>header</header>
+	<section>
+		<nav>nav</nav>
+		<div class="main">main</div>
+		<div class="aside">aside</div>
+	</section>
+	<footer>footer</footer>
+</body>
+</html>

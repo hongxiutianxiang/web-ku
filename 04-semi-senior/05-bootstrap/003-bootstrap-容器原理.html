@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-bootstrap-容器原理</title>
+	<style>
+		body{
+			display: flex;
+			justify-content: center;
+		}
+		.container{
+			width: 800px;
+			height: 100px;
+			background: blue;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container"></div>
+</body>
+<script>
+	var oContainer = document.querySelector('.container');
+
+	var iWidth = win.body.clientWidth || doc.documentElement.clientWidth;
+	function relise(){
+		if(iWidth>=1200){
+			oContainer.style.width = 1170 + 'px';
+		}
+		if(iWidth<1200){
+			oContainer.style.width = 970 + 'px';
+		}
+		if(iWidth<992){
+			oContainer.style.width = 750 + 'px';
+		}
+		if(iWidth<768){
+			oContainer.style.width = 100%;
+		}
+	}
+
+	
+</script>
+</html>
