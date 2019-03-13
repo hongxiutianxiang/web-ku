@@ -1,0 +1,37 @@
+#kz-navbar{
+	/*background: transparent;*/
+	opacity: 0.5;
+}
+#kz-navbar .link:hover{
+	text-decoration: none;
+	color: #ff6788;
+}
+#kz-navbar .navbar-brand{
+	margin-right: 20px;
+}
+#kz-navbar .navbar-nav .active a{
+	color: #ff6788;
+	background: transparent;
+}
+#kz-navbar .navbar-nav a{
+	font-size: 16px;
+	margin-right: 20px;
+}
+
+
+
+.main{
+	margin-top: 70px;
+	height: 3000px;
+}
+.main #carousel-example-generic{
+	margin-bottom: 20px;
+}
+.main #carousel-example-generic img{
+	width: 100%;
+	height: 500px !important;
+}
+.col-md-4 .ad img{
+	width: 100%;
+	height: 250px;
+}
