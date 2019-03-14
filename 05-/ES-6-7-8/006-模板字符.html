@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-模板字符</title>
+</head>
+<body>
+	<button>bingo</button>
+</body>
+<script>
+	let oBtn = document.querySelector('button');
+	var name = 'Tom';
+
+	oBtn.onclick = function(){
+		
+		let html = `<ul>
+		<li>${name}</li>
+		<li>${name}</li>
+		</ul>`
+		document.innerHTML = html;
+	}
+</script>
+</html>

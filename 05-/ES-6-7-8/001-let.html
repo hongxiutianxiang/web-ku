@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-let</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let a = 1;
+	//let a = 2;    Identifier 'a' has already been declared
+	//console.log(a)
+
+	//console.log(b);  // b is not defined
+	let b = 1;
+
+	function fn1(){
+		var c = 1;
+		function fn2(){
+			c = 2;
+			console.log(c)
+		};
+		console.log(c)
+		fn2();
+		console.log(c)
+	}
+	//fn1();
+
+	function fn3(){
+		let d = 1;
+		console.log(d);
+		function fn4(){
+			d = 2;
+			console.log(d);
+		}
+		fn4();
+	}
+	fn3();
+	
+</script>
+</html>

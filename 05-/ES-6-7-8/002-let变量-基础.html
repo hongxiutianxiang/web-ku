@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002-let变量-基础</title>
+</head>
+<body>
+	<button>1</button>
+	<button>2</button>
+	<button>3</button>
+	<button>4</button>
+</body>
+<script>
+	var aBtns = document.getElementsByTagName('button');
+
+	// for(var i = 0;i<aBtns.length;i++){
+	// 	aBtns[i].index = i;
+	// 	aBtns[i].onclick = function(){
+	// 		 console.log(this.index)
+	// 	}
+	// }
+	// console.log(i)
+
+	// for(var i = 0;i<aBtns.length;i++){
+	// 	;(function(i){
+	// 		aBtns[i].onclick = function(){
+	// 		 console.log(i)
+	// 	}
+	// 	})(i);
+		
+	// }
+	// console.log(i)
+
+	for(let i = 0;i<aBtns.length;i++){
+			aBtns[i].onclick = function(){
+			 console.log(i)
+		}
+	}
+	//console.log(i)  //ReferenceError: i is not defined
+</script>
+</html>

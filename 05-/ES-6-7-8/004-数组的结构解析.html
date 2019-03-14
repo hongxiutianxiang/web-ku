@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004-数组的结构解析</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let [a,b,c] = [1,2,3];
+	console.log(a,b,c)
+
+	let [d,[e,f],g] = [1,[2,3],4];
+	console.log(d,e,f,g)
+
+	let [h,[i,j],k = 99] = [1,[2,3]];
+	console.log(h,i,j,k)
+
+	// let [l,[m,n],o = 99] = [1,[2,3],null];
+	// console.log(l,m,n,o)
+	let [l,[m,n],o = 99] = [1,[2,3],undefined];
+	console.log(l,m,n,o)
+
+</script>
+</html>
