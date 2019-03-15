@@ -13,11 +13,44 @@
 	// }
 	// console.log(sum(1,2));
 
-	let arr = [1,2];
 
-	function sum(n1,n2){
-		return n1 +n2;
-	}
-	console.log(sum(...arr));
+
+	// let arr = [1,2];
+	// function sum(n1,n2){
+	// 	return n1 +n2;
+	// }
+	// console.log(sum(...arr));//函数调用时把数组转换为参数列表
+
+	// function sum(...arr){  //函数定义时把参数列表转换为数组
+	// 	let result = 0;
+	// 	for(let i = 0;i<arr.length;i++){
+	// 		result += arr[i];
+	// 	}
+	// 	return result;
+	// }
+	// console.log(sum(11,22,33));
+
+/*
+	//求数组中最大数
+	let arr = [1,5,6,8,23,4,5,65,8];
+
+	// console.log(Math.max.apply({},arr))   //es5
+
+	console.log(Math.max(...arr))   //es6
+*/
+
+//深拷贝数组
+	let arr1 = [1,5,6,8,23,4,5,65,8];
+	console.log(arr1);
+
+	let arr2 = arr1.concat();  //es5
+	console.log(arr2);
+
+	let arr3 = arr1.slice();  //es5
+	console.log(arr3);
+
+	let arr4 = [...arr1]
+	console.log(arr4)
+
 </script>
 </html>
