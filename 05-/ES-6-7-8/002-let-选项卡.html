@@ -8,6 +8,10 @@
 			margin: 0;
 			padding: 0;
 		}
+		#Tab-box{
+			/*width: 400px;
+			border: 1px solid #000;*/
+		}
 		li{
 			list-style: none;
 		}
@@ -40,27 +44,73 @@
 	</style>
 </head>
 <body>
-	<ul id="chose">
-		<li class="active">热门</li>
-		<li>家居</li>
-		<li>电脑</li>
-		<li>影音</li>
-	</ul>
-	<ul id="content">
-		<li style="display: block;">1</li>
-		<li>2</li>
-		<li>3</li>
-		<li>4</li>
-	</ul>
+	<div id="Tab-box">
+		<ul id="chose">
+			<li class="active">热门</li>
+			<li>家居</li>
+			<li>电脑</li>
+			<li>影音</li>
+		</ul>
+		<ul id="content">
+			<li style="display: block;">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
 </body>
 <script>
+	/*
 	var aBtns = document.querySelectorAll('#chose li');
+	var aCon = document.querySelectorAll('#content li')
 	for(let i = 0;i<aBtns.length;i++){
+
 		aBtns[i].onclick = function(){
-			console.log(this)
-			this.ClassName = 'active';
+			for(let j = 0;j<aBtns.length;j++){
+			aBtns[j].className = '';
+			aCon[j].style.display = 'none';
+		}
+			this.className = 'active';
+			aCon[i].style.display = 'block';
 		}
 	}
+	*/
+
+
+	function Tab(){
+
+		//1.罗列属性
+		this.aBtns = document.querySelectorAll('#chose li');
+		this.aCon = document.querySelectorAll('#content li');
+
+		//2.绑定事件
+		this.bindEvent();
+
+	}
+
+	Tab.prototype.bindEvent = function(){
+		let _this = this;
+		for(let i = 0;i<this.aBtns.length;i++){
+			this.aBtns[i].index=i;
+			this.aBtns[i].onclick = function(){
+				_this.fnClick(this);
+			}
+		}
+	}
+
+	Tab.prototype.fnClick = function(a){
+		for(var i = 0;i<this.aBtns.length;i++){
+			this.aBtns[i].className = '';
+			this.aCon[i].style.display = 'none';
+		}
+		a.className = 'active';
+		this.aCon[a.index].style.display = 'block';
+	}
+
+
+
+	new Tab();
+
 
 </script>
 </html>

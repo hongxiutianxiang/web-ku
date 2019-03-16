@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-set-遍历</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let s1 = new Set([4,5,9,8,5,5,7,4,3,7]);
+
+	console.log('a::',s1)
+
+	for(let b of s1.keys()){
+		console.log('b::',b)
+	}
+	for(let c of s1.values()){
+		console.log('c::',c)
+	}
+	for(let d of s1){
+		console.log('d::',d)
+	}
+	for(let e of s1.entries()){
+		console.log('e::',e)
+	}
+
+	s1.forEach(function(va,ke){
+		console.log(va,ke)
+	})
+</script>
+</html>

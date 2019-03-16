@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项可-生成-面向对象</title>
+	<style>
+		li{
+			list-style: none;
+		}
+		.active{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="Tab-box"></div>
+</body>
+<script>
+	function Tab(options){
+		//1.罗列属性
+		this.TabBox = document.getElementById('Tab-box');
+		this.num = options.num;
+		this.oUlBtn = null;
+		this.oBtn = null;
+		this.oCon = null;
+
+		//2.初始化
+		this.init();
+
+		//3.绑定事件
+		this.bindEvent();
+
+	}
+
+	Tab.prototype.init = function(){
+		this.oUlBtn = document.createElement('ul');
+		this.TabBox.appendChild(this.oUlBtn);
+
+		var oUlCon = document.createElement('ul');
+		this.TabBox.appendChild(oUlCon);
+
+		this.TabBox.style.position = 'relative';
+
+		for(var i = 0;i<this.num.length;i++){
+			 this.oBtn = document.createElement('li');
+			this.oUlBtn.appendChild(this.oBtn);
+
+			this.oCon = document.createElement('li');
+			oUlCon.appendChild(this.oCon);
+
+			this.oBtn.style.float = 'left';
+			this.oBtn.style.width = '100px';
+			this.oBtn.style.height = '50px';
+			this.oBtn.style.border = '1px solid #000';
+			
+			//this.oBtn.innerHTML = i;
+			this.oBtn.innerHTML = this.num[i];
+
+			this.oCon.style.position = 'absolute';
+			this.oCon.style.top = '100px';
+			this.oCon.style.left = '150px';
+			this.oCon.style.width = '200px';
+			this.oCon.style.height = '300px';
+			this.oCon.style.border = '1px solid #000';
+			this.oCon.innerHTML = i;
+			if(i == 0){
+				this.oCon.style.display = 'block';
+				this.oBtn.className = 'active';
+			}else{
+				this.oCon.style.display = 'none';
+			}
+
+		}
+	}
+
+	Tab.prototype.bindEvent = function(){
+		console.log(0)
+		var _this = this;
+		for(let i = 0;i<this.num.length;i++){
+			this.oUlBtn.children[i].onclick = function(){
+				console.log(i)
+				 _this.now = i;
+				_this.fnclick();
+			}
+		}
+	}
+
+	Tab.prototype.fnclick = function(){
+		for(let i = 0;i<this.oUlBtn.children.length;i++){
+			this.oUlBtn.children[i].className = '';
+			// this.oUlCon.children[i].style.display = 'none';
+		}
+		this.oUlBtn.children[this.now].className = 'active';
+		// this.oUlCon.children[this.now].style.display = 'block';
+	}
+
+
+
+	new Tab({
+		id:'Tab-box',
+		num:['一','二','三','四'],
+	})
+
+</script>
+</html>

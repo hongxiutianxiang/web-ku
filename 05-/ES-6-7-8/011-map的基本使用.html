@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-map的基本使用</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let map1 = new Map();
+
+	let obj1 = {110:'teacher1'};
+	let obj2 = {111:'student1'};
+	map1.set(obj1,'teacher2');
+	map1.set(obj2,'doctor2');
+
+	for(let a of map1.keys()){
+		console.log('a::',a);
+	}
+
+	for(let b of map1.values()){
+		console.log('b::',b);
+	}
+	for(let c of map1){
+		console.log('c::',c);
+	}
+	for(let d of map1.entries()){
+		console.log('d::',d);
+	}
+
+	console.log(map1);
+</script>
+</html>

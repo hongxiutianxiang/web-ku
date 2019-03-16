@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-set的基本使用</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let arr1 = [1,2,6,8,7];
+	let s1 = new Set();
+	let s2 = new Set(arr1)
+
+	s1.add(3);
+	s1.add(5);
+	s1.add(6);
+	console.log(s1);
+
+	console.log(s2)
+
+	console.log(s2.delete(8));
+	console.log(s2);
+
+	console.log(s1.has(5));
+
+	s1.clear();
+	console.log(s1);
+
+	let arr2 = [1,2,6,8,7,7,8];
+	let s3 = new Set();
+	let s4 = new Set(arr2)
+
+	s3.add(3);
+	s3.add(5);
+	s3.add(6);
+	s3.add(6);
+
+	console.log(s3)
+	console.log(s4)
+</script>
+</html>

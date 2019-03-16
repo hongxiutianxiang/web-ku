@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>014-箭头函数</title>
+</head>
+<body>
+	
+</body>
+<script>
+
+	let fn1 = function(x,y){
+		console.log(x,y);
+		return x + y;
+	}
+	console.log(fn1(1,2));
+	
+	let fn2 = (x,y)=>{
+		console.log(x,y);
+		return x + y;
+	}
+	console.log(fn2(3,4))
+
+	let fn3 = (x,y)=>x+y;
+	console.log(fn3(4,5));
+
+</script>
+</html>
