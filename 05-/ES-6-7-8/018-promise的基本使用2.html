@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018-promise的基本使用2</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let promise1 = new Promise((resolve,reject)=>{
+		console.log('promise is running')
+			// resolve('aaaa');
+			reject('bbbb')
+		})
+	console.log(promise1);
+	promise1
+	.then((data)=>{
+		console.log('aaa',data)
+	},(error)=>{
+		console.log('bbb',error)
+	})
+</script>
+</html>

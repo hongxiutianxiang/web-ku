@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>016箭头函数和普通函数的区别</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(){
+		console.log(123)
+	}
+	new Person();
+
+	// let Person2 = ()=>{
+	// 	console.log(456)
+	// }
+	// new Person2();  //Person2 is not a constructor
+
+	function Person3(){
+		console.log(arguments)
+	}
+	Person3(11,22,33,44);
+
+	// let Person4 = ()=>{
+	// 	console.log(arguments)
+	// }
+	// Person4(44,55,66,74)  //arguments is not defined
+
+
+	Person5();
+	function Person5(){
+		console.log(999)
+	}
+
+
+	// Person6();  // Person6 is not defined
+	// let Person6 = ()=>{
+	// 	console.log(888)
+	// }
+	
+</script>
+</html>
