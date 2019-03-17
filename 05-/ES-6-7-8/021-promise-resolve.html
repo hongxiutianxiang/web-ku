@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-promise-resolve</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let p1 = new Promise(()=>{});
+	console.log(p1);
+
+	let r1 = Promise.resolve();
+	console.log(r1);
+
+	let r2 = Promise.resolve(p1);
+	console.log(r2);
+
+	console.log(p1 == r2);
+
+	let obj={
+		then
+	}
+
+	
+</script>
+</html>

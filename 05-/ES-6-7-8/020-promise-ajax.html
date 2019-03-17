@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-promise-ajax</title>
+</head>
+<body>
+	
+</body>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+	;(function($){
+		$.get('https://api.github.com/users/kuazhu',(data1)=>{
+			console.log(data1);
+			$.get(data1.followers_url,data2=>{
+				console.log(data2)
+			})
+		})
+
+	})(jQuery);
+</script>
+</html>

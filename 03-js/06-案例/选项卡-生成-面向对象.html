@@ -21,6 +21,7 @@
 		this.TabBox = document.getElementById('Tab-box');
 		this.num = options.num;
 		this.oUlBtn = null;
+		this.oUlcon = null;
 		this.oBtn = null;
 		this.oCon = null;
 
@@ -36,17 +37,17 @@
 		this.oUlBtn = document.createElement('ul');
 		this.TabBox.appendChild(this.oUlBtn);
 
-		var oUlCon = document.createElement('ul');
-		this.TabBox.appendChild(oUlCon);
+		this.oUlCon = document.createElement('ul');
+		this.TabBox.appendChild(this.oUlCon);
 
 		this.TabBox.style.position = 'relative';
 
 		for(var i = 0;i<this.num.length;i++){
-			 this.oBtn = document.createElement('li');
+			this.oBtn = document.createElement('li');
 			this.oUlBtn.appendChild(this.oBtn);
 
 			this.oCon = document.createElement('li');
-			oUlCon.appendChild(this.oCon);
+			this.oUlCon.appendChild(this.oCon);
 
 			this.oBtn.style.float = 'left';
 			this.oBtn.style.width = '100px';
@@ -88,10 +89,10 @@
 	Tab.prototype.fnclick = function(){
 		for(let i = 0;i<this.oUlBtn.children.length;i++){
 			this.oUlBtn.children[i].className = '';
-			// this.oUlCon.children[i].style.display = 'none';
+			this.oUlCon.children[i].style.display = 'none';
 		}
 		this.oUlBtn.children[this.now].className = 'active';
-		// this.oUlCon.children[this.now].style.display = 'block';
+		this.oUlCon.children[this.now].style.display = 'block';
 	}
 
 
