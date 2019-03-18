@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>033-class类</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		SayName(){
+			console.log('I am ' + this.name);
+		}
+		SayAge(){
+			console.log('I am ' + this.age)
+		}
+
+	}
+	class Student extends Person{
+		constructor(){
+			super();
+		}
+	}
+
+	var p1 = new Person('Tom',18);
+	console.log(p1);
+	p1.SayName();
+	p1.SayAge();
+
+</script>
+</html>

@@ -10,11 +10,37 @@
 <script src="jquery-1.12.4.min.js"></script>
 <script>
 	;(function($){
-		$.get('https://api.github.com/users/kuazhu',(data1)=>{
-			console.log(data1);
-			$.get(data1.followers_url,data2=>{
+		// $.get('https://api.github.com/users/kuazhu',(data1)=>{
+		// 	console.log(data1);
+		// 	$.get(data1.followers_url,data2=>{
+		// 		console.log(data2)
+		// 	})
+		// });
+
+		let getDataPromise = (url)=>{
+			return new Promise((resolve,reject)=>{
+				$.get(url,(data)=>{
+					resolve(data);
+				})
+			})
+		}
+		let promise1 = getDataPromise('https://api.github.com/users/kuazhu');
+		promise1 
+		.then((data1)=>{
+			// console.log(data1)
+			/*
+			getDataPromise(data1.followers_url)
+			.then((data2)=>{
 				console.log(data2)
 			})
+			*/
+			return getDataPromise(data1.followers_url);
+		})
+		.then((data2)=>{
+			return getDataPromise(data2[0].followers_url);
+		})
+		.then((data3)=>{
+			console.log(data3)
 		})
 
 	})(jQuery);

@@ -19,9 +19,28 @@
 
 	console.log(p1 == r2);
 
+	//如果参数是一个具有then方法的对象,resolve方法会将这个对象转为 Promise 对象然后就立即执行该对象的then方法
 	let obj={
-		then
+		then:function(){
+			console.log('obj then,,,,')
+		}
 	}
+
+	let p3 = Promise.resolve(obj)
+
+	//如果参数参数不是具有then方法的对象,或根本就不是对象,返回一个新的 Promise 对象,状态为resolved
+	let obj1={
+		otherThen:function(){
+			console.log('obj otherThen,,,,')
+		}
+	}
+
+	let p4 = Promise.resolve(obj1)
+
+	//不带有任何参数,直接返回一个resolved状态的 Promise 对象
+	let p5 = Promise.resolve('hi');
+	console.log(p5);
+
 
 	
 </script>

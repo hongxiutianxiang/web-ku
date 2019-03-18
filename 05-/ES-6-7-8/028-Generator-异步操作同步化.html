@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028-Generator异步同步化</title>
+</head>
+<body>
+	
+</body>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+	
+	let getDataPromise = (url)=>{
+		return new Promise((resolve,reject)=>{
+			$.get(url,(data)=>{
+				resolve(data);
+			})
+		})
+	}
+
+	function * gen(){
+		let data1 = yield getDataPromise();
+	}
+
+	let g = gen('https://api.github.com/users/kuazhu');
+	console.log(g.next());
+	
+	/*
+	function * gen(){
+		yield 1;
+		yield 2;
+		yield 3;
+		yield 4;
+		yield 5;
+	}
+	let g = gen();
+	console.log(g.next(5))
+	*/
+
+</script>
+</html>
