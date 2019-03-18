@@ -8,11 +8,94 @@
 	
 </body>
 <script>
+	/*
+	var img = new Image();
+
+	img.onload = function(){
+		console.log('success')
+	}
+	img.onerror = function(){
+		console.log('failed')
+	}
+
+	img.src = 'img/bizhiaa.jpg';
+	*/
+	/*
+	var img = new Image();
+
+	function loadImg(url,success,failed){
+		img.onload = function(){
+			success(url);
+		}
+		img.onerror = function(){
+			failed(url);
+		}
+
+		img.src = url;
+	}
+
+	loadImg('img/bizhia.jpg',function(url){
+		console.log('success',url)
+	},function(url){
+		console.log('failed',url)
+	})
+	*/
+	/*
+	let promise1 = new Promise((resolve,reject)=>{
+		var img = new Image();
+
+		img.onload = function(){
+			resolve('img/bizhia.jpg')
+		}
+		img.onerror = function(){
+			reject('img/bizhia.jpg')
+		}
+
+		img.src = 'img/bizhia.jpg';
+	});
+
+	promise1
+	.then((url)=>{
+		console.log('success',url)
+	},(url)=>{
+		console.log('failed',url)
+	})
+	*/
+
+	let getLoadImgPromise = (url)=>{
+		return new Promise((resolve,reject)=>{
+			var img = new Image();
+
+			img.onload = function(){
+				resolve(url)
+			}
+			img.onerror = function(){
+				reject(url)
+			}
+
+			img.src = url;
+		});
+	}
+	getLoadImgPromise('img/bizhia.jpg')
+	.then((url)=>{
+		console.log('success',url)
+	},(url)=>{
+		console.log('failed',url)
+	})
+
+
+
+
+
+
+
+	/*
 	let some = (url)=>{
 		let promise1 = new Promise((resolve,reject)=>{
 
 		})
 	}
+	*/
 	
 </script>
 </html>

@@ -13,6 +13,7 @@
 	}
 	new Person();
 
+	//箭头函数没有原型对象,所以不能用箭头函数来定义构造函数
 	// let Person2 = ()=>{
 	// 	console.log(456)
 	// }
@@ -23,6 +24,7 @@
 	}
 	Person3(11,22,33,44);
 
+	//箭头函数中没有arguments
 	// let Person4 = ()=>{
 	// 	console.log(arguments)
 	// }
@@ -34,7 +36,7 @@
 		console.log(999)
 	}
 
-
+	//如果定义有名称的箭头函数,需要把箭头函数赋值给变量,所以箭头函数不存在声明的提升
 	// Person6();  // Person6 is not defined
 	// let Person6 = ()=>{
 	// 	console.log(888)

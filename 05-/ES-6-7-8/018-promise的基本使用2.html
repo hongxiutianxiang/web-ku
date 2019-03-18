@@ -8,17 +8,24 @@
 	
 </body>
 <script>
+	//1.new Promise时，传入的函数立即执行
 	let promise1 = new Promise((resolve,reject)=>{
-		console.log('promise is running')
-			// resolve('aaaa');
-			reject('bbbb')
-		})
+
+		console.log('promise is running') //同步
+
+		//2.执行异步请求
+		resolve('hello');//模拟异步成功
+		// reject('出错了')//模拟异步失败
+		
+	})
 	console.log(promise1);
+
+	//3.通过Promise实例对异步结果进行处理
 	promise1
 	.then((data)=>{
-		console.log('aaa',data)
+		console.log('success',data)
 	},(error)=>{
-		console.log('bbb',error)
+		console.log('failed',error)
 	})
 </script>
 </html>
