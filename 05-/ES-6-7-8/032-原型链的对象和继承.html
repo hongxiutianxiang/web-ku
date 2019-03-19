@@ -8,8 +8,39 @@
 	
 </body>
 <script>
-	function Person(){
-		
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
 	}
+
+	Person.prototype.sayName = function(){
+		console.log('I am '+this.name)
+	}
+
+	Person.prototype.sayAge = function(){
+		console.log('I am '+this.age)
+	}
+
+	Person.sayLike = function(){
+		console.log('I like...')
+	}
+
+	var p1 = new Person('Tom',18);
+	p1.sayName();
+	p1.sayAge();
+	Person.sayLike();
+
+	function Student(name,age,major){
+		Person.call(this,name,age);
+		this.major = major;
+	}
+	Student.prototype = Object.create(Person.prototype);
+	Student.prototype.ShowMajor = function(){
+		console.log('I am from '+ this.major)
+	}
+	var s1 = new Student('Jack',13,'Math');
+	s1.sayName();
+	s1.sayAge();
+	s1.ShowMajor();
 </script>
 </html>

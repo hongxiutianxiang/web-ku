@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>035-字面量对象简洁语法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let username = 'Tom',
+	age = 18;
+	/*
+	let obj = {
+		username:username,
+		age:age
+	}
+	*/
+	/*
+	let obj = {
+		username,
+		age,
+		sayUserName:function(){
+			console.log('I am ' + this.username)
+		},
+		sayAge:function(){
+			console.log('I am ' + this.age)
+		}
+	}
+	*/
+
+	let obj = {
+		username,
+		age,
+		sayUserName:()=>{
+			console.log('I am ' + this.username)  //箭头函数this不对
+		},
+		sayAge:()=>{
+			console.log('I am ' + this.age)
+		}
+	}
+
+	console.log(obj);
+	obj.sayUserName();
+	obj.sayAge();
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>037-数组的新增方法</title>
+</head>
+<body>
+	
+</body>
+<script>
+	let likeArr = {
+		0:'aa',
+		1:'bb',
+		length:2
+	}
+	console.log(likeArr);
+
+	let arr1 = Array.from(likeArr);
+	console.log(arr1)
+
+	let arr2 = [5,6,88,55,63,41,15];
+	let res1 = arr2.find(n=>n>10);  //let res1 = arr2.find((n)=>{return n>10});
+	console.log(res1)
+
+	let res2 = arr2.findIndex(n=>n>20);
+	console.log(res2)
+</script>
+</html>

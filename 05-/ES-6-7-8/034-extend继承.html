@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>033-class类</title>
+	<title>034-extend继承</title>
 </head>
 <body>
 	
@@ -32,6 +32,24 @@
 	p1.SayName();
 	p1.SayAge();
 	Person.sayLike();
+
+	class Student extends Person{
+		constructor(name,age,major){
+			super(name,age);
+			this.major = major;
+		}
+		SayMajor(){
+			console.log('I am from '+ this.major)
+		}
+	}
+
+	var s1 = new Person('Jack',15,'Math');
+	console.log(s1);
+	s1.SayName();
+	s1.SayAge();
+	Student.sayLike();
+	s1.SayMajor();
+
 
 </script>
 </html>

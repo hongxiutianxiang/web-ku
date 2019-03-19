@@ -8,8 +8,65 @@
 	
 </body>
 <script>
-	async function(){
-		
+	/*  //await 只能放到async函数体中
+	function fn1(){
+		await 'hello';
 	}
+	*/
+	/*
+	async function fn1(){
+		let data1 = await 'hello'; //如果不是 Promise 对象，就直接返回对应的值
+		console.log(data1);
+	}
+
+	fn1();
+	*/
+
+	let promise = new Promise((resolve,reject)=>{
+		setTimeout(()=>{
+			resolve('data..');
+		},200)
+	})
+
+	/*
+	//await表示后面的处理需要等待,通常await后面是一个 Promise 对象，返回该对象的结果
+	async function fn2(){
+		let data2 = await promise;
+		console.log(data2);
+	}
+
+	fn2();
+	*/
+	/*
+	async function fn3(){
+		await Promise.reject('出错出错了。。。');
+		//后面的程序不被执行
+		let data3 = await promise;
+		console.log(data3);
+	}
+
+	fn3()
+	.catch((err)=>{
+		console.log(err);
+	})
+	*/
+	async function fn4(){
+		try{
+			await Promise.reject('出错出错了。。。');
+		}
+		catch(err){
+			console.log(err)
+		}
+
+		try{
+			let data3 = await promise;
+			console.log(data3);
+		}
+		catch(err){
+			console.log(err);
+		}
+	}
+
+
 </script>
 </html>

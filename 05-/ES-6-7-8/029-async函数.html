@@ -7,4 +7,13 @@
 <body>
 	
 </body>
+<script>
+	async function fn1(){  //表示这个函数里有异步处理
+		return 'hello';   //async函数内部return语句返回的值，会成为then方法回调函数的参数。
+	}
+
+	let p = fn1();
+	// console.log(p)  //async函数返回一个 Promise 对象，可以使用then方法添加回调函数。
+	p.then(data=>console.log(data))
+</script>
 </html>

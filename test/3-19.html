@@ -2,36 +2,31 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>033-class类</title>
+	<title>3-19</title>
 </head>
 <body>
 	
 </body>
 <script>
-	//类不存在变量提升
-	// let p2 = new Person('Jack',22);
-	
 	class Person{
 		constructor(name,age){
 			this.name = name;
 			this.age = age;
 		}
 		SayName(){
-			console.log('I am ' + this.name);
+			console.log('I am '+ this.name)
 		}
 		SayAge(){
-			console.log('I am ' + this.age)
+			console.log('I am '+this.age)
 		}
-		static sayLike(){
-			console.log('I like...')
+		static SayHi(){
+			console.log('hi')
 		}
 	}
 
 	var p1 = new Person('Tom',18);
-	console.log(p1);
 	p1.SayName();
 	p1.SayAge();
-	Person.sayLike();
-
+	Person.SayHi();
 </script>
 </html>
