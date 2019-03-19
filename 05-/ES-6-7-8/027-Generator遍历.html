@@ -7,4 +7,23 @@
 <body>
 	
 </body>
+<script>
+	function * gen(){
+		yield 1;
+		yield 2;
+		yield 3;
+		yield 4;
+		yield 5;
+	}
+	let g = gen();
+	// console.log(g.next());
+	// console.log(g.next());
+	// console.log(g.next());
+	// console.log(g.next());
+	// console.log(g.next());
+
+	for(let v of g){
+		console.log(v)
+	}
+</script>
 </html>

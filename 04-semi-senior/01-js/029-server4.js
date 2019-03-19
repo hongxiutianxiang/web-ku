@@ -51,7 +51,7 @@ server.listen(3000, '127.0.0.1', function(){
 
 //局域网测试
 /*
-server.listen(3000, '10.196.21.58', function(){
-  console.log("Server running at http://10.196.21.58:3000/");
+server.listen(3000, '10.214.95.144', function(){
+  console.log("Server running at http://10.214.95.144:3000/");
 });
 */

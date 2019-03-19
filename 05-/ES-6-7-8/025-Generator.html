@@ -8,6 +8,32 @@
 	
 </body>
 <script>
-	
+	function * gen(){
+		console.log('in gen...')
+		yield 'get data1';
+		console.log('other thing2')
+		yield 'get data2';
+		console.log('other thing3')
+		yield 'get data3';
+		console.log('other thing4')
+		yield 'get data4';
+		return 'data5'
+	}
+
+	// console.log(gen);
+	// console.log(typeof gen);
+	let g = gen(); //调用 Generator 函数后，该函数并不执行,返回一个遍历器对象
+	// console.log(g)
+
+	// let res = g.next();
+	// console.log(res);
+	// let res2 = g.next();
+	// console.log(res2);
+
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
+	console.log(g.next());
 </script>
 </html>
