@@ -1,9 +1,21 @@
+// const EventEmitter = require('events');
+
+// const emitter = new EventEmitter();
+
+// emitter.on('test',()=>{
+// 	console.log('aaaa')
+// })
+// emitter.emit('test');
+
+
+
+
 const EventA = require('events');
 
 class MyEmitter extends EventA{}
 
-const myEMi = new MyEmitter();
-myEMi.on('test',()=>{
+const myEv = new MyEmitter();
+myEv.on('test',()=>{
 	console.log('aaaaa')
 });
-myEMi.emit('test');
+myEv.emit('test');
