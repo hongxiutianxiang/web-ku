@@ -11,10 +11,10 @@ fs.readFile('./01.txt',{'flag':'r'},(err,data)=>{
 })
 */
 
-const stat = util.promisityfy(fs.stat);
-stat('./01.txt')
-.then((stat)=>{
-	console.log(stat)
+const readFile = util.promisify(fs.readFile);
+readFile('./01.txt',{flag:'r'})
+.then((data)=>{
+	console.log(data)
 })
 
 
