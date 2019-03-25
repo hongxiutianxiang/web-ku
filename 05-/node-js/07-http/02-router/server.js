@@ -1,11 +1,8 @@
 const http = require('http');
 
 const server = http.createServer((req,res)=>{
-	//req = request;
-	//res = response;
 	res.setHeader('Content-Type','text/html;charset=utf-8');
-	res.write('<h1>hello 你好</h1>');
-	res.end('kuazhu');
+	res.end('<h1>hello 你好</h1>');
 
 });
 
