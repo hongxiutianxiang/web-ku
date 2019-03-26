@@ -10,26 +10,26 @@
 	function getRandom(min,max) {	
 		return Math.round(min + (max-min)*Math.random());
 	}
+	
 	var $wish = $('.wish');
 	var $wall = $('.wall');
-	//获取父容器和自身的宽高
+	//获取父容器和自身的高度
 	var wishWidth = $wish.width(),
-		wishHeight = $wish.height(),
+		wishHight = $wish.height(),
 		wallWidth = $wall.width(),
-		wallHeight = $wall.height();
+		wallheight = $wall.height();
 
-
-		
-	//1.设置许愿卡片拖动
-	$wish.pep({  constrainTo: '.wall' })
+	//1.设置卡片拖到
+	$wish.pep({  constrainTo: '.wall' });
 	//2.随机显示许愿卡片
 	$wish.each(function(){
 		let x = getRandom(0,wallWidth - wishWidth);
-		let y = getRandom(0,wallHeight - wishHeight);
+		let y = getRandom(0,wallheight - wishHight);
 		$(this).css({
-			transform: "matrix(1, 0, 0, 1, "+x+", "+y+")"
+			transform: 'matrix(1,0,0,1,'+ x +',' + y + ')'
 		})
-	});
+	})
+	
 
 
 
