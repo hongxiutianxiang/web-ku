@@ -4,6 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const mime = require('./mime.json');
+const { getAll } = require('./WishModel.js')
 
 const server = http.createServer((req,res)=>{
 	console.log('url:::',req.url);
@@ -13,39 +14,43 @@ const server = http.createServer((req,res)=>{
 	let pathname = reqUrl.pathname;
 
 	if(pathname == '/' || pathname == '/index.html'){//获取首页
-		res.setHeader('Content-Type','text/html;charset=utf-8');
-		let html = `<!DOCTYPE html>
-					<html lang="en">
-					<head>
-						<meta charset="UTF-8">
-						<title>许愿墙</title>
-						<link rel="stylesheet" href="css/index.css">
-					</head>
-					<body>
-						<div class="wall">
-								<div class="wish" style="background: blue">
-									<a href="javascript:;" class="close" data-id='111'></a>
-									111
+		getAll()
+		.then(data=>{
+			console.log(data)
+			let html = `<!DOCTYPE html>
+						<html lang="en">
+						<head>
+							<meta charset="UTF-8">
+							<title>许愿墙</title>
+							<link rel="stylesheet" href="css/index.css">
+						</head>
+						<body>
+							<div class="wall">`
+					data.forEach(item=>{
+						html += `<div class="wish" style="background: ${item.color}">
+									<a href="javascript:;" class="close" data-id='${item.id}'></a>
+										${item.content}
+								</div>`
+					})		
+										
+				html +=			`</div>
+							<div class="form-box">
+								<div>
+									<textarea name="content" id="content" cols="30" rows="20"></textarea>
 								</div>
-								<div class="wish" style="background: yellow">
-									<a href="javascript:;" class="close" data-id='222'></a>
-									222
-								</div>			
-						</div>
-						<div class="form-box">
-							<div>
-								<textarea name="content" id="content" cols="30" rows="20"></textarea>
-							</div>
-							<div>
-								<a href="javascript:;" class="sub-btn">许下心愿</a>
-							</div>
-						</div>	
-					</body>
-					<script src="js/jquery.min.js"></script>
-					<script src="js/jquery.pep.js"></script>
-					<script src="js/index.js"></script>
-					</html>`
-		res.end(html);	
+								<div>
+									<a href="javascript:;" class="sub-btn">许下心愿</a>
+								</div>
+							</div>	
+						</body>
+						<script src="js/jquery.min.js"></script>
+						<script src="js/jquery.pep.js"></script>
+						<script src="js/index.js"></script>
+						</html>`
+			res.setHeader('Content-Type','text/html;charset=utf-8');
+			res.end(html);	
+		})
+
 	}
 	else{//获取静态资源
 
@@ -76,8 +81,8 @@ const server = http.createServer((req,res)=>{
 
 });
 
-server.listen(3000,'127.0.0.1',()=>{
-	console.log('server is running at http://127.0.0.1:3000')
+server.listen(3001,'127.0.0.1',()=>{
+	console.log('server is running at http://127.0.0.1:3001')
 })
 
 

@@ -60,15 +60,83 @@ async function add(name){
 
 	return arr;
 }
+async function get(id){
+	//1.获取原有的数据
+	let data = await readFile(filePath);	
+	let arr = JSON.parse(data);
+	//2.查找对应id的对象
+	return arr.find(val=>{
+		return val['id'] == id;
+	})
+}
+async function updata(id,name){
+	//1.获取原有的数据
+	let data = await readFile(filePath);	
+	let arr = JSON.parse(data);
+	//2.查找对应id的对象
+	let obj = arr.find(val=>{
+		return val['id'] == id;
+	})
+	if(obj){
+		obj.name = name;
+		let strArr = JSON.stringify(arr);
+		//3.保存
+		await writeFile(filePath,strArr);
 
-add('Leo')
+		return arr;
+	}else{
+		return obj
+	}
+}
+async function remove(id){
+	//1.获取原有的数据
+	let data = await readFile(filePath);	
+	let arr = JSON.parse(data);
+	//2.删除对应id的对象
+	let newArr = arr.filter(val =>{
+		return val['id'] != id;
+	})
+	let strArr = JSON.stringify(newArr);
+	//3.保存
+	await writeFile(filePath,strArr);
+
+	return newArr;
+
+}
+
+
+
+/*
+add('Mike')
 .then(data=>{
 	console.log(data);
 })
 .catch(err=>{
 	console.log(err);
 })
-
-
-
-
+*/
+/*
+get('15535846419554269')
+.then(data=>{
+	console.log(data);
+})
+.catch(err=>{
+	console.log(err)
+})
+*/
+/*
+updata('15535846419554269','Peter')
+.then(data=>{
+	console.log(data)
+})
+.catch(err=>{
+	console.log(err)
+})
+*/
+remove('15535846419554269')
+.then(data=>{
+	console.log(data)
+})
+.catch(err=>{
+	console.log(err)
+})
