@@ -13,9 +13,9 @@ const server = http.createServer((req,res)=>{
 	console.log('url:::',req.url);
 
 	let reqUrl = url.parse(req.url,true);
-	console.log(reqUrl);
+	// console.log(reqUrl);
 	let pathname = reqUrl.pathname;
-	console.log('pathname:::',reqUrl);
+	// console.log('pathname:::',reqUrl);
 	//约定：
 	//1.请求以/static/开始的路径是静态资源
 	//2.对于路由请求的约定:  /Controller/action/arg1/arg2...
@@ -40,6 +40,19 @@ const server = http.createServer((req,res)=>{
 		});		
 	}else{//路由处理
 		let paths = pathname.split('/');
+		let controller = path[1] || 'Wish';
+		let action = path[2] || 'index';
+		try{
+			let mode = require('./Controller/' + controller);
+			mode[action] && mode[action]();
+		}
+		catch(err){
+			console.log('err:::',err);
+			res.setHeader('Content-Type','text/html;charset=utf-8');
+			res.end('<h1>出错了aa</h1>');
+		}
+		
+
 		console.log(paths);
 		res.end('ok');
 	}
