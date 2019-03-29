@@ -27,7 +27,7 @@ const db = mongoose.connection;
 
 	 //4.1 插入数据
 	 /*
-	 const user = new UserModel({name:"Tom",age:19,major:"computer"});
+	 const user = new UserModel({name:"Jack",age:19,major:"computer"});
 	 user.save((err,doc)=>{
 	 	if(err){
 	 		console.log('save user err::',err);
@@ -37,6 +37,7 @@ const db = mongoose.connection;
 	 })
 	 */
 	 //4.2 查找
+	 /*
 	 UserModel.find({},(err,docs)=>{
 	 	if(err){
 	 		console.log('find user err::',err);
@@ -44,8 +45,34 @@ const db = mongoose.connection;
 	 		console.log(docs);
 	 	}
 	 })
-
-
+	 */
+	 //4.3更新
+	 //update要被废弃，不推荐使用
+	 /*
+	 UserModel.update({name:"Tom"},{$set:{age:88}},(err,result)=>{
+	 	if(err){
+	 		console.log('update user err::',err);
+	 	}else{
+	 		console.log(result);
+	 	}
+	 })
+	 */
+	 /*
+	 UserModel.updateOne({name:"Tom"},{$set:{age:66}},(err,result)=>{
+	 	if(err){
+	 		console.log('update user err::',err);
+	 	}else{
+	 		console.log(result);
+	 	}
+	 })
+	 */
+	  UserModel.deleteOne({name:"Tom"},(err,result)=>{
+	 	if(err){
+	 		console.log('delete user err::',err);
+	 	}else{
+	 		console.log(result);
+	 	}
+	 })
 });
 
 

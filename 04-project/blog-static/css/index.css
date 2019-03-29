@@ -1,0 +1,8 @@
+
+.main #carousel-example-generic{
+	margin-bottom: 20px;
+}
+.main #carousel-example-generic img{
+	width: 100%;
+	height: 500px !important;
+}
