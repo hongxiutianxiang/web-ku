@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>
+	{% block title %}{% endblock %}
+	</title>
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/common.css">
+	{% block head %}{% endblock %}
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top" id="kz-navbar">
+	  <div class="container">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">我的个人博客</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      <ul class="nav navbar-nav">
+	        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+	        <li><a href="list.html" class="link" target="_blank">HTML/CSS</a></li>
+	       <li><a href="list.html" class="link" target="_blank">JavaScript</a></li>
+	       <li><a href="list.html" class="link" target="_blank">学无止境</a></li>
+	       <li><a href="list.html" class="link" target="_blank">我的足迹</a></li>
+	      </ul>
+	     
+	      <ul class="nav navbar-nav navbar-right">
+	       <!--  <li><a href="#">Link</a></li> -->
+	        <li class="dropdown">
+	         <!--  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a> -->
+	          <ul class="dropdown-menu">
+	            <li><a href="#">Action</a></li>
+	            <li><a href="#">Another action</a></li>
+	            <li><a href="#">Something else here</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="#">Separated link</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container -->
+	</nav>
+
+	<div class="main">
+		<div class="container" id="container">
+
+
+			<div class="row">
+				<div class="col-md-8">
+				{% block content %}{% endblock %}	
+				</div>
+
+				  <div class="col-md-4 hidden-xs hidden-sm">
+					 <!--用户注册登录-->
+			          <div class="user-panel" id='user-info' style="display: none;">
+			            <span>Tom</span>
+			            <a class="link" href="#">进入中心</a>
+			            <a class="link" href="javascript:;" id='logout'>退出</a>
+			          </div>
+			          <!-- 注册 -->
+			          <div class="form-horizontal user-panel" id='register' style="display: none;">
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">用户名</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="text" class="form-control" name='username' placeholder="请输入用户名">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">密码</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="password" class="form-control" name="password" placeholder="请输入密码">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">重复密码</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="password" class="form-control" name="repassword" placeholder="请再次输入密码">
+			              </div>
+			            </div>            
+			            <div class="form-group">
+			              <div class="col-sm-offset-4 col-sm-6">
+			                <a href="javascript:;" class="btn btn-primary" id='sub-register'>提交</a>
+			                <a href="javascript:;" class="link" id='go-login'>已有账号,去登录</a>
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <div class="col-sm-12">
+			                <p class="text-danger err"></p>
+			              </div>
+			            </div>            
+			          </div> 
+						<!-- 登陆 -->
+			          <div class="form-horizontal user-panel" id='login'>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">用户名</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="text" class="form-control" name='username' placeholder="请输入用户名">
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <label class="col-sm-4 control-label">密码</label>
+			              <div class="col-sm-6">
+			                <input autocomplete="off" type="password" class="form-control" name="password" placeholder="请输入密码">
+			              </div>
+			            </div>            
+			            <div class="form-group">
+			              <div class="col-sm-offset-4 col-sm-6">
+			                <a href="javascript:;" class="btn btn-primary" id='sub-login'>提交</a>
+			                <a href="javascript:;" class="link" id='go-register'>免费注册</a>
+			              </div>
+			            </div>
+			            <div class="form-group">
+			              <div class="col-sm-12">
+			                <p class="text-danger err"></p>
+			              </div>
+			            </div>            
+			          </div> 
+			          <!--用户注册登录-->          
+					<div class="ad">
+						<a href="#" class="thumbnail">
+							<img src="imgs/zhaojun.jpg" alt="">
+						</a>
+					</div>
+					<div class="ad">
+						<a href="#" class="thumbnail">
+							<img src="imgs/zhenji.jpg" alt="">
+						</a>
+					</div>
+
+					<div class="panel panel-default custom-panel">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">博主介绍</h3>
+					  </div>
+					  <div class="panel-body">
+					   		
+						<div class="media">
+						  <div class="media-left">
+						    <a href="#">
+						      <img class="media-object img-circle" src="imgs/zhaojun.jpg" alt="...">
+						    </a>
+						  </div>
+						  <div class="media-body">
+						    <h4 class="media-heading">红袖添香</h4>
+						    我们曾如此渴望命运的波澜,到最后才发现,人生最曼妙的风景,竟是内心的淡定与从容。我们曾如此期盼外界的认可,到最后才知道,世界是自己的,与他人毫无关系。
+						  </div>
+						</div>
+
+					  </div>
+					</div>
+					<div class="panel panel-default custom-panel hot-list">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">点击排行</h3>
+					  </div>
+					  <div class="panel-body">
+						<ul class="list-group">
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
+						  
+						</ul>					   		
+
+					  </div>
+					</div>
+					<div class="panel panel-default custom-panel focus-me">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">关注我</h3>
+					  </div>
+					  <div class="panel-body">
+					   	<img src="imgs/zhenji.jpg" alt="二维码" class="center-block">	
+					  </div>
+					</div>
+
+				  </div>
+			</div>
+		</div>
+	</div>
+
+	<footer>桥边红药叹夜太漫长</footer>
+
+</body>
+<script src="lib/jQuery/jquery-1.12.4.min.js"></script>
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+{% block footer %}{% endblock %}
+</html>
