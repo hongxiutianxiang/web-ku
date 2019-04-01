@@ -1,6 +1,7 @@
 const express = require('express')
 const swig = require('swig')
 const mongoose = require('mongoose')
+const bodyParse = require('body-parser')
 
 const app = express()
 const port = 3000
@@ -32,6 +33,9 @@ app.set('views', './views')
 //3.注册模板引擎
 app.set('view engine', 'html')
 
+//post/put请求处理中间件
+app.use(bodyParse.urlencoded({extend: false}))
+app.use(bodyParse.json())
 
 app.use('/',require('./routes/index.js'))
 

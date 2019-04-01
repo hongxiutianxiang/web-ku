@@ -14,6 +14,10 @@
 		 $login.show();
 	})
 
+
+	var usernameReg = /^[a-z][1-9a-z_]{2,9}$/i;
+	var passwordReg = /^\w{3,6}$/;
+
 	//2用户注册
 	$('#sub-register').on('click',function(){
 		//2.1获取表单数据
@@ -27,11 +31,11 @@
 
 		//用户名以字母开头，包含数字下划线3-10位字符
 		
-		if(!/^[a-z][1-9a-z_]{2,9}$/i.test(username)){
+		if(!usernameReg.test(username)){
 			errMsg = '用户名以字母开头，包含数字下划线3-10位字符'
 		}
 		//密码3-6位字符
-		else if(!/^\w{3,6}$/.test(password)){
+		else if(!passwordReg.test(password)){
 			errMsg = '密码3-6位字符'
 		}
 		//两次密码一致
@@ -55,7 +59,59 @@
 				}
 			})
 			.done(function(result){
-				console.log(result)
+				if(result.status == 0){//成功
+					$('#go-login').trigger('click')
+				}else{//失败
+					$err.html(result.message);
+				}
+			})
+			.fail(function(err){
+				$err.html('请求失败，请稍后再试');
+			})
+		}
+		
+	})
+	//3.用户登陆
+	$('#sub-login').on('click',function(){
+		//3.1获取表单数据
+		var username = $login.find('[name="username"]').val();
+		var password = $login.find('[name="password"]').val();
+
+		//3.1验证
+		var errMsg = '';
+		var $err = $login.find('.err');
+
+		//用户名以字母开头，包含数字下划线3-10位字符
+		
+		if(!usernameReg.test(username)){
+			errMsg = '用户名以字母开头，包含数字下划线3-10位字符'
+		}
+		//密码3-6位字符
+		else if(!passwordReg.test(password)){
+			errMsg = '密码3-6位字符'
+		}
+		if(errMsg){//验证不通过
+			$err.html(errMsg);
+			return;
+		}else{//验证通过
+			$err.html('');
+			//3.3发送ajax提交数据
+			$.ajax({
+				url:"/user/login",
+				type:'post',
+				dataType:'json',
+				data:{
+					username:username,
+					password:password
+				}
+			})
+			.done(function(result){
+				if(result.status == 0){//成功
+					console.log('ok...')
+					console.log(result)
+				}else{//失败
+					$err.html(result.message);
+				}
 			})
 			.fail(function(err){
 				$err.html('请求失败，请稍后再试');
