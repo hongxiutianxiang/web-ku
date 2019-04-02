@@ -108,7 +108,13 @@
 			.done(function(result){
 				if(result.status == 0){//成功
 					console.log('ok...')
-					console.log(result)
+					// console.log(result)
+					/*
+					$login.hide();
+					$('#user-info span').html(result.data.username);
+					$('#user-info').show();
+					*/
+					window.location.reload()
 				}else{//失败
 					$err.html(result.message);
 				}
@@ -119,7 +125,25 @@
 		}
 		
 	})
-	
-	
+
+/*
+提取出来了 js/logout.js
+	//4.用户退出
+	$('#logout').on('click',function(){
+		$.ajax({
+			url:'/user/logout'
+		})
+		.done(function(result){
+			if(result.status == 0){//成功
+				window.location.reload()
+			}else{//失败
+				$err.html(result.message);
+			}
+		})
+		.fail(function(err){
+			$err.html('请求失败，请稍后再试')
+		})
+	})
+*/	
 
 })(jQuery);

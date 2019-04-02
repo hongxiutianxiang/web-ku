@@ -21,7 +21,8 @@ router.post("/register",(req,res)=>{
 		}else{//插入新用户
 			UserModel.insertMany({
 				username,
-				password:hmac(password)
+				password:hmac(password),
+				// isAdmin:true
 			})
 			.then(user=>{
 				res.json(result)
@@ -46,11 +47,13 @@ router.post("/login",(req,res)=>{
 		status:0,//成功
 		message:''
 	}
-	//1. 检查是否已经注册过
 	UserModel.findOne({username,password:hmac(password)},'-password -__v')
 	.then(user=>{
 		if(user){//登陆成功
 			result.data = user;
+			// console.log('确定',user)
+			// req.cookies.set('userInfo',JSON.stringify(user))
+			req.session.userInfo = user;
 
 			res.json(result);
 			
@@ -66,6 +69,17 @@ router.post("/login",(req,res)=>{
 		res.json(result);
 	})
 	// res.json({status:0})
+})
+
+//处理退出
+router.get('/logout',(req,res)=>{
+	const result = {
+		status:0,//成功
+		message:''
+	}
+	// req.cookies.set('userInfo',null)
+	req.session.destroy()
+	res.json(result)
 })
 
 module.exports = router
