@@ -1,5 +1,6 @@
 const express = require('express')
 const CategoryModel = require('../models/category.js')
+const pagination = require('../util/pagination.js')
 const router = express.Router();
 
 //权限验证
@@ -13,8 +14,23 @@ router.use((req,res,next)=>{
 
 //显示分类列表
 router.get("/",(req,res)=>{
-	res.render('admin/category_list',{
-		userInfo:req.userInfo
+	const options = {
+		page:req.query.page,
+		model:CategoryModel,
+		query:{},
+		projection:'-__v',
+		sort:{order:1}
+	}
+	pagination(options)
+	.then(data=>{
+		res.render('admin/category_list',{
+			userInfo:req.userInfo,
+			categories:data.docs,
+			page:data.page,
+			list:data.list,
+			pages:data.pages,
+			url:'/category'
+		})			
 	})
 })
 //显示添加分类页面
@@ -53,10 +69,24 @@ router.post("/add",(req,res)=>{
 			userInfo:req.userInfo,
 			message:"添加分类失败，请稍后再试"
 		})
+	})
+})
+
+//显示编辑页面
+
+router.get("/edit/:id",(req,res)=>{
+	const { id } = req.params;
+	console.log(id);
+	CategoryModel.findById({_id:id})
+	.then(category=>{
+		res.render('admin/category_edit',{
+			userInfo:req.userInfo,
+			category
+		})		
+	})
 })
 
 
-})
 
 
 
