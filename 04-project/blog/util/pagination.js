@@ -4,6 +4,7 @@ page:请求页码
 query:查询条件
 projection:投影
 sort:排序
+populates:关联的数组
 */
 async function pagination(options){
 	/*
@@ -17,7 +18,7 @@ async function pagination(options){
 	第page页  跳过 (page-1)*limit 条  skip( (page-1)*limit )
 	*/
 
-	let { page,model,query,projection,sort } = options;
+	let { page,model,query,projection,sort,populates } = options;
 
 	page = parseInt(page)
 	
@@ -50,7 +51,14 @@ async function pagination(options){
 	//跳过条数
 	const skip = (page-1)*limit;
 
-	const docs = await model.find(query,projection).sort(sort).skip(skip).limit(limit)	
+	let result = model.find(query,projection)
+	if(populates){
+		populates.forEach(populate=>{
+			result = result.populate(populate);
+		})
+	}
+
+	const docs = await result.sort(sort).skip(skip).limit(limit)	
 
 	return {
 		docs,
