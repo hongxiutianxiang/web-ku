@@ -35,7 +35,7 @@ router.get("/",(req,res)=>{
 })
 //显示添加分类页面
 router.get("/add",(req,res)=>{
-	res.render('admin/category_add',{
+	res.render('admin/category_add_edit',{
 		userInfo:req.userInfo
 	})
 })
@@ -76,17 +76,79 @@ router.post("/add",(req,res)=>{
 
 router.get("/edit/:id",(req,res)=>{
 	const { id } = req.params;
-	console.log(id);
+	// console.log(id);
 	CategoryModel.findById({_id:id})
 	.then(category=>{
-		res.render('admin/category_edit',{
+		res.render('admin/category_add_edit',{
 			userInfo:req.userInfo,
 			category
 		})		
 	})
 })
-
-
+/**/
+//处理编辑页面
+router.post("/edit",(req,res)=>{
+	const { id,name,order } = req.body;
+	CategoryModel.findById(id)
+	.then(category=>{
+		if(category.name == name && category.order == order){//没有更改
+			res.render('admin/error',{
+				userInfo:req.userInfo,
+				message:"请修改后再提交"
+			})
+		}else{
+			CategoryModel.findOne({name:name,id:{$ne:id}})
+			.then(newCategory=>{
+				if(newCategory){
+					res.render('admin/error',{
+						userInfo:req.userInfo,
+						message:"修改分类失败，分类已存在"
+					})					
+				}else{
+					CategoryModel.updateOne({_id:id},{name,order})
+					.then(result=>{
+						res.render('admin/success',{
+							userInfo:req.userInfo,
+							message:"修改分类成功",
+							url:'/category'
+						})					
+					})
+					.catch(err=>{
+						throw err;
+					})
+				}
+			})
+			.catch(err=>{
+				throw err;
+			})
+		}
+	})
+	.catch(err=>{
+		res.render('admin/error',{
+			userInfo:req.userInfo,
+			message:"修改分类失败，请稍后再试"
+		})		
+	})
+})
+//删除
+router.get("/delete/:id",(req,res)=>{
+	const { id } = req.params;
+	// console.log(id);
+	CategoryModel.deleteOne({_id:id})
+	.then(result=>{
+		res.render('admin/success',{
+			userInfo:req.userInfo,
+			message:"删除分类成功",
+			url:'/category'
+		})			
+	})
+	.catch(err=>{
+		res.render('admin/error',{
+			userInfo:req.userInfo,
+			message:"删除分类失败，请稍后再试"
+		})		
+	})
+})
 
 
 
