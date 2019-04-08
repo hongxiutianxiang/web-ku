@@ -1,4 +1,6 @@
 const express = require('express')
+const multer  = require('multer')
+const upload = multer({ dest: 'public/uploads/' })
 const UserModel = require('../models/user.js')
 const pagination = require('../util/pagination.js')
 const router = express.Router();
@@ -31,7 +33,7 @@ router.get("/users",(req,res)=>{
 
 	第page页  跳过 (page-1)*limit 条  skip( (page-1)*limit )
 	*/
-/*
+	/*
 	let { page } = req.query;
 
 	page = parseInt(page)
@@ -76,7 +78,7 @@ router.get("/users",(req,res)=>{
 		})
 
 	})
-*/
+	*/
 	const options = {
 		page:req.query.page,
 		model:UserModel,
@@ -96,6 +98,15 @@ router.get("/users",(req,res)=>{
 		})			
 	})
 
+})
+
+//处理上传图片
+router.post('/uploadImage',upload.single('upload'),(req,res)=>{
+	const uploadedFilePath = '/uploads/'+req.file.filename
+	res.json({
+		uploaded:true,
+		url:uploadedFilePath
+	})
 })
 
 module.exports = router
