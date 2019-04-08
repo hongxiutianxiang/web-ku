@@ -1,6 +1,6 @@
-*resource/
-*image/
-*images/
-*doc/
+**resource/
+**image/
+**images/
+**doc/
 **/node_modules
 **/db
