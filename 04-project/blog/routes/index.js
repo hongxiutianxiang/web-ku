@@ -16,9 +16,9 @@ async function getCommonData(req){
 		pageArticles
 	}
 }
-
+//显示首页
 router.get("/",(req,res)=>{
-	/**/
+	/*
 	CategoryModel.find({},'name')
 	.sort({order:-1})
 	.then(categories=>{
@@ -28,16 +28,37 @@ router.get("/",(req,res)=>{
 			categories
 		})	
 	})
+	*/
 	
-	/*
 	getCommonData(req)
 	.then(data=>{
 		const {categories,pageArticles} = data;
 		res.render('main/index',{
 			userInfo:req.userInfo,
-			categories		
+			categories,
+			//首页文章分页数据
+			articles:pageArticles.docs,
+			page:pageArticles.page,
+			list:pageArticles.list,
+			pages:pageArticles.pages,
+		})		
 	})
-	*/
+	
 })
+
+//处理文章数据的ajax请求
+router.get('/articles',(req,res)=>{
+	ArticleModel.getPaginationArticles(req)
+	.then(data=>{
+		res.json({
+			status:0,
+			data
+		})		
+	})
+
+})
+
+
+
 
 module.exports = router
