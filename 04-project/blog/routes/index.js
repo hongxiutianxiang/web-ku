@@ -4,16 +4,16 @@ const ArticleModel = require('../models/article.js')
 
 const router = express.Router()
 
-async function getCommonData(req){
+async function getCommonData(){
 	const categoriesPromise = CategoryModel.find({},'name').sort({order:-1});
-	const pageArticlesPromise = ArticleModel.getPaginationArticles(req);
+	const topArticlesPromise = ArticleModel.find({},'_id click title').sort({click:-1}).limit(10)
 
 	const categories = await categoriesPromise;
-	const pageArticles = await pageArticlesPromise;
+	const topArticles = await topArticlesPromise;
 
 	return {
 		categories,
-		pageArticles
+		topArticles
 	}
 }
 //显示首页
@@ -30,25 +30,34 @@ router.get("/",(req,res)=>{
 	})
 	*/
 	
-	getCommonData(req)
+	getCommonData()
 	.then(data=>{
-		const {categories,pageArticles} = data;
-		res.render('main/index',{
-			userInfo:req.userInfo,
-			categories,
-			//首页文章分页数据
-			articles:pageArticles.docs,
-			page:pageArticles.page,
-			list:pageArticles.list,
-			pages:pageArticles.pages,
-		})		
+		const {categories,topArticles} = data;
+		ArticleModel.getPaginationArticles(req)
+		.then(pageArticles=>{
+			res.render('main/index',{
+				userInfo:req.userInfo,
+				categories,
+				topArticles,
+				//首页文章分页数据
+				articles:pageArticles.docs,
+				page:pageArticles.page,
+				list:pageArticles.list,
+				pages:pageArticles.pages,
+			})				
+		})
 	})
 	
 })
 
 //处理文章数据的ajax请求
 router.get('/articles',(req,res)=>{
-	ArticleModel.getPaginationArticles(req)
+	const { id } = req.query;
+	const query = {};
+	if(id){
+		query.category = id;
+	}
+	ArticleModel.getPaginationArticles(req,query)
 	.then(data=>{
 		res.json({
 			status:0,
@@ -58,7 +67,48 @@ router.get('/articles',(req,res)=>{
 
 })
 
+//详情页
+router.get('/view/:id',(req,res)=>{
+	const {id} = req.params
+	getCommonData()
+	.then(data=>{
+		const {categories,topArticles} = data;
+		ArticleModel.findOneAndUpdate({_id:id},{$inc:{click:1}},{new:true})
+		.populate({path:"user",select:'username'})
+		.populate({path:'category',select:'name'})
+		.then(article=>{
+			res.render('main/detail',{
+				userInfo:req.userInfo,
+				categories,
+				topArticles,
+				article
+			})				
+		})
+	})
+})
 
-
+//列表页
+router.get('/list/:id',(req,res)=>{
+	const {id} = req.params
+	getCommonData()
+	.then(data=>{
+		const {categories,topArticles} = data;
+		ArticleModel.getPaginationArticles(req,{category:id})
+		.then(pageArticles=>{
+			res.render('main/list',{
+				userInfo:req.userInfo,
+				categories,
+				topArticles,
+				//首页文章分页数据
+				articles:pageArticles.docs,
+				page:pageArticles.page,
+				list:pageArticles.list,
+				pages:pageArticles.pages,
+				//回传分类id
+				category:id
+			})				
+		})
+	})
+})
 
 module.exports = router

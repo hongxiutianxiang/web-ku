@@ -27,7 +27,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">首页 <span class="sr-only">(current)</span></a></li>
+	        <li class="active"><a href="/">首页 <span class="sr-only">(current)</span></a></li>
 	        {% for category in categories %}
 	        <li><a href="/list/{{ category._id.toString() }}" class="link" target="_blank">{{ category.name }}</a></li>
 			{% endfor %}
@@ -134,12 +134,12 @@
 			          <!--用户注册登录-->          
 					<div class="ad">
 						<a href="#" class="thumbnail">
-							<img src="imgs/zhaojun.jpg" alt="">
+							<img src="/imgs/zhaojun.jpg" alt="">
 						</a>
 					</div>
 					<div class="ad">
 						<a href="#" class="thumbnail">
-							<img src="imgs/zhenji.jpg" alt="">
+							<img src="/imgs/zhenji.jpg" alt="">
 						</a>
 					</div>
 
@@ -152,7 +152,7 @@
 						<div class="media">
 						  <div class="media-left">
 						    <a href="#">
-						      <img class="media-object img-circle" src="imgs/zhaojun.jpg" alt="...">
+						      <img class="media-object img-circle" src="/imgs/zhaojun.jpg" alt="...">
 						    </a>
 						  </div>
 						  <div class="media-body">
@@ -169,15 +169,9 @@
 					  </div>
 					  <div class="panel-body">
 						<ul class="list-group">
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  <li class="list-group-item"><a href="detil.html" target="_blank" class="link text-ellipsis">Cras justo odioCras justo odioCras justo odioCras justo odioCras justo odio</a></li>
-						  
+						  {% for article in topArticles %}
+						  <li class="list-group-item"><a href="/view/{{ article._id.toString() }}" target="_blank" class="link text-ellipsis">[{{ article.click }}] {{ article.title }}</a></li>
+						  {% endfor %}
 						</ul>					   		
 
 					  </div>
@@ -187,7 +181,7 @@
 					    <h3 class="panel-title">关注我</h3>
 					  </div>
 					  <div class="panel-body">
-					   	<img src="imgs/zhenji.jpg" alt="二维码" class="center-block">	
+					   	<img src="/imgs/zhenji.jpg" alt="二维码" class="center-block">	
 					  </div>
 					</div>
 

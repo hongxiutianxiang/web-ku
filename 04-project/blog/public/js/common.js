@@ -126,7 +126,7 @@
 		
 	})
 	//4.文章列表分页
-	var $articlePagination = $('#article-list');
+	var $articlePagination = $('#article-page');
 	function buildArticleListHtml(articles){
 		var html = '';
 		articles.forEach(function(article){ 
