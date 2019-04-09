@@ -23,9 +23,11 @@
 				if(currentPage == page){
 					return false
 				}
+				console.log(options)
 				var url = options.url+"?page="+page
 				var id = $elem.data('id')
-				console.log(id)
+				// console.log(url)
+				// console.log(id)
 				if(id){
 					url += '&id'+id
 				}
@@ -40,7 +42,7 @@
 					}
 				})
 				.fail(function(err){
-
+					console.log(err)
 				})
 			})
 		}

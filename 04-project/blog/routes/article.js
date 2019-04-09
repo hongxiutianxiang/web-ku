@@ -28,6 +28,7 @@ router.get("/",(req,res)=>{
 	*/
 	ArticleModel.getPaginationArticles(req)
 	.then(data=>{
+		console.log(data)
 		res.render('admin/article_list',{
 			userInfo:req.userInfo,
 			articles:data.docs,
