@@ -9,12 +9,12 @@
 }
 .detil-panel .panel-body{
 	background: #fff !important;
-	min-height: 800px;
+	min-height: 600px;
 }
 .btn-sub-comment{
 	padding: 26px 20px;
 }
 #comment-wrap .panel-body{
 	word-break: break-word;
-	min-height: 500px;
+	min-height: 150px;
 }

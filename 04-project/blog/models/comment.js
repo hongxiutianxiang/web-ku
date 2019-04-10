@@ -28,7 +28,7 @@ CommentSchema.statics.getPaginationComments = function(req,query={}){
 		model:this,
 		query:query,
 		projection:'-__v',
-		sort:{_id:1},
+		sort:{_id:-1},
 		populates:[{path:"user",select:'username'},{path:"article",select:'title'}]
 	}
 	return pagination(options)	

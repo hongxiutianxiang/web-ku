@@ -11,7 +11,6 @@ class App extends Component{
 		   val:''
 	    }
 	    this.handleChange = this.handleChange.bind(this)
-	    this.handleAdd = this.handleAdd.bind(this)
 	}
 	handleAdd(){
 		this.setState({
@@ -41,7 +40,7 @@ class App extends Component{
 				//注释
 			}
 				<input onChange={this.handleChange} value={this.state.val} /> 
-				<button onClick={this.handleAdd}>新增</button>
+				<button onClick={this.handleAdd.bind(this)}>新增</button>
 				<ul>
 					{
 						this.state.list.map((item,index)=>{
