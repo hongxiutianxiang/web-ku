@@ -1,6 +1,7 @@
 const express = require('express')
 const CategoryModel = require('../models/category.js')
 const ArticleModel = require('../models/article.js')
+const CommentModel = require('../models/comment.js')
 
 const router = express.Router()
 
@@ -68,22 +69,42 @@ router.get('/articles',(req,res)=>{
 })
 
 //详情页
-router.get('/view/:id',(req,res)=>{
+async function getDetailData(req){
 	const {id} = req.params
-	getCommonData()
+	const commomDataPromise = getCommonData();
+	const articleDataPromise = ArticleModel.findOneAndUpdate({_id:id},{$inc:{click:1}},{new:true})
+								.populate({path:"user",select:'username'})
+								.populate({path:'category',select:'name'})
+	const commentPageDataPromise = CommentModel.getPaginationComments(req,{article:id})							
+	const data = await commomDataPromise;
+	const article = await articleDataPromise;
+	const pageData = await commentPageDataPromise;
+	const {categories,topArticles} = data;
+	return{
+		categories,
+		topArticles,
+		article,
+		pageData
+	}
+}
+
+router.get('/view/:id',(req,res)=>{
+	getDetailData(req)
 	.then(data=>{
-		const {categories,topArticles} = data;
-		ArticleModel.findOneAndUpdate({_id:id},{$inc:{click:1}},{new:true})
-		.populate({path:"user",select:'username'})
-		.populate({path:'category',select:'name'})
-		.then(article=>{
-			res.render('main/detail',{
-				userInfo:req.userInfo,
-				categories,
-				topArticles,
-				article
-			})				
-		})
+		const {categories,topArticles,article,pageData} = data;
+		res.render('main/detail',{
+			userInfo:req.userInfo,
+			categories,
+			topArticles,
+			article,
+			//回传分类id，为了详情页对应导航选中
+			category:article.category._id,
+			//评论的分页数据
+			comments:pageData.docs,
+			page:pageData.page,
+			list:pageData.list,
+			pages:pageData.pages,
+		})			
 	})
 })
 

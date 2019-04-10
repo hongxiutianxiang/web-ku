@@ -1,0 +1,51 @@
+const express = require('express')
+const CommentModel = require('../models/comment.js')
+const router = express.Router();
+
+//验证用户登录
+router.use((req,res,next)=>{
+	if(req.userInfo._id){
+		next()
+	}else{
+		res.json({
+			status:10,
+			message:'用户未登录'
+		})
+	}
+})
+
+router.post('/add',(req,res)=>{
+	const { content,article } = req.body
+	CommentModel.insertMany({
+		content,
+		article,
+		user:req.userInfo._id
+	})
+	.then(comments=>{
+		res.json({
+			status:0,
+			data:comments
+		})		
+	})
+})
+
+//处理评论分页数据的ajax请求
+router.get('/list',(req,res)=>{
+	const { id } = req.query;
+	const query = {};
+	if(id){
+		query.article = id;
+	}
+	CommentModel.getPaginationComments(req,query)
+	.then(data=>{
+		res.json({
+			status:0,
+			data
+		})		
+	})
+
+})
+
+
+
+module.exports = router

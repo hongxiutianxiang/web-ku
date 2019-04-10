@@ -23,13 +23,10 @@
 				if(currentPage == page){
 					return false
 				}
-				console.log(options)
 				var url = options.url+"?page="+page
 				var id = $elem.data('id')
-				// console.log(url)
-				// console.log(id)
 				if(id){
-					url += '&id'+id
+					url += '&id='+id
 				}
 				//发送请求
 				$.ajax({

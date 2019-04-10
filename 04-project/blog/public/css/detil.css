@@ -11,3 +11,10 @@
 	background: #fff !important;
 	min-height: 800px;
 }
+.btn-sub-comment{
+	padding: 26px 20px;
+}
+#comment-wrap .panel-body{
+	word-break: break-word;
+	min-height: 500px;
+}

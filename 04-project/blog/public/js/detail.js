@@ -1,0 +1,38 @@
+;(function($){
+	//发表评论
+	$('.btn-sub-comment').on('click',function(){
+		var content = $('#comment-content').val().trim();
+		var $err = $('.err');
+		if(!content){
+			$err.html('请输入评论内容');
+			return false;
+		}
+		else if(content.length>100){
+			$err.html('评论内容最多100字符');
+			return false;
+		}
+		else{
+			$err.html('')
+		}
+		var id = $(this).data('id')
+		$.ajax({
+			url:'/comment/add',
+			type:'post',
+			dataType:'json',
+			data:{
+				content:content,
+				article:id
+			}
+		})
+		.done(function(result){
+			$('#comment-content').val('')
+			console.log(result)
+		})
+		.fail(function(err){
+			console.log(err)
+		})
+
+
+
+	})
+})(jQuery);
