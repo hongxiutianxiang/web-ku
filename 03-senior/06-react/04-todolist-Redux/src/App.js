@@ -1,5 +1,6 @@
 import React,{ Component } from 'react'
-import Item from './Item.js'
+import { Input,Button,Row, Col, List} from 'antd';
+import {ADD_ITEM,CHANGE_ITEM,DEL_ITEM} from './store/actionTypes.js'
 
 import store from './store/index.js'
 
@@ -9,79 +10,70 @@ class App extends Component{
 	constructor(props){
 	    super(props);
 	    this.state = store.getState() 
+	    store.subscribe(()=>{
+	    	this.setState(()=>store.getState())
+	    });
 	    this.handleChange = this.handleChange.bind(this)
 	    this.handleAdd = this.handleAdd.bind(this)
 	}
 	handleAdd(){
 		/*
-		this.setState({
-			list:[...this.state.list,this.state.val],
-			val:''
-		})
-		*/
-		/*
-		this.setState(()=>{
-			return {
-				list:[...this.state.list,this.state.val],
-				val:''
-			}
-		})
-		*/
-		/*
-		this.setState((preState)=>{
-			return {
-				list:[...preState.list,preState.val],
-				val:''
-			}
-		})
-		*/
 		this.setState(preState=>({
 			list:[...preState.list,preState.val],
 			val:''
 		}))
+		*/
+		const action = {
+			type:ADD_ITEM
+		}
+		store.dispatch(action)
 	}
 	handleChange(ev){
-		/*
-		this.setState({
-			val:ev.target.value
-		})
-		*/
 		const val = ev.target.value
+		/*
 		this.setState(()=>({
 			val:val
 		}))
+		*/
+		const action = {
+			type:CHANGE_ITEM,
+			payload:val
+		}
+		store.dispatch(action)
 	}
 	handleDel(index){
-		// console.log("del...",index)
+		/*
 		const list = [...this.state.list]
 		list.splice(index,1)
-		/*
-		this.setState({
-			list:list
-		})
-		*/
 		this.setState(()=>({
 			list
 		}))
-	}
-	getItems(){
-		return this.state.list.map((item,index)=>{
-			return <Item key={index} content={item} handleDel={this.handleDel.bind(this,index)} />
-		})		
+		*/
+		const action = {
+			type:DEL_ITEM,
+			payload:index
+		}
+		store.dispatch(action)
 	}
 	render(){
 		return(
 			<div className="wrap">
-			{
-			}
-				<input onChange={this.handleChange} value={this.state.val} /> 
-				<button onClick={this.handleAdd}>新增</button>
-				<ul>
-					{
-						this.getItems();
-					}
-				</ul>
-
+			<Row>
+				 <Col span={4}>
+					<Input onChange={this.handleChange} value={this.state.val} /> 
+				 </Col>
+				 <Col span={4}>
+					<Button type="primary" onClick={this.handleAdd}>新增</Button>
+				</Col>
+			</Row>
+			 <Col span={4}>
+			    <List
+			    	style={{marginTop:10}}
+			        bordered
+			        dataSource={this.state.list}
+			        renderItem={(item,index) => (<List.Item onClick={this.handleDel.bind(this,index)}>{item}</List.Item>)}
+			    />
+			</Col>
 			</div>
 		)
 	}
