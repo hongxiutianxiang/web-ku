@@ -7,6 +7,8 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+//css单独打包成一个文件
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath = "/";
 
 module.exports = {
@@ -34,12 +36,16 @@ module.exports = {
 		rules: [
 		//处理css文件
 			{
-				test: /\.css$/i,
-				use: [
-					'style-loader',
-					'css-loader'
-				]
-			},
+	            test: /\.css$/,
+	            use: [
+	              {
+	                loader: MiniCssExtractPlugin.loader,
+	                options: {
+	                }
+	              },
+	              "css-loader"
+	            ]
+            },
 	    //处理图片 
 			{
 				test: /\.(png|jpg|gif|jpeg)$/i,
@@ -73,7 +79,8 @@ module.exports = {
 	        inject:true,//脚本写在那个标签里,默认是true(在body结束后)
 	        hash:true//给生成的js/css文件添加一个唯一的hash
 	    }),
-	    new CleanWebpackPlugin()
+	    new CleanWebpackPlugin(),
+	    new MiniCssExtractPlugin({})
 	],
 	devServer:{
 		contentBase: './dist',//内容的目录
