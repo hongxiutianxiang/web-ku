@@ -1,0 +1,17 @@
+
+<import src="../movie-item-template/movie-item-template.wxml" />
+
+<template name="movieListTemplate">
+  <view class='movie-list-wrap'>
+    <view class='head'>
+      <view class='tag'>正在热映</view>
+      <view class='more'>更多></view>
+    </view>
+    <view class='list'>
+      <template is="movieItemTemplate" />
+      <template is="movieItemTemplate" />
+      <template is="movieItemTemplate" />
+    </view>
+    
+  </view>
+</template>

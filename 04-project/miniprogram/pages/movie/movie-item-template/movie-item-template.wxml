@@ -1,0 +1,10 @@
+
+<import src="../star-template/star-template.wxml" />
+
+<template name="movieItemTemplate">
+  <view class='movie-item-wrap'>
+    <image class='cover-img' src='/images/article/qin1.jpg'></image>
+    <text class='title'>电影名称</text>
+    <template is="starTemplate" />
+  </view>
+</template>
