@@ -3,8 +3,8 @@
 
 <template name="movieItemTemplate">
   <view class='movie-item-wrap'>
-    <image class='cover-img' src='/images/article/qin1.jpg'></image>
-    <text class='title'>电影名称</text>
-    <template is="starTemplate" />
+    <image class='cover-img' src='{{coverImg}}'></image>
+    <text class='title'>{{title}}</text>
+    <template is="starTemplate" data="{{score:score,stars:stars}}"/>
   </view>
 </template>

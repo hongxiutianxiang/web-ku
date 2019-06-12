@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013</title>
+</head>
+<body>
+	<div id="app">
+		<p style="background-color: yellow;color: red">11111</p>
+		<p :style="{backgroundColor: 'yellow',color: 'red'}">22222</p>
+		<p :style="{backgroundColor: bg,color: color}">33333</p>
+		<p :style="styleObj">444444</p>
+		<p :style="styleObj2">555555</p>
+		<p :style="[styleObj,styleObj2]">66666</p>
+		<p :style="styleArr">777777</p>
+		
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			bg:'yellow',
+			color:'red',
+			styleObj:{
+				backgroundColor: 'yellow',
+				color: 'red'
+			},
+			styleObj2:{
+				fontSize:'36px'
+			},
+			styleArr:[
+				{
+					backgroundColor: 'yellow',
+					color: 'red'
+				},
+				{
+					fontSize:'36px'
+				},
+			]
+		},
+	})
+	
+</script>
+</html>

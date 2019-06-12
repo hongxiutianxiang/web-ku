@@ -4,13 +4,13 @@
 <template name="movieListTemplate">
   <view class='movie-list-wrap'>
     <view class='head'>
-      <view class='tag'>正在热映</view>
-      <view class='more'>更多></view>
+      <view class='tag'>{{tag}}</view>
+      <view bindtap='tapMore' class='more' data-type="{{type}}">更多></view>
     </view>
     <view class='list'>
-      <template is="movieItemTemplate" />
-      <template is="movieItemTemplate" />
-      <template is="movieItemTemplate" />
+      <block wx:for="{{movies}}" wx:for-item="movie" wx:key="index"> 
+      <template is="movieItemTemplate" data="{{...movie}}"/>
+      </block>
     </view>
     
   </view>

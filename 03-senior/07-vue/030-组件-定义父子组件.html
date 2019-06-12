@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>028</title>
+	
+</head>
+<body>
+	<div id="app">
+		<ul>
+			<todo-tiem></todo-tiem>
+		</ul>
+		<template id="todo-item"></template>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	Vue.component('todo-item',{
+		template:'#todo-item'
+	})
+	let vm1 = new Vue({
+		el:"#app",
+		data:{
+			
+		},
+	})
+	
+</script>
+</html>

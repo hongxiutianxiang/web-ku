@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.large-box{
+			width: 500px;
+			height: 500px;
+			background-color: blue;
+			border: 1px solid #000;
+			margin: 100px auto;
+		}
+		.middle-box{
+			width: 300px;
+			height: 300px;
+			background-color: yellow;
+			border: 1px solid #000;
+			margin: 100px auto;
+		}
+		.small-box{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			border: 1px solid #000;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p>原始值::{{message}}</p>
+		<p>反转:: {{message.split('').reverse().join('')}}</p>
+		<p>计算属性:: {{reversedMessage}}</p>
+		<p>调用方法:: {{reverseMessage()}}</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			message:'hello'
+		},
+		methods:{
+			reverseMessage(){
+				return this.message.split('').reverse().join('')
+			}
+		},
+		computed:{
+			reversedMessage(){
+				return this.message.split('').reverse().join('')
+			}
+		}
+	})
+	
+</script>
+</html>

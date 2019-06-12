@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    isPlaying:false
   },
 
   /**
@@ -34,6 +34,20 @@ Page({
     }
 
     this.setData({...article,isCollected:isCollected})
+
+    //监听音乐相关事件
+    var backgroundAudioManager = wx.getBackgroundAudioManager();
+    backgroundAudioManager.onPlay(function(){
+      this.setData({
+        isPlaying:true
+      })
+    }.bind(this));
+    backgroundAudioManager.onPause(function () {
+      this.setData({
+        isPlaying: false
+      })
+    }.bind(this));
+
   },
   /*
   *处理收藏
@@ -86,7 +100,23 @@ Page({
    */
   tapMusic:function(){
     var backgroundAudioManager = wx.getBackgroundAudioManager();
-    backgroundAudioManager.src = 'https://music.163.com/?from=infinity#/song?id=1349292048';
+    var isPlaying = this.data.isPlaying;
+    if(isPlaying){
+      backgroundAudioManager.pause();
+      this.setData({
+        isPlaying: false
+      })
+    }else{
+      var music = articles[this.data.articleId].music;
+      backgroundAudioManager.title = music.title;
+      backgroundAudioManager.src = music.src;
+      this.setData({
+        isPlaying:true
+      })
+    }
+
+    
+
 
   },
   
