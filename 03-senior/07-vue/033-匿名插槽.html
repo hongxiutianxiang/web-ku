@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>033</title>
+</head>
+<body>
+	<div id="app">
+		<layout>
+			内容1
+		</layout>
+	</div>
+	<template id="layout">
+		<div>
+			<nav>导航</nav>
+			<!-- <div>内容</div> -->
+			<slot>匿名插槽1</slot>
+			<slot>匿名插槽2</slot>
+			<footer>底部footer</footer>
+		</div>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	Vue.component('layout',{
+		template:"#layout"
+	})
+	let vm = new Vue({
+		el:"#app",
+		data:{
+
+		}
+	})
+	console.log(vm)
+</script>
+</html>

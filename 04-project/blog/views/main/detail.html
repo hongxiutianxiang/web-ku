@@ -24,9 +24,9 @@
 	<div class="well">
 		<strong>简介:</strong>{{ article.intro }}
 	</div>
-	<p>
+	<div>
 		{{ article.content | safe }}
-	</p>
+	</div>
 
   </div>
 </div>
@@ -52,9 +52,11 @@
 		<div id="comment-wrap">
 			{% for comment in comments %}
 			<div class="panel panel-default">
-			  <div class="panel-heading">{{ comment.user.username }} 发表于{{ comment.createdAt | date('Y年m月d日 H:m:s',-8*60) }}</div>
-			  <div class="panel-body">
-			    {{ comment.content }}
+			  	<div class="panel-heading">{{ comment.user.username }} 发表于{{ comment.createdAt | date('Y年m月d日 H:m:s',-8*60) }}
+			  	</div>
+			  	<div class="panel-body">
+			    	{{ comment.content }}
+				</div>
 			</div>
 			{% endfor %}
 		</div>

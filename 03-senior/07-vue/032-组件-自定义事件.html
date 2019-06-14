@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>032</title>
+</head>
+<body>
+	<div id="app">
+		<button-content @add-total-event="addTotal()"></button-content>
+		<button-content @add-total-event="addTotal()"></button-content>
+		<button-content @add-total-event="addTotal()"></button-content>
+		<button-content @add-total-event="addTotal()"></button-content>
+		<p>总共被点击了{{total}}次</p>
+	</div>
+	<template id="button-content">
+		<button @click="addCount()">被点击了{{count}}次</button>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	Vue.component('button-content',{
+		data(){
+			return{
+				count:0
+			}
+		},
+		methods:{
+			addCount(){
+				this.count++;
+				this.$emit('add-total-event')
+			}
+		},
+		template:"#button-content"
+	});
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			total:0
+		},
+		methods:{
+			addTotal(){
+				this.total++
+			}
+		}
+	})
+</script>
+</html>
