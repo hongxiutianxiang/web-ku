@@ -1,4 +1,4 @@
-# my-project
+# project-org
 
 ## Project setup
 ```
