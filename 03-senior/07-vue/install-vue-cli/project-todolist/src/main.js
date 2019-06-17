@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import './assets/css/common.css'
 
 Vue.config.productionTip = false//关掉警告提示
 
