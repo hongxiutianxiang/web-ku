@@ -2,7 +2,9 @@ const express = require('express')
 const multer  = require('multer')
 const upload = multer({ dest: 'public/uploads/' })
 const UserModel = require('../models/user.js')
+const CommentModel = require('../models/comment.js')
 const pagination = require('../util/pagination.js')
+const hmac = require('../util/hmac.js')
 const router = express.Router();
 
 
@@ -109,4 +111,64 @@ router.post('/uploadImage',upload.single('upload'),(req,res)=>{
 	})
 })
 
-module.exports = router
+//处理评论管理
+router.get('/comments',(req,res)=>{
+	CommentModel.getPaginationComments(req)
+	.then(data=>{
+		res.render('admin/comment_list',{
+			userInfo:req.userInfo,
+			comments:data.docs,
+			page:data.page,
+			list:data.list,
+			pages:data.pages,
+			url:'/admin/comments'
+		})			
+	})
+})
+
+
+//删除评论
+router.get("/comment/delete/:id",(req,res)=>{
+	const { id } = req.params;
+	// console.log(id);
+	CommentModel.deleteOne({_id:id})
+	.then(result=>{
+		res.render('admin/success',{
+			userInfo:req.userInfo,
+			message:"删除评论成功",
+			url:'/admin/comments'
+		})			
+	})
+	.catch(err=>{
+		res.render('admin/error',{
+			userInfo:req.userInfo,
+			message:"删除评论失败，请稍后再试"
+		})		
+	})
+})
+
+//显示修改密码页面
+router.get('/password',(req,res)=>{
+	res.render('admin/password',{
+		userInfo:req.userInfo,
+	})
+})
+
+//修改密码
+
+router.post('/password',(req,res)=>{
+	const { password } = req.body;
+	UserModel.updateOne({_id:req.userInfo._id},{password:hmac(password)})
+	.then(result=>{
+		req.session.destroy();
+		res.render('admin/success',{
+			userInfo:req.userInfo,
+			message:"更新密码成功,请重新登陆",
+			url:'/'
+		})
+	})
+})
+
+
+
+module.exports = router;

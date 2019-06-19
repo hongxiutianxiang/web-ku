@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011</title>
+</head>
+<body>
+	<div id="app">
+		<!-- 错误写法 -->
+		<!-- <a href="{{kuazhuUrl}}">跨猪</a> -->
+
+		<a v-bind:href="kuazhuUrl">跨猪</a>
+		<a :href="baiduUrl">百度</a>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			kuazhuUrl:'https://www.kuazhu.com',
+			baiduUrl:'https://www.baidu.com'
+		},
+	})
+	
+</script>
+</html>

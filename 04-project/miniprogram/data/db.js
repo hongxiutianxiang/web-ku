@@ -11,6 +11,11 @@ var articles = [
     start: 30,
     view: 50,
     articleId:0,
+    music:{
+      src: 'http://sc1.111ttt.cn:8282/2018/1/03/13/396131227447.mp3?tflag=1546606800&pin=97bb2268ae26c20fe093fd5b0f04be80',
+      title:'红昭愿',
+      coverImg:'',
+    }
   },
   {
     avatar: '/images/avatar/a2.jpg',
@@ -24,6 +29,11 @@ var articles = [
     start: 30,
     view: 50,
     articleId: 1,
+    music: {
+      src: 'http://sc1.111ttt.cn:8282/2018/1/03/13/396131227447.mp3?tflag=1546606800&pin=97bb2268ae26c20fe093fd5b0f04be80',
+      title: '红昭愿',
+      coverImg: '',
+    }
   },
   {
     avatar: '/images/avatar/a3.jpg',
@@ -37,6 +47,11 @@ var articles = [
     start: 30,
     view: 50,
     articleId: 2,
+    music: {
+      src: 'http://sc1.111ttt.cn:8282/2018/1/03/13/396131227447.mp3?tflag=1546606800&pin=97bb2268ae26c20fe093fd5b0f04be80',
+      title: '红昭愿',
+      coverImg: '',
+    }
   }
 ];
 

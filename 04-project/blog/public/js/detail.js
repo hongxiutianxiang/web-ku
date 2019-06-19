@@ -26,7 +26,8 @@
 		})
 		.done(function(result){
 			$('#comment-content').val('')
-			console.log(result)
+			console.log('detail-29',result)
+			$('#comment-page').trigger('get-data',result.data)
 		})
 		.fail(function(err){
 			console.log(err)

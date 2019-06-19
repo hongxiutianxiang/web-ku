@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			background: yellow;
+		}
+		.err{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="app">
+		<p class="active err">class="active err"</p>
+		<p>《》</p>
+		<p :class="{active:true}">v-bind:class="{active:true}</p>
+		<p :class="{active:isActive,err:isErr}">:class="{active:isActive,err:isErr}"</p>
+		<p :class="['active','err']">:class="[active,err]"</p>
+		<p :class="[isActive ? 'active' : '','err']">:class="[isActive ? 'active' : '','err']"</p>
+		<p :class="classObj">:class="classObj"</p>
+		<p :class="classArr">:class="classArr"</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:"#app",
+		data:{
+			isActive:false,
+			isErr:true,
+			classObj:{
+				active:true,
+				err:true,
+			},
+			classArr:[
+				'active','err'
+			]
+		},
+	})
+	
+</script>
+</html>

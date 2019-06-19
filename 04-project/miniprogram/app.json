@@ -1,14 +1,22 @@
 {
   "pages": [
-    "pages/movie/movie",
-    "pages/article/article",
     "pages/index/index",
+    "pages/movie/movie",
+    "pages/movie/movie-more/movie-more",
+    "pages/article/article",
     "pages/article/article-detail/article-detail"
   ],
   "window": {
+<<<<<<< HEAD
     "navigationBarBackgroundColor": "#000",
     "enablePullDownRefresh": true
+=======
+    "navigationBarBackgroundColor": "#000"
+>>>>>>> 556c3082aeb8bcc7e6342b0cb3a6bb10959ab256
   },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "tabBar": {
     "color": "#000",
     "selectedColor": "blue",
@@ -19,15 +27,23 @@
         "pagePath": "pages/article/article",
         "text": "文章",
         "iconPath": "images/icon/article.png",
+<<<<<<< HEAD
         "selectedIconPath": "images/icon/music.jpg"
+=======
+        "selectedIconPath": "images/icon/read.png"
+>>>>>>> 556c3082aeb8bcc7e6342b0cb3a6bb10959ab256
       },
       {
         "pagePath": "pages/movie/movie",
         "text": "电影",
         "iconPath": "images/icon/movie.png",
-        "selectedIconPath": "images/icon/collect.jpg"
+        "selectedIconPath": "images/icon/movie-active.png"
       }
     ]
   },
+<<<<<<< HEAD
   "sitemapLocation": "sitemap75.json"
+=======
+  "sitemapLocation": "sitemap85.json"
+>>>>>>> 556c3082aeb8bcc7e6342b0cb3a6bb10959ab256
 }
