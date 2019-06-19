@@ -4,23 +4,22 @@
     "pages/article/article",
     "pages/index/index",
     "pages/article/article-detail/article-detail"
-   
   ],
   "window": {
     "navigationBarBackgroundColor": "#000",
-    "enablePullDownRefresh":true
+    "enablePullDownRefresh": true
   },
   "tabBar": {
     "color": "#000",
     "selectedColor": "blue",
     "borderStyle": "black",
-    "position":"bottom",
-    "list":[
+    "position": "bottom",
+    "list": [
       {
-        "pagePath":"pages/article/article",
-        "text":"文章",
-        "iconPath":"images/icon/article.png",
-        "selectedIconPath":"images/icon/music.jpg"
+        "pagePath": "pages/article/article",
+        "text": "文章",
+        "iconPath": "images/icon/article.png",
+        "selectedIconPath": "images/icon/music.jpg"
       },
       {
         "pagePath": "pages/movie/movie",
@@ -28,7 +27,7 @@
         "iconPath": "images/icon/movie.png",
         "selectedIconPath": "images/icon/collect.jpg"
       }
-      
     ]
-  }
+  },
+  "sitemapLocation": "sitemap75.json"
 }
