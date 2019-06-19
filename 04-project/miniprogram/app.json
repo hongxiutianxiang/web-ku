@@ -7,12 +7,9 @@
     "pages/article/article-detail/article-detail"
   ],
   "window": {
-<<<<<<< HEAD
     "navigationBarBackgroundColor": "#000",
-    "enablePullDownRefresh": true
-=======
+    "enablePullDownRefresh": true,
     "navigationBarBackgroundColor": "#000"
->>>>>>> 556c3082aeb8bcc7e6342b0cb3a6bb10959ab256
   },
   "requiredBackgroundModes": [
     "audio"
@@ -27,11 +24,8 @@
         "pagePath": "pages/article/article",
         "text": "文章",
         "iconPath": "images/icon/article.png",
-<<<<<<< HEAD
-        "selectedIconPath": "images/icon/music.jpg"
-=======
+        "selectedIconPath": "images/icon/music.jpg",
         "selectedIconPath": "images/icon/read.png"
->>>>>>> 556c3082aeb8bcc7e6342b0cb3a6bb10959ab256
       },
       {
         "pagePath": "pages/movie/movie",
@@ -41,9 +35,6 @@
       }
     ]
   },
-<<<<<<< HEAD
-  "sitemapLocation": "sitemap75.json"
-=======
+  "sitemapLocation": "sitemap75.json",
   "sitemapLocation": "sitemap85.json"
->>>>>>> 556c3082aeb8bcc7e6342b0cb3a6bb10959ab256
 }
