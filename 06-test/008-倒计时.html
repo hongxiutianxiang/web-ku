@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-倒计时</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		#timer{
+			width: 550px;
+			margin: 200px auto;
+			font-size: 32px;
+			text-align: center;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		
+	</div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer')
+
+	var endTime = new Date('2019/06/30/19:13:00')
+	var endMinSeconds = endTime.getTime()
+	var timer = 0;
+
+	function toDouble(num){
+		return num<10 ? num='0'+num : num=''+num;
+	}
+	function handleTime(){
+		var allMinSeconds = endMinSeconds - Date.now()
+
+		if(allMinSeconds<=0){
+			allMinSeconds = 0;
+			clearInterval(timer)
+		}
+
+		var allSeconds = parseInt(allMinSeconds/1000);
+		var iHours = parseInt(allSeconds/3600);
+		var iMinutes = parseInt(allSeconds % 3600/60);
+		var iSeconds = allSeconds % 3600 % 60;
+		
+		oTimer.innerHTML =  '距离活动结束还有'+toDouble(iHours)+'小时'+toDouble(iMinutes)+'分钟'+toDouble(iSeconds)+'秒'
+	}
+	
+	timer = setInterval(handleTime,500)
+	handleTime()
+</script>
+</html>

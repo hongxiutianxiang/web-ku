@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007-数码时钟</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		#timer{
+			width: 400px;
+			margin: 200px auto;
+			font-size: 48px;
+			text-align: center;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		
+	</div>
+</body>
+<script>
+	var oDiv = document.getElementById('timer')
+
+	function toDouble(num){
+		return num<10 ? num = '0'+num : num = num
+	}
+
+	function timer(){
+		var time = new Date();
+
+		var iHours = time.getHours();
+		var iMinutes = time.getMinutes();
+		var iSecond = time.getSeconds();
+
+		var iTime = toDouble(iHours) + ':' + toDouble(iMinutes) + ':' + toDouble(iSecond);	
+		oDiv.innerHTML = iTime;
+	}
+
+	setInterval(timer,500)
+	timer();
+
+	
+
+	
+</script>
+</html>

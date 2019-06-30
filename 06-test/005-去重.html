@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005-去重</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [4,6,3,2,5,2,3,4,7,2];
+	var result = [];
+
+	function uniqueArrary(arr){
+		for(var i = 0;i<arr.length;i++){
+			if(result.indexOf(arr[i]) == -1){
+				result.push(arr[i])
+			}
+		}
+		return result;
+	}
+	var arr2 = uniqueArrary(arr1)
+	console.log(arr1)
+	console.log(result)
+	console.log(arr2)
+</script>
+</html>

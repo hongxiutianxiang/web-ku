@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002-冒泡排序</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [2,6,3,4,8,7];
+	var temp;
+
+	for(var i = 0;i<arr1.length;i++){
+		for(var j = i+1;j<arr1.length;j++){
+			if(arr1[i]>arr1[j]){
+				temp = arr1[i]
+				arr1[i] = arr1[j];
+				arr1[j] = temp;
+			}
+
+		}
+	}
+	console.log(arr1)
+</script>
+</html>

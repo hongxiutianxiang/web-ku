@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006-插入输入框的值并插入</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 220px;
+			margin: 100px auto;
+		}
+		li{
+			list-style: none;
+			height: 30px;
+			line-height: 30px;
+			border-bottom: 1px dashed #ccc;
+		}
+		a{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<textarea name="text" id="text" cols="30" rows="10"></textarea>
+		<button id="btn">发布</button>
+		<ul class="comment-container">
+			<!-- <li class="comment-item">啊啊啊<a href="#">删除</a></li> -->
+		</ul>
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oText = document.getElementById('text');
+	var oUl = document.querySelector('.comment-container')
+
+	oBtn.onclick=function(){
+		oLi = document.createElement('li');
+		oLi.innerHTML = oText.value;
+		oA = document.createElement('a');
+		oA.innerHTML = '删除';
+		oA.setAttribute('href','#')
+		oA.onclick=function(){
+			oUl.removeChild(this.parentNode)
+		}
+
+		oLi.appendChild(oA)
+		oUl.insertBefore(oLi,oUl.firstChild);
+
+		oText.value = '';
+	}
+	
+</script>
+</html>

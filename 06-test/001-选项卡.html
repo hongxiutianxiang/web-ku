@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>001-选项卡</title>
+	<style>
+		li{
+			list-style: none;
+		}
+		.tab{
+			overflow: hidden;
+		}
+		.tab-item{
+			float: left;
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin-right: 10px;
+			border: 1px solid #000;
+		}
+		.content-item{
+			display: none;
+			width: 200px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+		.active{
+			color: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul class="tab">
+		<li class="tab-item">first</li>
+		<li class="tab-item">second</li>
+		<li class="tab-item">third</li>
+	</ul>
+	<ul class="content">
+		<li class="content-item">1</li>
+		<li class="content-item">2</li>
+		<li class="content-item">3</li>
+	</ul>
+</body>
+<script>
+	var aTabItem = document.querySelectorAll('.tab-item');
+	var aContentItem = document.querySelectorAll('.content-item');
+
+	for(var i = 0;i<aTabItem.length;i++){
+		aTabItem[i].index = i;
+		aTabItem[i].onclick = function(){
+
+			for(var j = 0;j<aTabItem.length;j++){
+				aContentItem[j].style.display = 'none';
+				aTabItem[j].className = 'tab-item';
+			}
+			this.className = 'tab-item active';
+			aContentItem[this.index].style.display = 'block';
+		}
+	}
+</script>
+</html>
