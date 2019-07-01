@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-轮播图</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.carousel{
+			position: relative;
+			width: 500px;
+			height: 300px;
+			margin: 100px auto;
+		}
+		.img-item{
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: all 1s; 
+		}
+		.img-item img{
+			width: 100%;
+		}
+		.arrow{
+			position: absolute;
+			top: 50%;
+			margin-top: -25px;
+			width: 30px;
+			height: 50px;
+			background: #ccc;
+			text-align: center;
+			line-height: 50px;
+		}
+		.right-arrow{
+			right: 0;
+		}
+		.dot-box{
+			position: absolute;
+			left: 85%;
+			bottom: 10px;
+		}
+		.dot-item{
+			float: left;
+			margin-left: 5px;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background: #aaa;
+			border: 2px solid #eee;
+		}
+		.active{
+			background: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<div class="carousel">
+		<ul class="img-box">
+			<li class="img-item" style="opacity: 1"><img src="./images/bizhia.jpg" alt=""></li>
+			<li class="img-item"><img src="./images/bizhib.jpg" alt=""></li>
+			<li class="img-item"><img src="./images/bizhic.jpg" alt=""></li>
+		</ul>
+		<span class="arrow left-arrow"><</span>
+		<span class="arrow right-arrow">></span>
+		<ul class="dot-box">
+			<li class="dot-item active"></li>
+			<li class="dot-item"></li>
+			<li class="dot-item"></li>
+		</ul>
+	</div>
+</body>
+<script>
+	var aImgItem = document.querySelectorAll('.img-item');
+	var oLeftArrow = document.querySelector('.left-arrow');
+	var oRightArrow = document.querySelector('.right-arrow');
+	var aDotItem = document.querySelectorAll('.dot-item');
+	var oCarousel = document.querySelector('.carousel')
+
+	var now = 0;
+	var timer = 0;
+
+	function tab(){
+		for(var i = 0;i<aImgItem.length;i++){
+			aImgItem[i].style.opacity = '0';
+			aDotItem[i].className = 'dot-item';
+		}
+		aImgItem[now].style.opacity = '1';
+		aDotItem[now].className = 'dot-item active';
+	}
+
+	oRightArrow.onclick = function(){
+		now++;
+		if(now>=3){
+			now = 0;
+		}
+		tab()
+	}
+	oLeftArrow.onclick = function(){
+		now--;
+		if(now<=0){
+			now = aImgItem.length-1;
+		}
+		tab()
+	}
+	for(var i = 0;i<aDotItem.length;i++){
+		aDotItem[i].index = i;	//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		aDotItem[i].onclick = function(){
+			now = this.index;
+			tab()
+		}
+	}
+
+	timer = setInterval(oRightArrow.onclick,2000)
+
+	oCarousel.onmouseover = function(){
+		clearInterval(timer)
+	}
+	oCarousel.onmouseout = function(){
+		timer = setInterval(oRightArrow.onclick,2000)
+	}
+
+	
+</script>
+</html>

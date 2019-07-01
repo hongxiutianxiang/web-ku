@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-伸缩菜单</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.main{
+			position: absolute;
+			top: 100px;
+			left: -400px;
+			width: 400px;
+			height: 300px;
+			background: pink;
+		}
+		.sub{
+			position: absolute;
+			right: -50px;
+			width: 50px;
+			height: 300px;
+			background: skyblue;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="sub"></div>
+	</div>
+</body>
+<script>
+	var oMain = document.querySelector('.main');
+
+	var timer = 0;
+	
+
+	oMain.onmouseover = function(){
+		clearInterval(timer);//防止多次点击		!!!!!!!!!!!!!!!!!!!!!!!
+		var iSpeed = 0;
+		timer = setInterval(function(){
+			console.log(oMain.offsetLeft)
+			if(oMain.offsetLeft>0){
+				iSpeed = -6;
+			}else{
+				iSpeed = 6;
+			}
+			if(Math.abs(0 - oMain.offsetLeft) < Math.abs(iSpeed)){
+				oMain.style.left = 0;
+				clearInterval(timer)
+			}else{
+				oMain.style.left = oMain.offsetLeft + iSpeed + 'px';	//!!!!!!!!!!!!!!!!
+			}
+			
+		},20)
+	}
+	oMain.onmouseout = function(){
+		clearInterval(timer);//防止多次点击    
+		var iSpeed = 0;
+		timer = setInterval(function(){
+			if(oMain.offsetLeft>-400){
+				iSpeed = -6;
+			}else{
+				iSpeed = 6;
+			}
+			if(Math.abs(-400 - oMain.offsetLeft) < Math.abs(iSpeed)){
+				oMain.style.left = '-400px';
+				clearInterval(timer)
+			}else{
+				oMain.style.left = oMain.offsetLeft + iSpeed + 'px';
+			}
+			
+		},20)
+	}
+</script>
+</html>
