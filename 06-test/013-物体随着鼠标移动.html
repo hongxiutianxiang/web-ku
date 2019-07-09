@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-物体随着鼠标移动</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+		.box{
+			position: absolute;
+			top: 0;
+			left: 0;	
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+<script>
+	var oBox = document.querySelector('.box')
+
+	function getScrollTop(){
+		return window.pageYOffset || document.documentElement.getScrollTop || document.body.scrollTop;
+	}
+	function getScrollLeft(){
+		return window.pageXOffset || document.documentElement.getScrollLeft || document.body.scrollLeft;
+	}
+
+	document.onmousemove = function(ev){
+		oBox.style.left = getScrollLeft() + ev.clientX + 'px';
+		oBox.style.top = getScrollTop() + ev.clientY + 'px';
+		console.log(ev.clientX,ev.clientY)
+	}
+</script>
+</html>
