@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>019-构造原型创建对象</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.sayHi = function(){
+		console.log('Hi,I am ' + this.name)
+	}
+	Person.prototype.sayHello = function(){
+		console.log('Hello,I am ' + this.name)
+	}
+	Person.prototype.LEGS = 2;
+
+	var person1 = new Person('Tom',18);
+	person1.sayHi();
+	person1.sayHello();
+	console.log(person1.LEGS)
+
+	var person2 = new Person('Jack',33);
+	person2.sayHi();
+	person2.sayHello();
+	console.log(person2.LEGS)
+
+	console.log(person1)
+	console.log(person2)
+
+	console.log(person1.sayHi == person2.sayHi)
+</script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-选项卡-面向对象</title>
+	<style>
+		li{
+			list-style: none;
+		}
+		.tab,.tab2{
+			overflow: hidden;
+		}
+		.tab-item{
+			float: left;
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			text-align: center;
+			margin-right: 10px;
+			border: 1px solid #000;
+		}
+		.content-item{
+			display: none;
+			width: 200px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+		.active{
+			color: #ff6700;
+		}
+	</style>
+</head>
+<body>
+	<ul class="tab">
+		<li class="tab-item">first</li>
+		<li class="tab-item">second</li>
+		<li class="tab-item">third</li>
+	</ul>
+	<ul class="content">
+		<li class="content-item">1</li>
+		<li class="content-item">2</li>
+		<li class="content-item">3</li>
+	</ul>
+
+	<ul class="tab2">
+		<li class="tab-item">first</li>
+		<li class="tab-item">second</li>
+		<li class="tab-item">third</li>
+	</ul>
+	<ul class="content2">
+		<li class="content-item">1</li>
+		<li class="content-item">2</li>
+		<li class="content-item">3</li>
+	</ul>
+</body>
+<script>
+	/*
+	var aTabItem = document.querySelectorAll('.tab-item');
+	var aContentItem = document.querySelectorAll('.content-item');
+
+	for(var i = 0;i<aTabItem.length;i++){
+		aTabItem[i].index = i;
+		aTabItem[i].onclick = function(){
+
+			for(var j = 0;j<aTabItem.length;j++){
+				aContentItem[j].style.display = 'none';
+				aTabItem[j].className = 'tab-item';
+			}
+			this.className = 'tab-item active';
+			aContentItem[this.index].style.display = 'block';
+		}
+	}
+	*/
+	function Tab(btnSelector,contentSelecor){
+		//1.罗列属性
+		this.aTabItem = document.querySelectorAll(btnSelector);
+		this.aContentItem = document.querySelectorAll(contentSelecor);
+		//2.绑定事件
+		this.bindEvent();
+	}
+	Tab.prototype.bindEvent = function(){
+		var _this = this;
+		for(var i = 0;i<this.aTabItem.length;i++){
+			this.aTabItem[i].index = i;
+			this.aTabItem[i].onclick = function(){
+				_this.fnClick(this)
+			}
+		}
+	}
+	Tab.prototype.fnClick = function(oBtn){
+		
+		for(var i = 0;i<this.aTabItem.length;i++){
+			this.aTabItem[i].className = 'tab-item';
+			this.aContentItem[i].style.display = 'none';
+		}
+		oBtn.className = 'tab-item active';
+		this.aContentItem[oBtn.index].style.display = 'block';
+	}
+
+	new Tab('.tab li','.content li');
+	new Tab('.tab2 li','.content2 li');
+</script>
+</html>

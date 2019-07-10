@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>005-去重2</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr1 = [1,2,3,1,2,3];
+	function uniqueArr(arr) {
+		var result = [];
+		var obj = {};
+		for(var i = 0;i<arr.length;i++){
+			obj[arr[i]] = '';
+		}
+		console.log(obj)
+		for(var attr in obj){
+			result.push(parseInt(attr))
+		}
+		return result;
+	}
+	console.log(uniqueArr(arr1))
+</script>
+</html>

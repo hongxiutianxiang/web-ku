@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022-轮播图-面向对象</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.leftArrow,.rightArrow{
+			position: absolute;
+			top: 50%;
+			width: 30px;
+			height: 50px;
+			margin-top: -25px;
+			line-height: 50px;
+			text-align: center;
+			background: rgba(0,0,0,0.6);
+			color: #eee;
+		}
+		.leftArrow{
+			left: 0;
+		}
+		.rightArrow{
+			right: 0;
+		}
+		.bottomBtnWrap{
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+		}
+		.bottomBtnWrap li{
+			float: left;
+			margin-right: 5px;
+			width: 10px;
+			height: 10px;
+			background: #aaa;
+			border: 2px solid #eee;
+			border-radius: 50%;
+		}
+		.active{
+			background: blue !important;
+		}
+	</style>
+</head>
+<body>
+	<div id="carousel"></div>
+</body>
+<script>
+	function Carousel(options){
+		//1.罗列属性
+		this.oBox = document.getElementById('carousel');
+		this.aImg = options.aImg;
+		this.width = options.width;
+		this.height = options.height;
+		this.playDuration = options.playDuration;
+
+		this.oUlImg = null;
+		this.oLi = null;
+		this.now = 0;
+		this.timer = 0;
+
+		//2.初始化Dom节点
+		this.init();
+
+		//3.绑定事件
+		this.bindEvent();
+
+		//4.自动播放
+		if(this.playDuration){
+			this.auto();
+		}
+	}
+	Carousel.prototype.init = function(){
+		this.oBox.style.position = 'relative';
+		this.oBox.style.width = this.width;
+		this.oBox.style.height = this.height;
+
+		this.oUlImg = document.createElement('ul');
+
+		this.oUlBtn = document.createElement('ul');
+		this.oUlBtn.className = 'bottomBtnWrap';
+		this.oUlBtn.style.zIndex = 99;
+		
+		
+		for(var i = 0;i<this.aImg.length;i++){
+			this.oLi = document.createElement('li');
+			this.oLi.style.width = '100%';
+			this.oLi.style.height = '100%';
+			this.oLi.style.position = 'absolute';
+			this.oLi.style.left = 0;
+			this.oLi.style.top = 0;
+
+			
+
+			this.oImg = document.createElement('img');
+			this.oImg.style.width = this.width;
+			this.oImg.style.height = this.height;
+			this.oImg.src = this.aImg[i];
+
+			this.oBtn = document.createElement('li');
+
+			if(i == 0){
+				this.oLi.style.zIndex = 50;
+				this.oBtn.className = 'active';
+			}else{
+				this.oLi.style.zIndex = 0;
+			}
+
+			this.oUlImg.appendChild(this.oLi);
+			this.oUlBtn.appendChild(this.oBtn);
+			this.oLi.appendChild(this.oImg);
+		}
+
+		this.leftArrow = document.createElement('span');
+		this.rightArrow = document.createElement('span');
+		this.leftArrow.className = 'leftArrow';
+		this.leftArrow.style.zIndex = 99;
+		this.leftArrow.innerHTML = '&lt';
+		this.rightArrow.className = 'rightArrow';
+		this.rightArrow.style.zIndex = 99;
+		this.rightArrow.innerHTML = '&gt';
+
+
+
+		this.oBox.appendChild(this.oUlImg);
+		this.oBox.appendChild(this.leftArrow);
+		this.oBox.appendChild(this.rightArrow);
+		this.oBox.appendChild(this.oUlBtn)
+		this.oUlBtn.style.marginLeft = -(this.oUlBtn.offsetWidth*0.5) + 'px';
+	}
+
+	Carousel.prototype.bindEvent = function(){
+		var _this = this;
+		//绑定右按钮
+		this.rightArrow.onclick = function(){
+			_this.now++;
+			if(_this.now>=_this.aImg.length){
+				_this.now = 0;
+			}
+			_this.tab();
+		}
+		//绑定左按钮
+		this.leftArrow.onclick = function(){
+			_this.now--;
+			if(_this.now<0){
+				_this.now = _this.aImg.length - 1;
+			}
+			_this.tab();
+		}
+		//绑定底部指示按钮
+		for(var i = 0;i<this.aImg.length;i++){
+			this.oUlBtn.children[i].index = i;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			this.oUlBtn.children[i].onclick = function(){
+				_this.now = this.index;
+				_this.tab();
+			}
+		}
+	}
+
+	Carousel.prototype.tab = function(){
+		//清除所有
+		for(var i = 0;i<this.aImg.length;i++){
+			this.oUlImg.children[i].style.zIndex = 0;
+			this.oUlBtn.children[i].className = '';
+		}
+		//将要显示的
+		this.oUlImg.children[this.now].style.zIndex = 50;
+		this.oUlBtn.children[this.now].className = 'active';
+	}
+
+	Carousel.prototype.auto = function(){
+		var _this = this;
+		this.timer = setInterval(this.rightArrow.onclick,this.playDuration);
+		this.oBox.onmouseover = function(){
+			clearInterval(_this.timer)
+		}
+		this.oBox.onmouseout = function(){
+			_this.timer = setInterval(_this.rightArrow.onclick,_this.playDuration);
+		}
+	}
+
+	new Carousel({
+		id:'carousel',
+		aImg:['./images/bizhia.jpg','./images/bizhib.jpg','./images/bizhic.jpg'],
+		width:'500px',
+		height:'350px',
+		playDuration:2000
+	});
+</script>
+</html>
