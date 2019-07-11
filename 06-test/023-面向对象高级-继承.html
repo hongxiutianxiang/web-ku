@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-面向对象高级-继承</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+	}
+
+	Person.prototype.sayName = function(){
+		console.log('I am '+ this.name)
+	}
+	Person.prototype.sayAge = function(){
+		console.log('I am ' + this.age + 'years old')
+	}
+	//属性的继承
+	function Teacher(name,age,major){
+		Person.call(this,name,age);//this为Teacher这个实例对象,想想new的作用
+		this.major = major;
+	}
+	//方法的继承
+	Teacher.prototype = Object.create(Person.prototype);
+	Teacher.prototype.constructor = Teacher;
+
+	Teacher.prototype.sayMajor = function(){
+		console.log('I am from ' + this.major)
+	}
+
+	var p1 = new Person('Tom',22);
+	p1.sayName();
+	p1.sayAge();
+
+	var t1 = new Teacher('Jack',45,'teacher')
+	t1.sayName();
+	t1.sayAge();
+	t1.sayMajor();
+
+	console.log(p1);
+	console.log(t1)
+</script>
+</html>
