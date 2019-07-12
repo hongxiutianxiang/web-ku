@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027-发布订阅者模式（观察者模式）-老师布置作业</title>
+</head>
+<body>
+	
+</body>
+<script>
+	;(function(w){
+		function Teacher(name,student){
+			this.name = name;
+			this.students = [];
+
+			
+		}
+		Teacher.prototype = {
+			constructor:Teacher,
+			register:function(student){
+				this.students.push(student)
+			},
+			publish:function(task){
+				for(var i = 0;i<this.students.length;i++){
+					this.students[i].listen(task)
+				}
+			}
+		}
+		w.Teacher = Teacher;
+	})(window)
+
+	;(function(w){
+		function Student(name,teacher){
+			this.name = name;
+			teacher.register(this)
+		}
+		Student.prototype = {
+			constructor:Student,
+			listen:function(task){
+				console.log('I am '+this.name+',my task is '+task)
+			}
+			
+		}
+		w.Student = Student;
+	})(window)
+
+	var t1 = new Teacher('Tony')
+	var s1 = new Student('Javk',t1)
+	var s2 = new Student('Roce',t1)
+
+	t1.publish('playing...');
+
+	console.log(t1)
+</script>
+</html>

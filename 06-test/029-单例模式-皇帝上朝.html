@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>029-单例模式</title>
+</head>
+<body>
+	
+</body>
+<script>
+	;(function(w){
+		var sking = null;
+		function King(name){		
+			if(!sking){
+				this.name = name;
+				this.id = Math.random();
+				sking = this;
+			}
+			return sking;
+		}
+		King.prototype = {
+			constructor:King,
+			work:function(){
+				console.log(this.name + this.id + ' say:有事起奏,无事退朝')
+			}
+		}
+		w.King = King;
+	})(window)
+
+	for(var i = 1;i<=5;i++){
+		new King('武则天').work();
+	}
+	
+</script>
+</html>

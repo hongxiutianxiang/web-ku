@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-闭包-封闭空间的作用-构建对象</title>
+	
+</head>
+<body>
+	
+</body>
+<script>
+	;(function(w){
+		function Person(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		Person.prototype = {
+			consructor:Person,
+			sayName:function(){
+				console.log('I am ' + this.name)
+			},
+			sayAge:function(){
+				console.log('I am ' + this.age + ' years old')
+			}
+		}
+		w.Person = Person;	
+	})(window)
+	
+
+	var p1 = new Person('Tom',18);
+	p1.sayName();
+	p1.sayAge();
+</script>
+</html>

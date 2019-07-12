@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>030-单例模式-惰性登录框</title>
+	<style>
+		#btn{
+			width: 100px;
+			height: 80px;
+		}
+		.login{
+			width: 200px;
+			height: 300px;
+			background: #ccc;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">登录</button>
+</body>
+<script>
+	/*
+	var oBtn = document.getElementById('btn');
+	var obj = null;
+	oBtn.onclick = function(){
+		if(!obj){
+			var oDiv = document.createElement('div');
+			oDiv.className = 'login';
+			document.body.appendChild(oDiv)
+			obj = oDiv;
+		}
+		return obj;
+	}
+	*/
+	
+	
+	function getSingle(fn){
+		var obj = null;
+		return function(){
+			if(!obj){
+				obj = fn()
+			}
+			return obj;
+		}
+		
+	}
+	function createLoginLayer(){
+		var oDiv = document.createElement('div');
+		oDiv.className = 'login';
+		document.body.appendChild(oDiv);
+		return oDiv;
+	}
+	var creatSingleLoginLayer = getSingle(createLoginLayer);
+
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		creatSingleLoginLayer()
+	}
+</script>
+</html>

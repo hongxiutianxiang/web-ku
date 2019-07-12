@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>025-闭包-封闭空间的作用-循环中直接找到元素的索引</title>
+	<style>
+		/**{
+			margin: 0;
+			padding: 0;
+		}*/
+		li{
+			float: left;
+			list-style: none;
+			width: 100px;
+			height: 30px;
+			margin-right: 10px;
+			background: pink;
+		}
+		.active{
+			background: yellow;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li class="active"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+<script>
+	/*
+	var aLi = document.querySelectorAll('li')
+	for(var i= 0;i<aLi.length;i++){
+		
+			for(var j = 0;j<aLi.length;j++){
+				aLi[j].className = ''
+			}
+			this.className = 'active'
+		}
+	}
+	*/
+	var aLi = document.querySelectorAll('li')
+	var lastIndex = 0;
+	for(var i= 0;i<aLi.length;i++){
+		//console.log(i)  0123456789
+		;(function(i){
+			//console.log(i)  0123456789
+			aLi[i].onmouseover = function(){
+				aLi[lastIndex].className = '';
+				this.className = 'active';
+				lastIndex = i;
+				console.log(i)
+			}
+		})(i)
+	}
+	//console.log(i)  10
+</script>
+</html>
