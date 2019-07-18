@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>034-jquery-setColor插件</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>change</button>
+	<div>jklhfash</div>
+	<div>jklhfash</div>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	;(function($){
+		$.fn.extend({
+			setColor:function(options){
+				var defaults = {
+					color:'red'
+				}
+				options = $.extend(defaults,options)
+				// console.log(this) //this为jQuery对象
+				this.each(function(){
+					// console.log(this) //this为dom节点
+					this.style.color = options.color;
+				})
+			}
+		})
+	})(jQuery);
+</script>
+<script>
+	$(function(){
+	   $('button').click(function(){
+	   		$('div').setColor({
+	   			color:'blue'
+	   		})
+	   })
+	});
+</script>
+</html>

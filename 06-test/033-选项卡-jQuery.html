@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>033-选项卡-jquery</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.btn{
+			overflow: hidden;
+		}
+		li{
+			list-style: none;
+		}
+		.btn li{
+			width: 100px;
+			height: 60px;
+			border: 1px solid #000;
+			float: left;
+		}
+		.btn li.active{
+			background: #000;
+			color: #fff;
+		}
+		.content li{
+			display: none;
+			width: 200px;
+			height: 300px;
+			border: 1px solid #000;
+		}
+		.content li.show{
+			display: block ;
+		}
+	</style>
+</head>
+<body>
+	<ul class="btn">
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<ul class="content">
+		<li class="show">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+</body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+	   $('.btn li').on('mouseenter',function(){
+	   	var $this = $(this);
+	   	$this.addClass('active');
+	   	$this.siblings().removeClass('active');
+	   	var $index = $this.index();
+	   	var $currentLi = $('.content li');
+	   	$currentLi.eq($index).addClass('show');
+	   	$currentLi.siblings().removeClass('show');//???????????????????????????????????
+	   })
+	});
+</script>
+</html>
