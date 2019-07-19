@@ -3,8 +3,105 @@
 <head>
 	<meta charset="UTF-8">
 	<title>035-选项卡-jQuery</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+		}
+		.tab{
+			float: left;
+			width: 288px;
+			height: 400px;
+			margin: 30px;
+		}
+		.btn{
+			overflow: hidden;
+			margin-bottom: 10px;
+		}
+		.btn li{
+			float: left;
+			width: 70px;
+			height: 40px;
+			border: 1px solid #000;
+		}
+		.btn li.active{
+			background: yellow;
+		}
+		.btn li.current{
+			background: pink;
+		}
+		.content li{
+			display: none;
+			width: 286px;
+			height: 350px;
+			border: 1px solid #000;
+		}
+	</style>
 </head>
 <body>
-	
+	<div class="tab">
+		<ul class="btn">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul class="content">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+		</ul>
+	</div>
+
+	<!-- <div class="tab">
+		<ul class="btn">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<ul class="content">
+			<li>a</li>
+			<li>b</li>
+			<li>c</li>
+			<li>d</li>
+		</ul>
+	</div> -->
 </body>
+<script type="text/javascript" src="./jquery-1.12.4.js"></script>
+<script>
+	;(function($){
+		$.fn.extend({
+			tab:function(options){
+				var defaults = {
+					activeClass:'active',
+					benSelector:'.btn li',
+					contentSelector:'.content li',
+					eventType:'click'
+				}
+				options = $.extend(defaults,options)
+				this.each(function(){
+					$tab = $(this);
+					$btns = $tab.find(options.benSelector);
+					$btns.on(options.eventType,function(){
+						$(this).addClass(options.activeClass).siblings().removeClass(options.activeClass);
+						var index = $(this).index();
+						$tab.find(options.contentSelector).eq(index).show().siblings().hide();
+					})
+				})
+			}
+		})
+	})(jQuery);
+</script>
+<script>
+	$(function(){
+		$('.tab').tab({
+			// activeClass:'current'
+		})
+	});
+</script>
 </html>
