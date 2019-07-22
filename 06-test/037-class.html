@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>037-class</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		showName(){
+			console.log('I am '+ this.name)
+		}
+		showAge(){
+			console.log(this.age)
+		}
+		static sayHi(){
+			console.log('Hi...')
+		}
+	}
+
+	class Student extends Person{
+		constructor(name,age,major){
+			super(name,age)
+			this.major = major;
+		}
+		showMajor(){
+			console.log('I am from ' + this.major)
+		}
+	}
+
+	let p1 = new Person('Tom',20);
+	console.log(p1)
+	p1.showName();
+	p1.showAge();
+	Person.sayHi()
+
+	let s1 = new Student('Jack',12,'Math')
+	console.log(s1)
+	s1.showName();
+	s1.showAge();
+	s1.showMajor();
+	Student.sayHi();
+
+</script>
+</html>
