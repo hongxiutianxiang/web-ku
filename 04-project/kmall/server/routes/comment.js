@@ -1,9 +1,4 @@
-/*
-* @Author: TomChen
-* @Date:   2019-03-31 11:06:49
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-04-04 19:02:34
-*/
+
 const express = require('express')
 const CommentModel = require('../models/comment.js')
 const router = express.Router()

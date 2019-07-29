@@ -1,9 +1,4 @@
-/*
-* @Author: TomChen
-* @Date:   2019-03-31 11:06:49
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-04-04 19:47:00
-*/
+
 const express = require('express')
 const multer  = require('multer')
 const upload = multer({ dest: 'public/uploads/' })

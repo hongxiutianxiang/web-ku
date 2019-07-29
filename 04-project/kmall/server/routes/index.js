@@ -1,9 +1,4 @@
-/*
-* @Author: TomChen
-* @Date:   2019-03-31 11:06:49
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-04-04 18:30:53
-*/
+
 const express = require('express')
 const CategoryModel = require('../models/category.js')
 const ArticleModel = require('../models/article.js')

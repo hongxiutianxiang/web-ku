@@ -1,9 +1,4 @@
-/*
-* @Author: TomChen
-* @Date:   2019-03-27 20:25:44
-* @Last Modified by:   TomChen
-* @Last Modified time: 2019-04-04 18:28:30
-*/
+
 
 const mongoose = require('mongoose');
 
